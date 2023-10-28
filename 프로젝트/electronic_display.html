@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/electronic_display.css" />
+  <link rel="stylesheet" href="assets/css/animate.css" />
+  <title>electronic display</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="titleBox">
+      <div class="titleArea">
+        <p class="title">일반부 - 남자 100M</p>
+      </div>
+      <p class="recordType">Official Result</p>
+      <p class="round">예선전</p>
+      <p class="windSpeed">풍속 :</p>
+      <p class="windSpeedValue">+ 0.9 m/s</p>
+      <p class="page">
+        Page <span id="now_page">1</span> / <span id="total_page">4</span>
+      </p>
+      <div class="pictogram" style="
+            background: url(assets/images/U20_pictogram/male/200m.png) 0% 0% /
+              contain no-repeat;
+          "></div>
+    </div>
+    <ul class="rankingBox">
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">황의찬</span>
+          <span class="playerRecode">11:05 </span>
+          <span class="trackNumber">.85</span>
+          <div class="BibNumber">137</div>
+          <div class="LaneNumber">1</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">나마디 조엘진</span>
+          <span class="playerRecode"></span>
+          <span class="trackNumber">DNS</span>
+
+          <div class="BibNumber">992</div>
+          <div class="LaneNumber">2</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">최진우</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">988</div>
+          <div class="LaneNumber">3</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">조상현</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">180</div>
+          <div class="LaneNumber">4</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">최우진</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">849</div>
+          <div class="LaneNumber">5</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">조엘진</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">846</div>
+          <div class="LaneNumber">6</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">배건율</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">095</div>
+          <div class="LaneNumber">7</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">무하마드레한</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">872</div>
+          <div class="LaneNumber">8</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">배정태</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">147</div>
+          <div class="LaneNumber">9</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">배정태2</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">129</div>
+          <div class="LaneNumber">10</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">KIM HYEONWOO</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">178</div>
+          <div class="LaneNumber">11</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">KIM JINMAN</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">991</div>
+          <div class="LaneNumber">12</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">PARK JUNHHYUK</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">157</div>
+          <div class="LaneNumber">13</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">KIM JUNYOUNG</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">176</div>
+          <div class="LaneNumber">14</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">JEON SEONGJIN</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">994</div>
+          <div class="LaneNumber">15</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">YOU JINSEO</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">090</div>
+          <div class="LaneNumber">16</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">LEE YEONGUNG</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">933</div>
+          <div class="LaneNumber">17</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">IM KANGCHUI</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">953</div>
+          <div class="LaneNumber">18</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">JANG BOGEUN</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">115</div>
+          <div class="LaneNumber">19</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">KWEON JAEWOO</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">175</div>
+          <div class="LaneNumber">20</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">LEE KANGCHEOL</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">139</div>
+          <div class="LaneNumber">21</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">CHOI JIHO</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">0</div>
+          <div class="LaneNumber">22</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+      <li class="rankingItem">
+        <div class="rankingItemWrapper">
+          <span class="wrapperLank">1</span>
+          <span class="playerName">CHOE SEHUN</span>
+          <span class="playerRecode">10.60 </span>
+          <div class="BibNumber">119</div>
+          <div class="LaneNumber">23</div>
+          <div class="Team">울산스포츠과학고</div>
+        </div>
+      </li>
+    </ul>
+
+    <img class="containerImg" src="assets/images/disPlay.png" />
+  </div>
+
+  <script src="assets/js/electronic_display.js"></script>
+  <!-- <script src="./assets/js/sub.js"></script> -->
+  <!-- <script>
+    let isInterval = true;
+
+    document.addEventListener("keydown", (e) => {
+      if (e.code === "KeyZ") {
+        isInterval = isInterval ? false : true;
+      }
+    })
+    if (rankingItem.length > 9) {
+      const totalPageNumber = parseInt(document.querySelector("#total_page").innerText);
+      setInterval(() => {
+        if (isInterval && totalPageNumber > parseInt(document.querySelector("#now_page").innerText)) {
+          for (let i = 0; i < rankingItemWrapper.length; i++) {
+            rankingItem[i].className = defaultRankingItem;
+            rankingItem[i].style.display = "none";
+            rankingItemWrapper[i].className = defaultRankingItemWrapper;
+            rankingItemWrapper[i].style.display = "none";
+          };
+          j + 8 < MAX_LENGTH ? j = j + 8 : j = j;
+          let NUM = j;
+          let count = 0;
+          function print() {
+            rankingItem[NUM].className = defaultRankingItem;
+            rankingItem[NUM].style.display = "block";
+            rankingItemWrapper[NUM].style.display = "flex";
+            NUM++;
+            count++;
+          };
+          let interval = setInterval(() => {
+            document.addEventListener("keydown", () => {
+              count = 8;
+            });
+            if (count === 8 || NUM === MAX_LENGTH) {
+              clearInterval(interval);
+            } else {
+              print();
+            };
+          }, 0);
+          document.querySelector("#now_page").innerText = parseInt(document.querySelector("#now_page").innerText) + 1;
+        }
+
+        else if (isInterval && totalPageNumber === parseInt(document.querySelector("#now_page").innerText)) {
+          for (let i = 0; i < totalPageNumber; i++) {
+            for (let i = 0; i < rankingItemWrapper.length; i++) {
+              rankingItem[i].className = defaultRankingItem;
+              rankingItem[i].style.display = "none";
+              rankingItemWrapper[i].className = defaultRankingItemWrapper;
+              rankingItemWrapper[i].style.display = "none";
+            };
+            j < 8 ? j = 0 : j = j - 8;
+            let NUM = j;
+            let count = 0;
+            function print() {
+              rankingItem[NUM].className = defaultRankingItem;
+              rankingItem[NUM].style.display = "block";
+              rankingItemWrapper[NUM].style.display = "flex";
+              NUM++;
+              count++;
+            };
+            let interval = setInterval(() => {
+              document.addEventListener("keydown", () => {
+                count = 8;
+              });
+              if (count === 8) {
+                clearInterval(interval);
+              } else {
+                print(j);
+              };
+            }, 0);
+          }
+          document.querySelector("#now_page").innerText = 1;
+        }
+      }, 50);
+    }
+  </script> -->
+</body>
+
+</html>

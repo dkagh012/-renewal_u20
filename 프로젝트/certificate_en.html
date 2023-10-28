@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../assets/css/pdf.css" />
+</head>
+<!-- 증명서 영문출력 -->
+
+<body>
+  <script>
+    window.print();
+  </script>
+  <style>
+    @page {
+      size: 210mm 297mm;
+      /*A4*/
+    }
+
+    @media print {
+      .PDF_wrap {
+        /* border: initial;
+      border-radius: initial;
+      width: initial;
+      min-height: initial;
+      box-shadow: initial;
+      background: initial;
+      page-break-after: always; */
+      }
+
+      html,
+      body {
+        -webkit-print-color-adjust: exact;
+        width: 210mm;
+        height: 297mm;
+      }
+    }
+
+    .ctc_wrap {
+      padding: 2.5cm 2cm 2cm 2cm;
+    }
+
+    .ctc_name,
+    .en_ctc_name {
+      font-family: "Noto Sans KR";
+      font-weight: bold;
+      margin: 0 auto;
+      display: inline-block;
+      font-size: 2.5em;
+      text-align: center;
+      letter-spacing: 10px;
+      text-indent: 10px;
+      border-bottom: 1px solid #000;
+      padding: 11rem 0 2rem 0;
+    }
+
+    .ctc_name {
+      letter-spacing: 25px;
+      text-indent: 25px;
+      font-size: 3em;
+      padding: 14rem 0 2rem 0;
+      min-width: 280px;
+    }
+
+    .ctc_sign {
+      font-size: 26px;
+      gap: 0;
+    }
+
+    .en_ctc_wrap {
+      padding: 3.5cm 3cm 2cm 3cm;
+    }
+
+    .en_ctc_name {
+      letter-spacing: 5px;
+      text-indent: 5px;
+    }
+
+    .en_ctc_tit>p:nth-child(2) {
+      font-size: 41px;
+      margin: 0;
+    }
+
+    .en_ctc_contents {
+      font-size: 30px;
+      line-height: 47px;
+      word-spacing: 2px;
+      padding-top: 6rem;
+      font-weight: bold;
+    }
+
+    .en_cyc_date {
+      padding-top: 11rem;
+      font-size: 31px;
+    }
+
+    .en_ctc_footer_wrap {
+      position: relative;
+      padding-top: 10rem;
+    }
+
+    .en_ctc_sign {
+      font-size: 30px;
+    }
+
+    .ctc_contents {
+      padding-top: 4rem;
+      letter-spacing: 1px;
+      font-size: 30px;
+      line-height: 70px;
+    }
+
+    .cyc_date {
+      font-size: 25px;
+      padding-top: 12rem;
+    }
+
+    .ctc_footer_wrap {
+      position: relative;
+    }
+  </style>
+  <style>
+    body,
+    .en_ctc_wrap {
+      font-family: "Times New Roman", sans-serif;
+      font-weight: 400;
+    }
+  </style>
+  <div class="en_ctc_wrap">
+    <header class="pdf_header">
+      <div class="en_ctc_tit">
+        <p style="font-family: 'Roboto'; padding-top: 1em">
+          20TH ASIAN U20 ATHLETICS CHAMPIONSHIPS YECHEON
+        </p>
+        <p>Certificate of Participation</p>
+      </div>
+    </header>
+    <div class="en_ctc_name">test</div>
+    <div class="ctc_center_logo">
+      <img src="assets/images/logo2.png" alt="" />
+    </div>
+    <div class="en_ctc_contents">
+      <div>
+        This certificate is awarded to the above named participant in the 20th
+        Yecheon Asian U20 Athletics Championships held in Yecheon-gun, Korea,
+        and prove this with your participation certificate.
+      </div>
+    </div>
+    <div class="en_cyc_date">
+      <p>
+        <span>04/</span>
+        <span>06/</span>
+        <span>2023</span>
+      </p>
+    </div>
+    <div class="en_ctc_footer_wrap">
+      <footer class="en_ctc_sign">
+        Chairman of the U20 Athletics Championships Organizing Committee
+      </footer>
+    </div>
+  </div>
+  <script type="text/javascript" src="assets/js/main.js?v=1688004206"></script>
+</body>
+
+</html>

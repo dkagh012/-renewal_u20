@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="assets/css/select2.min.css" />
+	<link rel="stylesheet" href="assets/css/style.css?v=1694690400" />
+    <link rel="stylesheet" href="assets/css/reset.css?v=1694690400" />
+    <link rel="stylesheet" href="assets/css/xeicon.min.css?v=1694690400" />
+	<script src="assets/js/jquery.js?v=1694690400"></script>
+	<script src="assets/js/select2.min.js"></script>
+    <title>트랙결과입력 | 트랙경기 | 제104회 전국체육대회</title>
+
+	<!-- <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="assets/images/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="assets/images/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="assets/images/favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff"> -->
+
+	<script type="text/javascript" charset="utf8" src="assets/js/datatables.min.js?v=1694690400"></script>
+	<script type="text/javascript" src="assets/js/useDataTables.js?v=1694690400"></script>
+</head>
+<body>
+<header>
+        <div id="sh_adm_hd">
+          <h1><a href="main">육상 경기 운영 시스템</a></h1>
+          <ul id="sh_adm_nav">
+            <li>
+              <a  href="athlete_list">
+                <p>선수관리</p>
+                <i class="xi-angle-down-min"></i>
+              </a>
+              <ul class="nav_smn">
+                <li><a  href="athlete_list">선수 목록</a></li>
+              </ul>
+            </li>
+            <li>
+              <a class="clicked" href="sports_list">
+                <p>경기관리</p>
+                <i class="xi-angle-down-min"></i>
+              </a>
+              <ul class="nav_smn">
+                <li><a  href="sports_list">경기 목록</a></li>
+                <li><a class="clicked" href="schedule_list">일정목록</a></li>
+                <li><a  href="group_list">조편성 목록</a></li>
+              </ul>
+            </li>
+            <li>
+              <a  href="history_list">
+                <p>기록관리</p>
+                <i class="xi-angle-down-min"></i>
+              </a>
+              <ul class="nav_smn">
+                <li><a  href="history_list">역대기록 목록</a></li>
+              </ul>
+            </li>
+            <li>
+              <a  href="all_record">
+                <p>통계관리</p>
+                <i class="xi-angle-down-min"></i>
+              </a>
+              <ul class="nav_smn">
+                <li><a  href="all_record">전체 기록보기</a></li>
+                <li><a  href="player_ranking_list">선수별 순위보기</a></li>
+                <li><a  href="new_record_list">신기록 경기기록</a></li>
+                <li><a  href="schedule_ranking_list">경기별 순위보기</a></li>
+                <li><a  href="schedule_medal_list">경기별 메달보기</a></li>
+                <li><a  href="country_ranking_list">소속별 순위보기</a></li>
+              </ul>
+            </li>
+            <li>
+              <a  href="mypage">
+                <p>계정관리</p>
+                <i class="xi-angle-down-min"></i>
+              </a>
+              <ul class="nav_smn">
+                <li><a  href="mypage">계정 정보</a></li>
+                <li><a  href="change_password">비빌번호 변경</a></li>
+                <li><a  href="account_write">계정 생성</a></li>
+                <li><a  href="account_list">계정 목록</a></li>
+                <li><a  href="log_list">로그 목록</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul id="sh_adm_gnb">
+            <li id="tnb_logout">
+              <a href="action/auth/logout.php">
+                로그아웃
+              </a>
+            </li>
+            <li class="mypage">
+              <a href="mypage"><i class="xi-profile-o"></i></a>
+            </li>
+            <li>
+              <button type="button" class="MobileTabMenuBtn">
+                <i class="xi-bars"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="MobileTabMenu hidden">
+          <!-- 관리자모드 SNB -->
+          <!-- 퀵메뉴 설정 팝업 스크립트 -->
+          <div class="MobileMenu">
+            <div class=" ">
+              <ul class="MobileMenuList">
+                <li class="MobileMenuItem">
+                  <div class="MobileMenuTitle">
+                    참가자관리
+                    <i class="xi-angle-down-min"></i>
+                  </div>
+                  <ul class="MenuList" style="display: none">
+                    <li><a  href="athlete_list">선수 목록</a></li>
+                    </ul>
+                </li>
+                <li class="MobileMenuItem">
+                  <div class="MobileMenuTitle">
+                    경기관리
+                    <i class="xi-angle-down-min"></i>
+                  </div>
+                  <ul class="MenuList" style="display: none">
+                    <li><a  href="sports_list">경기 목록</a></li>
+                    <li><a class="clicked" href="schedule_list">일정목록</a></li>
+                    <li><a  href="group_list">조편성 목록</a></li>
+                  </ul>
+                </li>
+                <li class="MobileMenuItem">
+                  <div class="MobileMenuTitle">
+                    기록관리
+                    <i class="xi-angle-down-min"></i>
+                  </div>
+                  <ul class="MenuList" style="display: none">
+                    <li><a  href="history_list">역대기록 목록</a></li>
+                  </ul>
+                </li>
+                <li class="MobileMenuItem">
+                  <div class="MobileMenuTitle">
+                    통계관리
+                    <i class="xi-angle-down-min"></i>
+                  </div>
+                  <ul class="MenuList" style="display: none">
+                  <li><a  href="all_record">전체 기록보기</a></li>
+                    <li><a  href="player_ranking_list">선수별 순위보기</a></li>
+                    <li><a  href="new_record_list">신기록 경기기록</a></li>
+                    <li><a  href="schedule_ranking_list">경기별 순위보기</a></li>
+                    
+                    <li><a  href="schedule_medal_list">경기별 메달보기</a></li>
+                    <li><a  href="country_ranking_list">소속별 순위보기</a></li>
+                  </ul>
+                </li>
+                <li class="MobileMenuItem">
+                  <div class="MobileMenuTitle">
+                    기록관리
+                    <i class="xi-angle-down-min"></i>
+                  </div>
+                  <ul class="MenuList" style="display: none">
+                    <li><a  href="mypage">계정 정보</a></li>
+                    <li><a  href="change_password">비빌번호 변경</a></li>
+                    <li><a  href="account_write">계정 생성</a></li>
+                    <li><a  href="account_list">계정 목록</a></li>
+                    <li><a  href="log_list">로그 목록</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="MobileBackground hidden"></div>
+        <div class="top">
+          <div id="js-scroll">
+            <i class="xi-caret-up-min topBtn"> </i>
+            <p>TOP</p>
+          </div>
+        </div>
+        <div id="sh_adm_count">
+          <ul>
+                          <li><a  href="sports_list">경기 목록</a></li>
+              <li><a class="clicked" href="schedule_list">일정목록</a></li>
+              <li><a  href="group_list">조편성 목록</a></li>
+                      </ul>
+        </div>
+      </header><script type="text/javascript" src="assets/js/onlynumber.js?v=1694690400"></script>
+  <script>
+    function openTextFile() {
+      var input = document.createElement("input");
+      input.type = "file";
+      input.accept = "lif/plain"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
+      input.onchange = function (event) {
+        processFile(event.target.files[0]);
+      };
+      input.click();
+    }
+
+    function processFile(file) {
+      var reader = new FileReader();
+      reader.onload = function () {
+        let ddd = reader.result.split("\r\n");
+        let wind = document.querySelector('[name="wind"]');
+        // let check = document.getElementsByTagName('th')[1].textContent;
+        let val = ddd[0].split(",")[4];
+        if (wind !== null) {
+          if (val != "") {
+            wind.value = val;
+          } else {
+            wind.value = "0";
+          }
+        }
+        for (i = 1; i < ddd.length; i++) {
+          let k = ddd[i].split(",");
+          let on;
+          if (
+            !document.querySelector("#id" + k[1]) &&
+            !document.querySelector("#rane" + k[2])
+          ) {
+            continue;
+          }
+          if (!document.querySelector("#id" + k[1])) {
+            if (!k[1]) continue;
+            on = document.querySelector("#rane" + k[2]).children;
+          } else {
+            if (!k[1]) continue;
+            on = document.querySelector("#id" + k[1]).children;
+          }
+          if (k[6]) {
+            on[5].firstElementChild.value = k[6];
+          } else if (k[0] == "DNS") {
+            on[5].firstElementChild.value = "DNS";
+          } else if (k[0] == "DNF") {
+            on[5].firstElementChild.value = "DNF";
+          } else {
+            on[5].firstElementChild.value = "DQ";
+          }
+          if (k[9]) {
+            on[7].firstElementChild.value = k[9];
+          }
+        }
+        rankcal1();
+      };
+      reader.readAsText(file, /* optional */ "utf-8");
+      input_time(true);
+    }
+  </script>
+    <div id="sh_adm_cont_wrap" class="MobileScroll">
+        <div class="local_ov01 local_ov min1024">
+          <!-- <form action=""> -->
+          <div class="result_view_tbale">
+            <table>
+              <tbody>
+                <tr>
+                  <th>경기 종목</th>
+                  <td>
+                  <input type="hidden" id="title" value="1" />
+                  <input type="hidden" id="group" value="1" />
+                    <input placeholder="경기 이름" type="text" id="Sport" value="200m" maxlength="16" required="" readonly />
+                  </td>
+                  <th>라운드</th>
+                  <td>
+                    <input type="hidden" id="Round" value="2" />
+                    <input placeholder="라운드" type="text" 
+                      value="예선전" maxlength="16" required="" readonly />
+                  </td>
+                </tr>
+                <tr>
+                  <th>성별</th>
+                  <td><input type="text" id="Gender" value="f" /></td>
+                                    <th>풍속</th>
+                  <td><input placeholder="풍속을 입력해주세요." type="text" id="wind" name="wind" value="" maxlength="16" required="" /></td>
+                                  </tr>
+                <tr>
+                  <th>현재 시간</th>
+                  <td>
+                    <input placeholder="시작 시간" type="text" id="Time" name="starttime" value="2023-01-01 00:00:00"  maxlength="30" required="" onclick="input_time()" />                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ResultTable">
+            <table class="box_table throwBackground one_Tr">
+              <colgroup>
+                <col style="width: 4%" /><col style="width: 4%" /><col style="width: 10%" /><col ><col style="width: 8%" /><col style="width: 8%" /><col style="width: 10%" /><col style="width: 5%" /><col style="width: 5%" /><col style="width: 6%" /><col style="width: 6%" />              </colgroup>
+              <thead class="result_table entry_table">
+                <tr>
+                  <th style="background: none">등수</th>
+                  <th style="background: none">레인</th>                  <th style="background: none">등 번호</th>
+                  <th style="background: none">이름</th>
+                  <th style="background: none">국가</th>
+                  <th style="background: none">경기 결과</th>
+                                    <th style="background: none">Reaction Time</th>
+                                    <th style="background: none">비고</th>
+                  <th style="background: none">참고기록</th>
+                                    <th style="background: none">Q/q</th>
+                                                      <th style="background: none">신기록</th>
+                </tr>
+              </thead>
+              <tbody class="entry_table">
+                                <tr id="rane2">
+                <td><input type="number" name="rank[]" id="rank" value="<br />
+<b>Notice</b>:  Undefined index: rank in <b>C:\xampp\htdocs\test\u20\u_system\includes\competition\schedule_track_normal_result_view.php</b> on line <b>244</b><br />
+" min="1" required="" /></td>
+                <td><input type="number" name="rain[]" value="2" min="1" required="" readonly /></td>
+                <td><input placeholder="등번호" type="text" id="bib" name="playerbib[]" value="428" maxlength="30" required="" readonly /></td>
+                <td><input placeholder="선수 이름" type="text" name="playername[]" value="김사랑" maxlength="30" required="" readonly />
+                </td>
+                <td><input placeholder="국가" type="text" id="Country" name="country" value="KOR" maxlength="30" required="" readonly /></td>
+                <td><input placeholder="경기 결과를 입력해주세요" type="text" name="gameresult[]" id="result" value="" maxlength="15" required onkeyup="trackFinal(this)" style="float: left; width: auto; padding-right: 5px" />
+                                <td><input placeholder="Reaction Time" type="text" name="reactiontime[]" id="reactiontime" value="" maxlength="9" onkeyup="trackReactionTimeForm(this)" style="float: left; padding-right: 5px" />
+                                <!-- <input type="hidden" name="compresult[]" value="' . ($row['record_' . $result_type . '_record'] ?? null) . '"/></td> -->
+                <td><input placeholder="비고를 입력해주세요" type="text" id="Bigo" name="bigo[]" value="" maxlength="100" /></td>
+                <td><input type="checkbox" id="RR" name="record_rr[454]" maxlength="100"  /></td>
+                                <td><input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" /></td>
+                                                <td><input placeholder="" id="Newrecord" type="text" name="newrecord[]" value="" maxlength="100"/></td>
+                                <tr id="rane3">
+                <td><input type="number" name="rank[]" id="rank" value="<br />
+<b>Notice</b>:  Undefined index: rank in <b>C:\xampp\htdocs\test\u20\u_system\includes\competition\schedule_track_normal_result_view.php</b> on line <b>244</b><br />
+" min="1" required="" /></td>
+                <td><input type="number" name="rain[]" value="3" min="1" required="" readonly /></td>
+                <td><input placeholder="등번호" type="text" id="bib" name="playerbib[]" value="387" maxlength="30" required="" readonly /></td>
+                <td><input placeholder="선수 이름" type="text" name="playername[]" value="이채원" maxlength="30" required="" readonly />
+                </td>
+                <td><input placeholder="국가" type="text" id="Country" name="country" value="KOR" maxlength="30" required="" readonly /></td>
+                <td><input placeholder="경기 결과를 입력해주세요" type="text" name="gameresult[]" id="result" value="" maxlength="15" required onkeyup="trackFinal(this)" style="float: left; width: auto; padding-right: 5px" />
+                                <td><input placeholder="Reaction Time" type="text" name="reactiontime[]" id="reactiontime" value="" maxlength="9" onkeyup="trackReactionTimeForm(this)" style="float: left; padding-right: 5px" />
+                                <!-- <input type="hidden" name="compresult[]" value="' . ($row['record_' . $result_type . '_record'] ?? null) . '"/></td> -->
+                <td><input placeholder="비고를 입력해주세요" type="text" id="Bigo" name="bigo[]" value="" maxlength="100" /></td>
+                <td><input type="checkbox" id="RR" name="record_rr[413]" maxlength="100"  /></td>
+                                <td><input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" /></td>
+                                                <td><input placeholder="" id="Newrecord" type="text" name="newrecord[]" value="" maxlength="100"/></td>
+                                <tr id="rane4">
+                <td><input type="number" name="rank[]" id="rank" value="<br />
+<b>Notice</b>:  Undefined index: rank in <b>C:\xampp\htdocs\test\u20\u_system\includes\competition\schedule_track_normal_result_view.php</b> on line <b>244</b><br />
+" min="1" required="" /></td>
+                <td><input type="number" name="rain[]" value="4" min="1" required="" readonly /></td>
+                <td><input placeholder="등번호" type="text" id="bib" name="playerbib[]" value="480" maxlength="30" required="" readonly /></td>
+                <td><input placeholder="선수 이름" type="text" name="playername[]" value="진수인" maxlength="30" required="" readonly />
+                </td>
+                <td><input placeholder="국가" type="text" id="Country" name="country" value="KOR" maxlength="30" required="" readonly /></td>
+                <td><input placeholder="경기 결과를 입력해주세요" type="text" name="gameresult[]" id="result" value="" maxlength="15" required onkeyup="trackFinal(this)" style="float: left; width: auto; padding-right: 5px" />
+                                <td><input placeholder="Reaction Time" type="text" name="reactiontime[]" id="reactiontime" value="" maxlength="9" onkeyup="trackReactionTimeForm(this)" style="float: left; padding-right: 5px" />
+                                <!-- <input type="hidden" name="compresult[]" value="' . ($row['record_' . $result_type . '_record'] ?? null) . '"/></td> -->
+                <td><input placeholder="비고를 입력해주세요" type="text" id="Bigo" name="bigo[]" value="" maxlength="100" /></td>
+                <td><input type="checkbox" id="RR" name="record_rr[506]" maxlength="100"  /></td>
+                                <td><input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" /></td>
+                                                <td><input placeholder="" id="Newrecord" type="text" name="newrecord[]" value="" maxlength="100"/></td>
+                                <tr id="rane5">
+                <td><input type="number" name="rank[]" id="rank" value="<br />
+<b>Notice</b>:  Undefined index: rank in <b>C:\xampp\htdocs\test\u20\u_system\includes\competition\schedule_track_normal_result_view.php</b> on line <b>244</b><br />
+" min="1" required="" /></td>
+                <td><input type="number" name="rain[]" value="5" min="1" required="" readonly /></td>
+                <td><input placeholder="등번호" type="text" id="bib" name="playerbib[]" value="543" maxlength="30" required="" readonly /></td>
+                <td><input placeholder="선수 이름" type="text" name="playername[]" value="이은빈" maxlength="30" required="" readonly />
+                </td>
+                <td><input placeholder="국가" type="text" id="Country" name="country" value="KOR" maxlength="30" required="" readonly /></td>
+                <td><input placeholder="경기 결과를 입력해주세요" type="text" name="gameresult[]" id="result" value="" maxlength="15" required onkeyup="trackFinal(this)" style="float: left; width: auto; padding-right: 5px" />
+                                <td><input placeholder="Reaction Time" type="text" name="reactiontime[]" id="reactiontime" value="" maxlength="9" onkeyup="trackReactionTimeForm(this)" style="float: left; padding-right: 5px" />
+                                <!-- <input type="hidden" name="compresult[]" value="' . ($row['record_' . $result_type . '_record'] ?? null) . '"/></td> -->
+                <td><input placeholder="비고를 입력해주세요" type="text" id="Bigo" name="bigo[]" value="" maxlength="100" /></td>
+                <td><input type="checkbox" id="RR" name="record_rr[569]" maxlength="100"  /></td>
+                                <td><input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" /></td>
+                                                <td><input placeholder="" id="Newrecord" type="text" name="newrecord[]" value="" maxlength="100"/></td>
+                                <tr id="rane6">
+                <td><input type="number" name="rank[]" id="rank" value="<br />
+<b>Notice</b>:  Undefined index: rank in <b>C:\xampp\htdocs\test\u20\u_system\includes\competition\schedule_track_normal_result_view.php</b> on line <b>244</b><br />
+" min="1" required="" /></td>
+                <td><input type="number" name="rain[]" value="6" min="1" required="" readonly /></td>
+                <td><input placeholder="등번호" type="text" id="bib" name="playerbib[]" value="484" maxlength="30" required="" readonly /></td>
+                <td><input placeholder="선수 이름" type="text" name="playername[]" value="한서진" maxlength="30" required="" readonly />
+                </td>
+                <td><input placeholder="국가" type="text" id="Country" name="country" value="KOR" maxlength="30" required="" readonly /></td>
+                <td><input placeholder="경기 결과를 입력해주세요" type="text" name="gameresult[]" id="result" value="" maxlength="15" required onkeyup="trackFinal(this)" style="float: left; width: auto; padding-right: 5px" />
+                                <td><input placeholder="Reaction Time" type="text" name="reactiontime[]" id="reactiontime" value="" maxlength="9" onkeyup="trackReactionTimeForm(this)" style="float: left; padding-right: 5px" />
+                                <!-- <input type="hidden" name="compresult[]" value="' . ($row['record_' . $result_type . '_record'] ?? null) . '"/></td> -->
+                <td><input placeholder="비고를 입력해주세요" type="text" id="Bigo" name="bigo[]" value="" maxlength="100" /></td>
+                <td><input type="checkbox" id="RR" name="record_rr[510]" maxlength="100"  /></td>
+                                <td><input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" /></td>
+                                                <td><input placeholder="" id="Newrecord" type="text" name="newrecord[]" value="" maxlength="100"/></td>
+                                <tr id="rane7">
+                <td><input type="number" name="rank[]" id="rank" value="<br />
+<b>Notice</b>:  Undefined index: rank in <b>C:\xampp\htdocs\test\u20\u_system\includes\competition\schedule_track_normal_result_view.php</b> on line <b>244</b><br />
+" min="1" required="" /></td>
+                <td><input type="number" name="rain[]" value="7" min="1" required="" readonly /></td>
+                <td><input placeholder="등번호" type="text" id="bib" name="playerbib[]" value="490" maxlength="30" required="" readonly /></td>
+                <td><input placeholder="선수 이름" type="text" name="playername[]" value="모상희" maxlength="30" required="" readonly />
+                </td>
+                <td><input placeholder="국가" type="text" id="Country" name="country" value="KOR" maxlength="30" required="" readonly /></td>
+                <td><input placeholder="경기 결과를 입력해주세요" type="text" name="gameresult[]" id="result" value="" maxlength="15" required onkeyup="trackFinal(this)" style="float: left; width: auto; padding-right: 5px" />
+                                <td><input placeholder="Reaction Time" type="text" name="reactiontime[]" id="reactiontime" value="" maxlength="9" onkeyup="trackReactionTimeForm(this)" style="float: left; padding-right: 5px" />
+                                <!-- <input type="hidden" name="compresult[]" value="' . ($row['record_' . $result_type . '_record'] ?? null) . '"/></td> -->
+                <td><input placeholder="비고를 입력해주세요" type="text" id="Bigo" name="bigo[]" value="" maxlength="100" /></td>
+                <td><input type="checkbox" id="RR" name="record_rr[516]" maxlength="100"  /></td>
+                                <td><input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" /></td>
+                                                <td><input placeholder="" id="Newrecord" type="text" name="newrecord[]" value="" maxlength="100"/></td>
+                                <tr id="rane8">
+                <td><input type="number" name="rank[]" id="rank" value="<br />
+<b>Notice</b>:  Undefined index: rank in <b>C:\xampp\htdocs\test\u20\u_system\includes\competition\schedule_track_normal_result_view.php</b> on line <b>244</b><br />
+" min="1" required="" /></td>
+                <td><input type="number" name="rain[]" value="8" min="1" required="" readonly /></td>
+                <td><input placeholder="등번호" type="text" id="bib" name="playerbib[]" value="503" maxlength="30" required="" readonly /></td>
+                <td><input placeholder="선수 이름" type="text" name="playername[]" value="손주희" maxlength="30" required="" readonly />
+                </td>
+                <td><input placeholder="국가" type="text" id="Country" name="country" value="KOR" maxlength="30" required="" readonly /></td>
+                <td><input placeholder="경기 결과를 입력해주세요" type="text" name="gameresult[]" id="result" value="" maxlength="15" required onkeyup="trackFinal(this)" style="float: left; width: auto; padding-right: 5px" />
+                                <td><input placeholder="Reaction Time" type="text" name="reactiontime[]" id="reactiontime" value="" maxlength="9" onkeyup="trackReactionTimeForm(this)" style="float: left; padding-right: 5px" />
+                                <!-- <input type="hidden" name="compresult[]" value="' . ($row['record_' . $result_type . '_record'] ?? null) . '"/></td> -->
+                <td><input placeholder="비고를 입력해주세요" type="text" id="Bigo" name="bigo[]" value="" maxlength="100" /></td>
+                <td><input type="checkbox" id="RR" name="record_rr[529]" maxlength="100"  /></td>
+                                <td><input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" /></td>
+                                                <td><input placeholder="" id="Newrecord" type="text" name="newrecord[]" value="" maxlength="100"/></td>
+                              </tbody>
+            </table>
+          </div>
+          <div class="addBtn">
+            <span class="btn State"><input type="text" id="State" value="Official Result"/></span>
+                                            <button class="btn_submit btn" onclick="SendTrackData('action/competition/schedule_track_normal_insert.php', '61', 'schedule_track')">
+                        <span>확인</span>
+                    </button>
+                      </div>
+          <!-- </form> -->
+        </div>
+      </div>
+    </div>
+    </div>
+<script type="text/javascript" src="assets/js/main.js?v=1694690400"></script>
+</body>
+</html>

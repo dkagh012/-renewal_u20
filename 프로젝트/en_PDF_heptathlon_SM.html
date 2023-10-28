@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <link rel="stylesheet" href="assets/css/pdf.css" />
+    <script>
+      window.print();
+    </script>
+
+    <style>
+      @page {
+        size: 210mm 297mm;
+        /*A4*/
+      }
+
+      @media print {
+        .PDF_wrap {
+        }
+
+        html,
+        body {
+          -webkit-print-color-adjust: exact;
+          width: 210mm;
+          height: 297mm;
+        }
+      }
+      table {
+        width: 100%;
+      }
+
+      .PDF_wrap {
+        padding: 0.5cm 0.7cm 2cm 0.7cm;
+      }
+      .PDF_wrap .header_table > th {
+        border: 0;
+        height: 30px;
+        padding: 0 5px;
+      }
+      .PDF_wrap .pdf_table_body > tr > td {
+        border: 0;
+        border-bottom: 1px solid #000;
+        height: 50px;
+      }
+
+      .PDF_wrap .world_record > table > tbody > tr > td {
+        border: 0;
+        border-bottom: 1px solid #000;
+        padding: 3px;
+      }
+
+      .PDF_wrap .PDF_footer,
+      .PDF_wrap .en_PDF_footer {
+        width: calc(100% - 1.4cm);
+      }
+
+      .page_number {
+        right: 0.7cm;
+      }
+      .pdf_table_body > tr > td:nth-child(1) {
+        text-align: right;
+        font-weight: bold;
+      }
+      .pdf_table_body > tr > td:nth-child(2) {
+        text-align: right;
+      }
+      .pdf_table_body > tr > td:nth-child(3) {
+        text-align: left;
+        font-weight: bold;
+      }
+      .pdf_table_body > tr > td:nth-child(4) {
+        font-weight: bold;
+        text-align: left;
+      }
+      .pdf_table_body > tr > td:nth-child(5) {
+        text-align: left;
+      }
+      .pdf_table_body > tr > td > div {
+        font-weight: bold;
+        text-align: right;
+        height: 15px;
+      }
+      .pdf_table_body > tr > td:nth-child(8) > span {
+        background: #00a73c;
+        padding: 2px 4px;
+        color: white;
+      }
+
+      .pdf_table_head > tr > th:nth-child(1) {
+        text-align: right;
+      }
+      .pdf_table_head > tr > th:nth-child(2) {
+        text-align: right;
+      }
+      .pdf_table_head > tr > th:nth-child(3) {
+        text-align: center;
+      }
+      .pdf_table_head > tr > th:nth-child(4) {
+        text-align: left;
+      }
+      .pdf_table_head > tr > th:nth-child(5) {
+        text-align: left;
+      }
+      .pdf_table_head > tr > th:nth-child(6) {
+        text-align: right;
+      }
+      .pdf_table_head > tr > th:nth-child(7) {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="PDF_wrap en_wrap hori_pdf">
+      <header class="pdf_header">
+        <div class="pdf_right_logo">
+          <img src="assets/images/logo3.png" alt="" />
+        </div>
+        <div class="pdf_left_logo">
+          <img src="assets/images/logo.png" alt="" />
+        </div>
+        <div>
+          <div class="PDF_tit">
+            <p class="main_title">20th ASIAN U20 ATHLETICS CHAMPIONSHIPS</p>
+            <p>Yecheon</p>
+            <p>4th - 7th June 2023</p>
+          </div>
+          <div class="PDF_result">
+            <p>SUMMARY</p>
+          </div>
+        </div>
+      </header>
+      <div class="page_number">
+        <p>Page</p>
+        <p class="pageNumber">1</p>
+        <span>/</span>
+        <p class="pageAllNumber">1</p>
+      </div>
+      <div class="word_wrap">
+        <div class="word_container">
+          <div class="pdf_info_two">
+            <div>
+              <p>Heptathlon WOMEN</p>
+            </div>
+            <div>
+              <p>100mH</p>
+              <p>5 Jun 2023 / 10:10</p>
+            </div>
+          </div>
+          <div class="word_run" style="">
+            <table class="box_table" style="zoom: 0.9">
+              <!-- 달리기 테이블  -->
+              <colgroup>
+                <col width="5%" />
+                <col width="9%" />
+                <col />
+                <col width="6%" />
+                <col width="10%" />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col width="9%" />
+                <col />
+              </colgroup>
+              <thead class="pdf_table_head">
+                <tr class="header_table">
+                  <th scope="col" style="font-size: 10px">Rank</th>
+                  <th scope="col" style="font-size: 10px">Bib</th>
+                  <th scope="col" style="font-size: 10px">Name</th>
+                  <th scope="col" style="font-size: 10px">Nat.</th>
+                  <th scope="col" style="font-size: 10px">Birth</th>
+                  <th scope="col" style="font-size: 10px">100mH</th>
+                  <th scope="col" style="font-size: 10px">Highjump</th>
+                  <th scope="col" style="font-size: 10px">Shotput</th>
+                  <th scope="col" style="font-size: 10px">200m</th>
+                  <th scope="col" style="font-size: 10px">Longjump</th>
+                  <th scope="col" style="font-size: 10px">Javelinthrow</th>
+                  <th scope="col" style="font-size: 10px">800m</th>
+                  <th scope="col" style="font-size: 10px; text-align: right">
+                    Point
+                  </th>
+                  <th
+                    scope="col"
+                    style="font-size: 10px; text-align: right"
+                  ></th>
+                </tr>
+              </thead>
+              <tbody class="pdf_table_body" style="text-align: center">
+                <tr>
+                  <td rowspan="1" scope="col">1</td>
+                  <td rowspan="1" scope="col">463</td>
+                  <td rowspan="1" scope="col">Hayashi Miki</td>
+                  <td rowspan="1" scope="col">JPN</td>
+                  <td rowspan="1" scope="col">16 May 2005</td>
+                  <td rowspan="1" scope="col">DQ</td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  >
+                    DQ<span class="DQ_result">(0.123)</span>
+                  </td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  ></td>
+                </tr>
+                <tr>
+                  <td rowspan="1" scope="col">2</td>
+                  <td rowspan="1" scope="col">563</td>
+                  <td rowspan="1" scope="col">Lin, Pei Hsuan</td>
+                  <td rowspan="1" scope="col">TPE</td>
+                  <td rowspan="1" scope="col">11 Oct 2007</td>
+                  <td rowspan="1" scope="col">
+                    <div>890</div>
+                    <div>14.64</div>
+                    <div>-2.9</div>
+                  </td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  >
+                    890
+                  </td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  ></td>
+                </tr>
+                <tr>
+                  <td rowspan="1" scope="col">3</td>
+                  <td rowspan="1" scope="col">478</td>
+                  <td rowspan="1" scope="col">Chistyakova Alina</td>
+                  <td rowspan="1" scope="col">KAZ</td>
+                  <td rowspan="1" scope="col">30 Apr 2005</td>
+                  <td rowspan="1" scope="col">
+                    <div>838</div>
+                    <div>15.03</div>
+                    <div>-2.9</div>
+                  </td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  >
+                    838
+                  </td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  ></td>
+                </tr>
+                <tr>
+                  <td rowspan="1" scope="col">4</td>
+                  <td rowspan="1" scope="col">567</td>
+                  <td rowspan="1" scope="col">Wang, Tzu Hsuan</td>
+                  <td rowspan="1" scope="col">TPE</td>
+                  <td rowspan="1" scope="col">29 Sep 2005</td>
+                  <td rowspan="1" scope="col">
+                    <div>817</div>
+                    <div>15.19</div>
+                    <div>-2.9</div>
+                  </td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  >
+                    817
+                  </td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  ></td>
+                </tr>
+                <tr>
+                  <td rowspan="1" scope="col">5</td>
+                  <td rowspan="1" scope="col">461</td>
+                  <td rowspan="1" scope="col">Saba Khorasani Zavarehvar</td>
+                  <td rowspan="1" scope="col">IRI</td>
+                  <td rowspan="1" scope="col">17 Jul 2004</td>
+                  <td rowspan="1" scope="col">
+                    <div>809</div>
+                    <div>15.25</div>
+                    <div>-2.9</div>
+                  </td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  >
+                    809
+                  </td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  ></td>
+                </tr>
+                <tr>
+                  <td rowspan="1" scope="col">6</td>
+                  <td rowspan="1" scope="col">580</td>
+                  <td rowspan="1" scope="col">Ugiloy Norboeva</td>
+                  <td rowspan="1" scope="col">UZB</td>
+                  <td rowspan="1" scope="col">31 Jan 2004</td>
+                  <td rowspan="1" scope="col">
+                    <div>769</div>
+                    <div>15.56</div>
+                    <div>-2.9</div>
+                  </td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  >
+                    769
+                  </td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  ></td>
+                </tr>
+                <tr>
+                  <td rowspan="1" scope="col">7</td>
+                  <td rowspan="1" scope="col">515</td>
+                  <td rowspan="1" scope="col">Lee Hayan</td>
+                  <td rowspan="1" scope="col">KOR</td>
+                  <td rowspan="1" scope="col">18 Oct 2004</td>
+                  <td rowspan="1" scope="col">
+                    <div>756</div>
+                    <div>15.66</div>
+                    <div>-2.9</div>
+                  </td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  >
+                    756
+                  </td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  ></td>
+                </tr>
+                <tr>
+                  <td rowspan="1" scope="col">8</td>
+                  <td rowspan="1" scope="col">476</td>
+                  <td rowspan="1" scope="col">Avdeyenko Yekaterina</td>
+                  <td rowspan="1" scope="col">KAZ</td>
+                  <td rowspan="1" scope="col">20 Dec 2004</td>
+                  <td rowspan="1" scope="col">
+                    <div>744</div>
+                    <div>15.76</div>
+                    <div>-2.9</div>
+                  </td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  >
+                    744
+                  </td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  ></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="world_record">
+          <div class="PDF_result">
+            <p>Record History</p>
+          </div>
+          <table>
+            <thead>
+              <tr class="header_table">
+                <th>Record</th>
+                <th>Result</th>
+                <th>Wind</th>
+                <th>Name</th>
+                <th>Nat.</th>
+                <th>Location</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody style="text-align: center; border: 0">
+              <tr>
+                <td style="line-height: 15px; font-size: 10px">WR</td>
+                <td style="line-height: 15px; font-size: 10px">7291</td>
+                <td style="line-height: 15px; font-size: 10px">0</td>
+                <td style="line-height: 15px; font-size: 10px">
+                  Jackie JOYNER-KERSEE
+                </td>
+                <td style="line-height: 15px; font-size: 10px">USA</td>
+                <td style="line-height: 15px; font-size: 10px">
+                  Olympic Stadium, Jamsil, Seoul (KOR)
+                </td>
+                <td style="line-height: 15px; font-size: 10px">1988-10-24</td>
+              </tr>
+              <tr>
+                <td style="line-height: 15px; font-size: 10px">AR</td>
+                <td style="line-height: 15px; font-size: 10px">6942</td>
+                <td style="line-height: 15px; font-size: 10px">0</td>
+                <td style="line-height: 15px; font-size: 10px">Ghada SHOUAA</td>
+                <td style="line-height: 15px; font-size: 10px">SYR</td>
+                <td style="line-height: 15px; font-size: 10px">
+                  Hypo-Meeting, Götzis (AUT)
+                </td>
+                <td style="line-height: 15px; font-size: 10px">1996-05-26</td>
+              </tr>
+              <tr>
+                <td style="line-height: 15px; font-size: 10px">WU20R</td>
+                <td style="line-height: 15px; font-size: 10px">6542</td>
+                <td style="line-height: 15px; font-size: 10px">0</td>
+                <td style="line-height: 15px; font-size: 10px">
+                  Carolina KLÜFT
+                </td>
+                <td style="line-height: 15px; font-size: 10px">SWE</td>
+                <td style="line-height: 15px; font-size: 10px">München(GER)</td>
+                <td style="line-height: 15px; font-size: 10px">2002-08-10</td>
+              </tr>
+              <tr>
+                <td style="line-height: 15px; font-size: 10px">AU20R</td>
+                <td style="line-height: 15px; font-size: 10px">6185</td>
+                <td style="line-height: 15px; font-size: 10px">0</td>
+                <td style="line-height: 15px; font-size: 10px">
+                  Shen Shengfei
+                </td>
+                <td style="line-height: 15px; font-size: 10px">CHN</td>
+                <td style="line-height: 15px; font-size: 10px">
+                  Shanghai(CHN)
+                </td>
+                <td style="line-height: 15px; font-size: 10px">1997-10-18</td>
+              </tr>
+              <tr>
+                <td style="line-height: 15px; font-size: 10px">CR</td>
+                <td style="line-height: 15px; font-size: 10px">5557</td>
+                <td style="line-height: 15px; font-size: 10px">0</td>
+                <td style="line-height: 15px; font-size: 10px">
+                  Irina Naumenko
+                </td>
+                <td style="line-height: 15px; font-size: 10px">KAN</td>
+                <td style="line-height: 15px; font-size: 10px">
+                  Singapore(SGP)
+                </td>
+                <td style="line-height: 15px; font-size: 10px">1999-10-30</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <footer class="PDF_footer"></footer>
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="assets/js/main.js?v=1688627016"
+    ></script>
+  </body>
+</html>

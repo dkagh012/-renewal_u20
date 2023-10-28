@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../assets/css/pdf.css" />
+</head>
+<script>
+  window.print();
+</script>
+<style>
+  @page {
+    size: 210mm 297mm;
+    /*A4*/
+  }
+
+  @media print {
+    .PDF_wrap {
+      /* border: initial;
+      border-radius: initial;
+      width: initial;
+      min-height: initial;
+      box-shadow: initial;
+      background: initial;
+      page-break-after: always; */
+    }
+
+    html,
+    body {
+      -webkit-print-color-adjust: exact;
+      width: 210mm;
+      height: 297mm;
+    }
+  }
+
+  .ctc_wrap {
+    padding: 2.5cm 2cm 2cm 2cm;
+  }
+
+  .ctc_name,
+  .en_ctc_name {
+    font-family: "Noto Sans KR";
+    font-weight: bold;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 2.5em;
+    text-align: center;
+    letter-spacing: 10px;
+    text-indent: 10px;
+    border-bottom: 1px solid #000;
+    padding: 11rem 0 2rem 0;
+  }
+
+  .ctc_name {
+    letter-spacing: 25px;
+    text-indent: 25px;
+    font-size: 3em;
+    padding: 14rem 0 2rem 0;
+    min-width: 280px;
+  }
+
+  .ctc_sign {
+    font-size: 26px;
+    gap: 0;
+  }
+
+  .en_ctc_wrap {
+    padding: 3.5cm 3cm 2cm 3cm;
+  }
+
+  .en_ctc_name {
+    letter-spacing: 5px;
+    text-indent: 5px;
+  }
+
+  .en_ctc_tit>p:nth-child(2) {
+    font-size: 41px;
+  }
+
+  .en_ctc_contents {
+    font-size: 30px;
+    line-height: 47px;
+    word-spacing: 2px;
+    padding-top: 6rem;
+    font-weight: bold;
+  }
+
+  .en_cyc_date {
+    padding-top: 11rem;
+    font-size: 31px;
+  }
+
+  .en_ctc_footer_wrap {
+    position: relative;
+    padding-top: 10rem;
+  }
+
+  .en_ctc_sign {
+    font-size: 30px;
+  }
+
+  .ctc_contents {
+    padding-top: 7rem;
+    letter-spacing: 1px;
+    font-size: 30px;
+    line-height: 70px;
+  }
+
+  .cyc_date {
+    font-size: 25px;
+    padding-top: 6rem;
+  }
+
+  .ctc_footer_wrap {
+    position: relative;
+  }
+
+  .en_ctc_wrap {
+    width: 21cm;
+    min-height: 29.7cm;
+    padding: 2.5cm 3cm 2cm 3cm;
+    text-align: center;
+    position: relative;
+    border: 0px;
+    font-family: "OPTITimes", sans-serif;
+  }
+
+  .en_ctc_tit>p:nth-child(1) {
+    font-size: 14px;
+    letter-spacing: -1px;
+    word-spacing: 6px;
+  }
+
+  .en_ctc_tit>p:nth-child(2) {
+    font-size: 37px;
+    line-height: 62px;
+  }
+
+  .en_ctc_tit {
+    font-weight: bold;
+  }
+
+  .en_ctc_name {
+    width: 280px;
+    padding: 5rem 0px 2rem;
+    text-align: right;
+    margin: 0px 0px 0px auto;
+  }
+
+  .en_ctc_name>p {
+    display: flex;
+    justify-content: flex-end;
+    padding: 11px 0px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: normal;
+    font-size: 15px;
+  }
+
+  .en_ctc_name>p>span:first-child {
+    width: 50%;
+    text-align: left;
+  }
+
+  .en_ctc_name>p>span:last-child {
+    width: 50%;
+    text-align: right;
+  }
+
+  .en_ctc_contents {
+    font-size: 26px;
+    line-height: 43px;
+    word-spacing: 6px;
+    padding-top: 6rem;
+    font-weight: bold;
+  }
+
+  .en_cyc_date {
+    padding-top: 14rem;
+    font-size: 38px;
+    line-height: 40px;
+    font-weight: 500;
+  }
+
+  .en_ctc_footer_wrap {
+    padding-top: 12rem;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 40px;
+  }
+
+  .en_ctc_sign {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .en_ctc_sign>span:nth-child(1) {
+    font-size: 36px;
+    line-height: 33px;
+    padding-bottom: 2rem;
+  }
+
+  .en_ctc_sign>span:nth-child(2) {
+    font-size: 12px;
+    line-height: 15px;
+  }
+</style>
+<style>
+  @page {
+    size: 210mm 297mm;
+    /*A4*/
+  }
+
+  @media print {
+    .PDF_wrap {
+      /* border: initial;
+      border-radius: initial;
+      width: initial;
+      min-height: initial;
+      box-shadow: initial;
+      background: initial;
+      page-break-after: always; */
+    }
+
+    html,
+    body {
+      -webkit-print-color-adjust: exact;
+      width: 210mm;
+      height: 297mm;
+    }
+  }
+</style>
+
+<!-- 증명서 한국어출력 -->
+
+<body>
+  <div class="ctc_wrap">
+    <header class="pdf_header">
+      <div class="ctc_tit">
+        <p>제20회 예천아시아 U20 육상경기선수권대회</p>
+        <p style="
+              padding-bottom: 2em;
+              font-size: 16px;
+              font-family: Noto Sans KR;
+            ">
+          20th Asian U20 Athletics Championships Yecheon
+        </p>
+        <p>참가증서</p>
+      </div>
+    </header>
+    <div class="ctc_name">테스트</div>
+    <div class="ctc_center_logo">
+      <img src="../assets/images/logo2.png" alt="" />
+    </div>
+    <div class="ctc_contents">
+      <div>
+        귀하께서는 대한민국 예천군에서 주최하고 있는 제20회 예천아시아 U20
+        육상경기선수권대회에 참가하였기에 본 증서를 드립니다.
+      </div>
+    </div>
+    <div class="cyc_date">
+      <p><span>2023년</span> <span> 04월</span> <span>17일</span></p>
+    </div>
+    <div class="ctc_footer_wrap">
+      <footer class="ctc_sign">
+        <span>U20 육상경기선수권대회 조직위원장 </span><span>김학동</span>
+      </footer>
+      <img class="stemp" src="./assets/images/stamp.jpg" alt="" />
+    </div>
+  </div>
+</body>
+
+</html>

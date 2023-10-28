@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>릴레이 등록 페이지</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/select2.min.css" />
+  <link rel="stylesheet" href="./assets/css/xeicon.min.css" />
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/select2.min.js"></script>
+</head>
+<!-- 릴레이 등록 페이지 -->
+
+<body>
+  <header>
+    <div id="sh_adm_hd">
+      <h1><a href="/index.html">육상 경기 운영 시스템</a></h1>
+      <ul id="sh_adm_nav">
+        <li>
+          <a href="">
+            <p>참가자관리</p>
+            <i class="xi-angle-down-min"></i>
+          </a>
+          <ul class="nav_smn">
+            <li>
+              <a href="/athlete_list.html">선수목록</a>
+            </li>
+            <li><a href="/coach_list.html">코치목록</a></li>
+            <li><a href="/judge_list.html">심판목록</a></li>
+            <li><a href="/director_list.html">임원목록</a></li>
+            <li>
+              <a href="/certificate_list.html">참가증서목록</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="">
+            <p>경기관리</p>
+            <i class="xi-angle-down-min"></i>
+          </a>
+          <ul class="nav_smn">
+            <li>
+              <a class="clicked" href="/sports_list.html">경기목록</a>
+            </li>
+            <li>
+              <a href="/country_list.html">국가목록</a>
+            </li>
+            <li>
+              <a href="/schedule_list.html">일정목록</a>
+            </li>
+            <li><a href="/group_list.html">조편성</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="">
+            <p>기록관리</p>
+            <i class="xi-angle-down-min"></i>
+          </a>
+          <ul class="nav_smn">
+            <li><a href="/history_list.html">역대기록목록</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="">
+            <p>통계관리</p>
+            <i class="xi-angle-down-min"></i>
+          </a>
+          <ul class="nav_smn">
+            <li><a href="">선수별 순위보기</a></li>
+            <li><a href="">신기록 경기기록</a></li>
+            <li><a href="">경기별 순위보기</a></li>
+            <li><a href="">전체 기록보기</a></li>
+            <li><a href="">경기별 메달보기</a></li>
+            <li><a href="">소속별 순위보기</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="">
+            <p>기록관리</p>
+            <i class="xi-angle-down-min"></i>
+          </a>
+          <ul class="nav_smn">
+            <li><a href="">계정 정보</a></li>
+            <li><a href="">비밀번호 변경</a></li>
+            <li><a href="">계정 생성</a></li>
+            <li><a href="">계정 목록</a></li>
+            <li><a href="">로그 목록</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul id="sh_adm_gnb">
+        <li>
+          <button type="button" class="MobileTabMenuBtn">
+            <i class="xi-bars"></i>
+          </button>
+        </li>
+        <li id="tnb_logout">
+          <a href="http://demo.webmaking.kr/admin/logout.php">로그아웃</a>
+        </li>
+      </ul>
+    </div>
+    <div class="MobileTabMenu hidden">
+      <!-- 관리자모드 SNB -->
+      <!-- 퀵메뉴 설정 팝업 스크립트 -->
+      <div class="MobileMenu">
+        <div class=" ">
+          <ul class="MobileMenuList">
+            <li class="MobileMenuItem">
+              <div class="MobileMenuTitle">
+                <p>참가자관리</p>
+                <i class="xi-angle-down-min"></i>
+              </div>
+              <ul class="MenuList" style="display: none">
+                <li>
+                  <a href="/athlete_list.html">선수목록</a>
+                </li>
+                <li><a href="/coach_list.html">코치목록</a></li>
+                <li><a href="/judge_list.html">심판목록</a></li>
+                <li><a href="/director_list.html">임원목록</a></li>
+                <li>
+                  <a href="/certificate_list.html">참가증서목록</a>
+                </li>
+              </ul>
+            </li>
+            <li class="MobileMenuItem">
+              <div class="MobileMenuTitle">
+                <p>경기관리</p>
+                <i class="xi-angle-down-min"></i>
+              </div>
+              <ul class="MenuList" style="display: none">
+                <li>
+                  <a class="clicked" href="/sports_list.html">경기목록</a>
+                </li>
+                <li>
+                  <a href="/country_list.html">국가목록</a>
+                </li>
+                <li>
+                  <a href="/schedule_list.html">일정목록</a>
+                </li>
+                <li>
+                  <a href="/group_list.html">조편성</a>
+                </li>
+              </ul>
+            </li>
+            <li class="MobileMenuItem">
+              <div class="MobileMenuTitle">
+                <p>기록관리</p>
+                <i class="xi-angle-down-min"></i>
+              </div>
+              <ul class="MenuList" style="display: none">
+                <li><a href="/history_list.html">역대기록목록</a></li>
+              </ul>
+            </li>
+            <li class="MobileMenuItem">
+              <div class="MobileMenuTitle">
+                <p>통계관리</p>
+                <i class="xi-angle-down-min"></i>
+              </div>
+              <ul class="MenuList" style="display: none">
+                <li><a href="">선수별 순위보기</a></li>
+                <li><a href="">신기록 경기기록</a></li>
+                <li><a href="">경기별 순위보기</a></li>
+                <li><a href="">전체 기록보기</a></li>
+                <li><a href="">경기별 메달보기</a></li>
+                <li><a href="">소속별 순위보기</a></li>
+              </ul>
+            </li>
+            <li class="MobileMenuItem">
+              <div class="MobileMenuTitle">
+                <p>기록관리</p>
+                <i class="xi-angle-down-min"></i>
+              </div>
+              <ul class="MenuList" style="display: none">
+                <li><a href="">계정 정보</a></li>
+                <li><a href="">비밀번호 변경</a></li>
+                <li><a href="">계정 생성</a></li>
+                <li><a href="">계정 목록</a></li>
+                <li><a href="">로그 목록</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="MobileBackground hidden"></div>
+    <div class="top">
+      <div id="js-scroll">
+        <i class="xi-caret-up-min topBtn"> </i>
+        <p>TOP</p>
+      </div>
+    </div>
+    <div id="sh_adm_count">
+      <ul>
+        <li><a class="clicked" href="/sports_list.html">경기목록</a></li>
+        <li>
+          <a href="/country_list.html">국가목록</a>
+        </li>
+        <li><a href="/schedule_list.html">일정목록</a></li>
+        <li><a href="/group_list.html">조편성</a></li>
+      </ul>
+    </div>
+  </header>
+  <!-- contents 본문 내용 -->
+  <div id="sh_adm_cont_wrap" class="MobileScroll">
+    <form class="groupForm min1024">
+      <div class="groupNumber groupTable">
+        <div class="" id="group_table">
+          <div class="schedule_filed_tit">
+            <p>1조 편성</p>
+          </div>
+          <div class="filed2_form">
+            <table cellspacing="0" cellpadding="0" class="filed2_Table filed2_swap group_datatable" id=""
+              name="table_name[]">
+              <colgroup>
+                <col width="20%" />
+                <col width="20%" />
+                <col width="40%" />
+                <col width="10%" />
+                <col width="10%" />
+              </colgroup>
+              <thead class="filed_list filed2_list result_table">
+                <tr>
+                  <th>순서</th>
+                  <th>소속</th>
+                  <th>선수 이름</th>
+                  <th>PB</th>
+                  <th>삭제</th>
+                </tr>
+              </thead>
+              <!-- 레인넘버 & 선수 선택 for문 -->
+              <tbody class="grouping_body entry_table Relay_Tbody_0" id="Relay_Tbody">
+                <tr>
+                  <td>
+                    <input type="hidden" name="group[]" id="group[]" value=" 1" />
+                    <input type="text" class="input_text" value="6" name="lane[]" /><input type="hidden"
+                      class="input_text" value="6" name="order[]" />
+                  </td>
+                  <td>
+                    <input type="text" class="Relay_groupInput" id="Country" value="테스트" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <input type="hidden" name="athlete_id[]" id="athlete_id[]" value="1" />
+                        <select class="select-box value select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">테스트123</option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <input type="hidden" name="athlete_id[]" id="athlete_id[]" value="1" />
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">테스트123</option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <input type="hidden" name="athlete_id[]" id="athlete_id[]" value="1" />
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">테스트123</option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <input type="hidden" name="athlete_id[]" id="athlete_id[]" value="1" />
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">테스트123</option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="text" id="pb" class="Relay_groupInput" />
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="hidden" name="group[]" id="group[]" value=" 1" />
+                    <input type="text" class="input_text" value="7" name="lane[]" /><input type="hidden"
+                      class="input_text" value="7" name="order[]" />
+                  </td>
+                  <td>
+                    <input type="text" class="Relay_groupInput" id="Country" value="안동" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <input type="hidden" name="athlete_id[]" id="athlete_id[]" value="2" />
+                        <select class="select-box value select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">확인용123</option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <input type="hidden" name="athlete_id[]" id="athlete_id[]" value="2" />
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">확인용123</option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <input type="hidden" name="athlete_id[]" id="athlete_id[]" value="2" />
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">확인용123</option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <input type="hidden" name="athlete_id[]" id="athlete_id[]" value="2" />
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">확인용123</option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="text" id="pb" class="Relay_groupInput" />
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="hidden" name="group[]" id="group[]" value=" 1" />
+                    <input type="text" class="input_text" value="8" name="lane[]" /><input type="hidden"
+                      class="input_text" value="8" name="order[]" />
+                  </td>
+                  <td>
+                    <input type="text" class="Relay_groupInput" id="Country" value="안동" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <input type="hidden" name="athlete_id[]" id="athlete_id[]" value="3" />
+                        <select class="select-box value select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">사용전 123</option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">사용전 123</option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">사용전 123</option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">사용전 123</option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="text" id="pb" class="Relay_groupInput" />
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="hidden" name="group[]" id="group[]" value=" 1" />
+                    <input type="text" class="input_text" value="9" name="lane[]" /><input type="hidden"
+                      class="input_text" value="9" name="order[]" />
+                  </td>
+                  <td>
+                    <input type="text" class="Relay_groupInput" id="Country" value="안동" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <input type="hidden" name="athlete_id[]" id="athlete_id[]" value="4" />
+                        <select class="select-box value select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">배정태</option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">배정태</option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">배정태</option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">배정태</option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="text" id="pb" class="Relay_groupInput" />
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="BTN_Orange defaultBtn BIG_btn Relay_PlusBtn_0" id="swapBtn" type="button">
+              <i class="xi-plus"></i>
+            </button>
+            <table class="Relay_Table_0">
+              <colgroup>
+                <col width="15%" />
+                <col width="25%" />
+                <col width="50%" />
+                <col width="10%" />
+              </colgroup>
+              <thead class="filed_list filed2_list result_table">
+                <tr>
+                  <th>순서</th>
+                  <th>소속</th>
+                  <th>선수 이름</th>
+                  <th>PB</th>
+                </tr>
+              </thead>
+              <tbody class="grouping_body entry_table">
+                <tr>
+                  <td>
+                    <input type="hidden" name="group[]" id="group[]" value=" 1" />
+                    <input type="text" class="input_text Relay_groupInput" value="6" name="lane[]" /><input
+                      type="hidden" class="input_text" value="6" name="order[]" />
+                  </td>
+                  <td>
+                    <input type="text" class="Relay_groupInput" id="Country" value="테스트" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <select class="select-box value select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="text" id="pb" class="Relay_groupInput" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="addBtn">
+          <a class="btn btn_02" href="/group_list.html">목록</a>
+          <button onclick="location.href='group_register.html' " class="btn_submit btn" type="submit">
+            확인
+          </button>
+        </div>
+      </div>
+      <div class="groupNumber groupTable">
+        <div class="" id="group_table">
+          <div class="schedule_filed_tit">
+            <p>1조 편성</p>
+          </div>
+          <div class="filed2_form">
+            <table cellspacing="0" cellpadding="0" class="filed2_Table filed2_swap group_datatable" id=""
+              name="table_name[]">
+              <colgroup>
+                <col width="20%" />
+                <col width="20%" />
+                <col width="40%" />
+                <col width="10%" />
+                <col width="10%" />
+              </colgroup>
+              <thead class="filed_list filed2_list result_table">
+                <tr>
+                  <th>순서</th>
+                  <th>소속</th>
+                  <th>선수 이름</th>
+                  <th>PB</th>
+                  <th>삭제</th>
+                </tr>
+              </thead>
+              <!-- 레인넘버 & 선수 선택 for문 -->
+              <tbody class="grouping_body entry_table Relay_Tbody_1" id="Relay_Tbody">
+                <tr>
+                  <td>
+                    <input type="hidden" name="group[]" id="group[]" value=" 1" />
+                    <input type="text" class="input_text" value="6" name="lane[]" /><input type="hidden"
+                      class="input_text" value="6" name="order[]" />
+                  </td>
+                  <td>
+                    <input type="text" class="Relay_groupInput" id="Country" value="테스트" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <select class="select-box value select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="text" id="pb" class="Relay_groupInput" />
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="hidden" name="group[]" id="group[]" value=" 1" />
+                    <input type="text" class="input_text" value="7" name="lane[]" /><input type="hidden"
+                      class="input_text" value="7" name="order[]" />
+                  </td>
+                  <td>
+                    <input type="text" class="Relay_groupInput" id="Country" value="안동" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <select class="select-box value select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="text" id="pb" class="Relay_groupInput" />
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="hidden" name="group[]" id="group[]" value=" 1" />
+                    <input type="text" class="input_text" value="8" name="lane[]" /><input type="hidden"
+                      class="input_text" value="8" name="order[]" />
+                  </td>
+                  <td>
+                    <input type="text" class="Relay_groupInput" id="Country" value="안동" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <select class="select-box value select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="text" id="pb" class="Relay_groupInput" />
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="hidden" name="group[]" id="group[]" value=" 1" />
+                    <input type="text" class="input_text" value="9" name="lane[]" /><input type="hidden"
+                      class="input_text" value="9" name="order[]" />
+                  </td>
+                  <td>
+                    <input type="text" class="Relay_groupInput" id="Country" value="안동" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <select class="select-box value select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="text" id="pb" class="Relay_groupInput" />
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="BTN_Orange defaultBtn BIG_btn Relay_PlusBtn_1" id="swapBtn" type="button">
+              <i class="xi-plus"></i>
+            </button>
+            <table class="Relay_Table_1">
+              <colgroup>
+                <col width="15%" />
+                <col width="25%" />
+                <col width="50%" />
+                <col width="10%" />
+              </colgroup>
+              <thead class="filed_list filed2_list result_table">
+                <tr>
+                  <th>순서</th>
+                  <th>소속</th>
+                  <th>선수 이름</th>
+                  <th>PB</th>
+                </tr>
+              </thead>
+              <tbody class="grouping_body entry_table">
+                <tr>
+                  <td>
+                    <input type="hidden" name="group[]" id="group[]" value=" 1" />
+                    <input type="text" class="input_text Relay_groupInput" value="6" name="lane[]" /><input
+                      type="hidden" class="input_text" value="6" name="order[]" />
+                  </td>
+                  <td>
+                    <input type="text" class="Relay_groupInput" id="Country" value="테스트" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <select class="select-box value select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="text" id="pb" class="Relay_groupInput" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="addBtn">
+          <a class="btn btn_02" href="/group_list.html">목록</a>
+          <button onclick="location.href='group_register.html' " class="btn_submit btn" type="submit">
+            확인
+          </button>
+        </div>
+      </div>
+      <div class="groupNumber groupTable">
+        <div class="" id="group_table">
+          <div class="schedule_filed_tit">
+            <p>1조 편성</p>
+          </div>
+          <div class="filed2_form">
+            <table cellspacing="0" cellpadding="0" class="filed2_Table filed2_swap group_datatable" id=""
+              name="table_name[]">
+              <colgroup>
+                <col width="20%" />
+                <col width="20%" />
+                <col width="40%" />
+                <col width="10%" />
+                <col width="10%" />
+              </colgroup>
+              <thead class="filed_list filed2_list result_table">
+                <tr>
+                  <th>순서</th>
+                  <th>소속</th>
+                  <th>선수 이름</th>
+                  <th>PB</th>
+                  <th>삭제</th>
+                </tr>
+              </thead>
+              <!-- 레인넘버 & 선수 선택 for문 -->
+              <tbody class="grouping_body entry_table Relay_Tbody_2" id="Relay_Tbody">
+                <tr>
+                  <td>
+                    <input type="hidden" name="group[]" id="group[]" value=" 1" />
+                    <input type="text" class="input_text" value="6" name="lane[]" /><input type="hidden"
+                      class="input_text" value="6" name="order[]" />
+                  </td>
+                  <td>
+                    <input type="text" class="Relay_groupInput" id="Country" value="테스트" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <select class="select-box value select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="text" id="pb" class="Relay_groupInput" />
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="hidden" name="group[]" id="group[]" value=" 1" />
+                    <input type="text" class="input_text" value="7" name="lane[]" /><input type="hidden"
+                      class="input_text" value="7" name="order[]" />
+                  </td>
+                  <td>
+                    <input type="text" class="Relay_groupInput" id="Country" value="안동" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <select class="select-box value select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="text" id="pb" class="Relay_groupInput" />
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="hidden" name="group[]" id="group[]" value=" 1" />
+                    <input type="text" class="input_text" value="8" name="lane[]" /><input type="hidden"
+                      class="input_text" value="8" name="order[]" />
+                  </td>
+                  <td>
+                    <input type="text" class="Relay_groupInput" id="Country" value="안동" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <select class="select-box value select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="text" id="pb" class="Relay_groupInput" />
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="hidden" name="group[]" id="group[]" value=" 1" />
+                    <input type="text" class="input_text" value="9" name="lane[]" /><input type="hidden"
+                      class="input_text" value="9" name="order[]" />
+                  </td>
+                  <td>
+                    <input type="text" class="Relay_groupInput" id="Country" value="안동" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <select class="select-box value select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="text" id="pb" class="Relay_groupInput" />
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="BTN_Orange defaultBtn BIG_btn Relay_PlusBtn_2" id="swapBtn" type="button">
+              <i class="xi-plus"></i>
+            </button>
+            <table class="Relay_Table_2">
+              <colgroup>
+                <col width="15%" />
+                <col width="25%" />
+                <col width="50%" />
+                <col width="10%" />
+              </colgroup>
+              <thead class="filed_list filed2_list result_table">
+                <tr>
+                  <th>순서</th>
+                  <th>소속</th>
+                  <th>선수 이름</th>
+                  <th>PB</th>
+                </tr>
+              </thead>
+              <tbody class="grouping_body entry_table">
+                <tr>
+                  <td>
+                    <input type="hidden" name="group[]" id="group[]" value=" 1" />
+                    <input type="text" class="input_text Relay_groupInput" value="6" name="lane[]" /><input
+                      type="hidden" class="input_text" value="6" name="order[]" />
+                  </td>
+                  <td>
+                    <input type="text" class="Relay_groupInput" id="Country" value="테스트" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <select class="select-box value select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="text" id="pb" class="Relay_groupInput" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="addBtn">
+          <a class="btn btn_02" href="/group_list.html">목록</a>
+          <button onclick="location.href='group_register.html' " class="btn_submit btn" type="submit">
+            확인
+          </button>
+        </div>
+      </div>
+      <div class="groupNumber groupTable">
+        <div class="" id="group_table">
+          <div class="schedule_filed_tit">
+            <p>1조 편성</p>
+          </div>
+          <div class="filed2_form">
+            <table cellspacing="0" cellpadding="0" class="filed2_Table filed2_swap group_datatable" id=""
+              name="table_name[]">
+              <colgroup>
+                <col width="20%" />
+                <col width="20%" />
+                <col width="40%" />
+                <col width="10%" />
+                <col width="10%" />
+              </colgroup>
+              <thead class="filed_list filed2_list result_table">
+                <tr>
+                  <th>순서</th>
+                  <th>소속</th>
+                  <th>선수 이름</th>
+                  <th>PB</th>
+                  <th>삭제</th>
+                </tr>
+              </thead>
+              <!-- 레인넘버 & 선수 선택 for문 -->
+              <tbody class="grouping_body entry_table Relay_Tbody_3" id="Relay_Tbody">
+                <tr>
+                  <td>
+                    <input type="hidden" name="group[]" id="group[]" value=" 1" />
+                    <input type="text" class="input_text" value="6" name="lane[]" /><input type="hidden"
+                      class="input_text" value="6" name="order[]" />
+                  </td>
+                  <td>
+                    <input type="text" class="Relay_groupInput" id="Country" value="테스트" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <select class="select-box value select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="text" id="pb" class="Relay_groupInput" />
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="hidden" name="group[]" id="group[]" value=" 1" />
+                    <input type="text" class="input_text" value="7" name="lane[]" /><input type="hidden"
+                      class="input_text" value="7" name="order[]" />
+                  </td>
+                  <td>
+                    <input type="text" class="Relay_groupInput" id="Country" value="안동" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <select class="select-box value select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="text" id="pb" class="Relay_groupInput" />
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="hidden" name="group[]" id="group[]" value=" 1" />
+                    <input type="text" class="input_text" value="8" name="lane[]" /><input type="hidden"
+                      class="input_text" value="8" name="order[]" />
+                  </td>
+                  <td>
+                    <input type="text" class="Relay_groupInput" id="Country" value="안동" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <select class="select-box value select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="text" id="pb" class="Relay_groupInput" />
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="hidden" name="group[]" id="group[]" value=" 1" />
+                    <input type="text" class="input_text" value="9" name="lane[]" /><input type="hidden"
+                      class="input_text" value="9" name="order[]" />
+                  </td>
+                  <td>
+                    <input type="text" class="Relay_groupInput" id="Country" value="안동" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <select class="select-box value select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="text" id="pb" class="Relay_groupInput" />
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="BTN_Orange defaultBtn BIG_btn Relay_PlusBtn_3" id="swapBtn" type="button">
+              <i class="xi-plus"></i>
+            </button>
+            <table class="Relay_Table_3">
+              <colgroup>
+                <col width="15%" />
+                <col width="25%" />
+                <col width="50%" />
+                <col width="10%" />
+              </colgroup>
+              <thead class="filed_list filed2_list result_table">
+                <tr>
+                  <th>순서</th>
+                  <th>소속</th>
+                  <th>선수 이름</th>
+                  <th>PB</th>
+                </tr>
+              </thead>
+              <tbody class="grouping_body entry_table">
+                <tr>
+                  <td>
+                    <input type="hidden" name="group[]" id="group[]" value=" 1" />
+                    <input type="text" class="input_text Relay_groupInput" value="6" name="lane[]" /><input
+                      type="hidden" class="input_text" value="6" name="order[]" />
+                  </td>
+                  <td>
+                    <input type="text" class="Relay_groupInput" id="Country" value="테스트" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <select class="select-box value select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <select class="select-box select2-hidden-accessible" name="athlete" tabindex="-1"
+                          aria-hidden="true">
+                          <option value="1" selected="">
+                            테스트(KOR)(삼성중학교)
+                          </option>
+                          <option value="2">테스트용</option>
+                          <option value="3">선수 선택</option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <input type="text" id="pb" class="Relay_groupInput" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="addBtn">
+          <a class="btn btn_02" href="/group_list.html">목록</a>
+          <button onclick="location.href='group_register.html' " class="btn_submit btn" type="submit">
+            확인
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script type="text/javascript" src="assets/js/main.js"></script>
+  <script>
+    if (document.querySelector(".swapBtn")) {
+      const TableLength = document.querySelectorAll(".filed2_Table");
+      // 릴레이 그룹 셀렉트 변경
+      $(document).ready(function () {
+        $("select")
+          .select2()
+          .on("select2:selecting", function (e) {
+            const currentSelect = $(e.target);
+            const selectedValue = e.params.args.data.id; // 클릭한 옵션의 값
+            const selectedText = e.params.args.data.text; // 클릭한 옵션의 텍스트
+
+            currentSelect.find("option").each(function () {
+              if ($(this).val() === selectedValue) {
+                $(this).attr("selected", "selected");
+              } else {
+                $(this).removeAttr("selected");
+              }
+            });
+
+            currentSelect.val(selectedValue).trigger("change");
+          });
+      });
+      console.log(TableLength.length);
+      document.addEventListener("DOMContentLoaded", function () {
+        // 예시로 3개의 테이블 및 버튼을 대상으로 합니다.
+        for (let i = 0; i < TableLength.length; i++) {
+          const btn = document.querySelector(`.Relay_PlusBtn_${i}`);
+          if (!btn) continue;
+
+          btn.addEventListener("click", function () {
+            const targetTable = document.querySelector(`.Relay_Table_${i}`);
+            const targetTbody = document.querySelector(`.Relay_Tbody_${i}`);
+            const rows = targetTable.querySelectorAll(
+              ".grouping_body.entry_table tr"
+            );
+
+            if (rows && rows.length > 0) {
+              const lastRow = rows[rows.length - 1];
+              // Convert the element to a jQuery object and then destroy select2
+              $(lastRow.querySelector("select")).select2("destroy");
+
+              const clonedRow = lastRow.cloneNode(true);
+
+              const td = document.createElement("td");
+
+              const swapButton = document.createElement("button");
+              swapButton.className = "BTN_Blue swapBtn defaultBtn BIG_btn";
+              swapButton.type = "button";
+              const swapIcon = document.createElement("i");
+              swapIcon.className = "xi-check";
+              swapButton.appendChild(swapIcon);
+              td.appendChild(swapButton);
+
+              const deleteButton = document.createElement("button");
+              deleteButton.type = "button";
+              deleteButton.name = "delete_each_row";
+              deleteButton.className = "defaultBtn BIG_btn BTN_Blue";
+              const deleteIcon = document.createElement("i");
+              deleteIcon.className = "xi-minus";
+              deleteButton.appendChild(deleteIcon);
+              td.appendChild(deleteButton);
+
+              clonedRow.appendChild(td);
+              targetTbody.appendChild(clonedRow);
+
+              // Reinitialize select2 on the original row's select element
+              $(lastRow.querySelector("select")).select2();
+
+              // Initialize select2 on the cloned row's select element
+              $(clonedRow.querySelector("select")).select2();
+            }
+          });
+        }
+        document.addEventListener("click", function (e) {
+          // if (e.target.classList.contains("swapBtn")) {
+          //   swapButtonContent(e.target);
+          // }
+
+          if (e.target.closest(".swapBtn")) {
+            swapButtonContent(e.target.closest(".swapBtn"));
+          }
+          if (e.target.name === "delete_each_row") {
+            e.target.closest("tr").remove();
+          }
+        });
+      });
+
+      // 릴레이 조 편성 추가 버튼
+
+      if (document.querySelectorAll(".swapBtn")) {
+        // const swapBtns = document.querySelectorAll(".swapBtn");
+        let prevTarget = null;
+        function swapButtonContent(btn) {
+          if (prevTarget) {
+            const prevRow = prevTarget.closest("tr");
+            const currentRow = btn.closest("tr");
+            const prevAthleteIds = prevRow.querySelectorAll(
+              "td:nth-child(3) #athlete_id\\[\\]"
+            );
+            const currentAthleteIds = currentRow.querySelectorAll(
+              "td:nth-child(3) #athlete_id\\[\\]"
+            );
+
+            // Iterate through the athlete_id elements and swap their values
+            prevAthleteIds.forEach((prevAthleteId, index) => {
+              const currentAthleteId = currentAthleteIds[index];
+              console.log(currentAthleteId);
+              const tempAthleteIdValue = prevAthleteId.value;
+              prevAthleteId.value = currentAthleteId.value;
+              currentAthleteId.value = tempAthleteIdValue;
+            });
+
+            const prevSelectBoxes = prevRow.querySelectorAll(
+              "td:nth-child(3) .select-box"
+            );
+            const currentSelectBoxes = currentRow.querySelectorAll(
+              "td:nth-child(3) .select-box"
+            );
+
+            const prevSelectTexts = prevRow.querySelectorAll(
+              "td:nth-child(3) #copy-value .select2-selection__rendered"
+            );
+            const currentSelectTexts = currentRow.querySelectorAll(
+              "td:nth-child(3) #copy-value .select2-selection__rendered"
+            );
+
+            prevSelectBoxes.forEach((prevSelectBox, index) => {
+              const currentSelectBox = currentSelectBoxes[index];
+
+              // Swap select2 values using select2 API
+              const prevSelectedValue = $(prevSelectBox).val();
+              const currentSelectedValue = $(currentSelectBox).val();
+
+              // Swap select2 rendered text
+              const tempText = prevSelectTexts[index].innerText;
+              prevSelectTexts[index].innerText =
+                currentSelectTexts[index].innerText;
+              currentSelectTexts[index].innerText = tempText;
+              const tempTitle = prevSelectTexts[index].title;
+              prevSelectTexts[index].title = currentSelectTexts[index].title;
+              currentSelectTexts[index].title = tempTitle;
+              const prevOptions = Array.from(prevSelectBox.options).map(
+                (option) => option.outerHTML
+              );
+              const currentOptions = Array.from(currentSelectBox.options).map(
+                (option) => option.outerHTML
+              );
+              prevSelectBox.innerHTML = currentOptions.join("");
+              currentSelectBox.innerHTML = prevOptions.join("");
+            });
+
+            // Swap input values
+            const prevInputBox = prevRow.querySelector(
+              "td:nth-child(2) input"
+            );
+            const currentInputBox = currentRow.querySelector(
+              "td:nth-child(2) input"
+            );
+
+            const prevInputValue = $(prevInputBox).val();
+            const currentInputValue = $(currentInputBox).val();
+            $(prevInputBox).val(currentInputValue).trigger("change");
+            $(currentInputBox).val(prevInputValue).trigger("change");
+
+            // Swap input Pb
+            if (document.querySelector("#pb")) {
+              const prevPBBox = prevRow.querySelector(
+                "td:nth-child(4) input"
+              );
+              const currentPBBox = currentRow.querySelector(
+                "td:nth-child(4) input"
+              );
+
+              const prevPBValue = $(prevPBBox).val();
+              const currentPBValue = $(currentPBBox).val();
+              $(prevPBBox).val(currentPBValue).trigger("change");
+              $(currentPBBox).val(prevPBValue).trigger("change");
+            }
+            prevTarget.classList.remove("swapBtn_click");
+            prevTarget.querySelector("i").classList.remove("xi-close");
+            prevTarget.querySelector("i").classList.add("xi-check");
+            prevTarget = null;
+          } else {
+            prevTarget = btn;
+            btn.classList.add("swapBtn_click");
+            btn.querySelector("i").classList.remove("xi-check");
+            btn.querySelector("i").classList.add("xi-close");
+          }
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

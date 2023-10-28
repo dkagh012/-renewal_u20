@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>심판 목록 보기/title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/xeicon.min.css" />
+    <script src="assets/js/jquery.js"></script>
+</head>
+<!-- 심판 목록 보기  -->
+
+<body>
+  <div id="sh_adm_wrap_index">
+    <!-- 관리자모드 HEADER -->
+    <header>
+      <div id="sh_adm_hd">
+        <h1><a href="/index.html">육상 경기 운영 시스템</a></h1>
+        <ul id="sh_adm_nav">
+          <li>
+            <a href="">
+              <p>참가자관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li>
+                <a href="/athlete_list.html">선수목록</a>
+              </li>
+              <li><a href="/coach_list.html">코치목록</a></li>
+              <li><a class="clicked" href="/judge_list.html">심판목록</a></li>
+              <li><a href="/director_list.html">임원목록</a></li>
+              <li>
+                <a href="/certificate_list.html">참가증서목록</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>경기관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/sports_list.html">경기목록</a></li>
+
+              <li><a href="/schedule_list.html">일정목록</a></li>
+              <li><a href="/group_list.html">조편성</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>기록관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/history_list.html">역대기록목록</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>통계관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/player_ranking_list.html">선수별 순위보기</a></li>
+              <li><a href="/new_record_list.html">신기록 경기기록</a></li>
+              <li><a href="/all_record.html">전체 기록보기</a></li>
+              <li><a href="/schedule_medal_list.html">경기별 메달보기</a></li>
+              <li>
+                <a href="/country_ranking_list.html">소속별 순위보기</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>기록관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="mypage.html">계정 정보</a></li>
+              <li><a href="change_password.html">비밀번호 변경</a></li>
+              <li><a href="account_write.html">계정 생성</a></li>
+              <li><a href="account_list.html">계정 목록</a></li>
+              <li><a href="log_list.html">로그 목록</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul id="sh_adm_gnb">
+          <li id="tnb_logout">
+            <a href="login.html">로그아웃</a>
+          </li>
+          <li class="mypage">
+            <a href="mypage.html"><i class="xi-profile-o"></i></a>
+          </li>
+          <li>
+            <button type="button" class="MobileTabMenuBtn">
+              <i class="xi-bars"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="MobileTabMenu hidden">
+        <!-- 관리자모드 SNB -->
+        <!-- 퀵메뉴 설정 팝업 스크립트 -->
+        <div class="MobileMenu">
+          <div class=" ">
+            <ul class="MobileMenuList">
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  참가자관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li>
+                    <a href="/athlete_list.html">선수목록</a>
+                  </li>
+                  <li>
+                    <a class="clicked" href="/coach_list.html">코치목록</a>
+                  </li>
+                  <li><a href="/judge_list.html">심판목록</a></li>
+                  <li><a href="/director_list.html">임원목록</a></li>
+                  <li>
+                    <a href="/certificate_list.html">참가증서목록</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  경기관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="/sports_list.html">경기목록</a></li>
+
+                  <li><a href="/schedule_list.html">일정목록</a></li>
+                  <li><a href="/group_list.html">조편성</a></li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  기록관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="/history_list.html">역대기록목록</a></li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  통계관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li>
+                    <a href="/player_ranking_list.html">선수별 순위보기</a>
+                  </li>
+                  <li><a href="/new_record_list.html">신기록 경기기록</a></li>
+                  <li><a href="/all_record.html">전체 기록보기</a></li>
+                  <li>
+                    <a href="/schedule_medal_list.html">경기별 메달보기</a>
+                  </li>
+                  <li>
+                    <a href="/country_ranking_list.html">소속별 순위보기</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  기록관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="mypage.html">계정 정보</a></li>
+                  <li><a href="change_password.html">비밀번호 변경</a></li>
+                  <li><a href="account_write.html">계정 생성</a></li>
+                  <li><a href="account_list.html">계정 목록</a></li>
+                  <li><a href="log_list.html">로그 목록</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="MobileBackground hidden"></div>
+      <div class="top">
+        <div id="js-scroll">
+          <i class="xi-caret-up-min topBtn"> </i>
+          <p>TOP</p>
+        </div>
+      </div>
+      <div id="sh_adm_count">
+        <ul>
+          <li>
+            <a href="/athlete_list.html">선수목록</a>
+          </li>
+          <li><a href="/coach_list.html">코치목록</a></li>
+          <li><a class="clicked" href="/judge_list.html">심판목록</a></li>
+          <li><a href="/director_list.html">임원목록</a></li>
+          <li>
+            <a href="/certificate_list.html">참가증서목록</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div id="sh_adm_cont_wrap" class="MobileScroll">
+      <div class="local_ov01 local_ov UserTable">
+        <form action="">
+          <div class="tbl_frm01 tbl_wrap">
+            <table>
+              <caption>
+                회원 추가
+              </caption>
+              <colgroup>
+                <col width="10%" />
+                <col width="40%" />
+                <col width="10%" />
+                <col width="40%" />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th rowspan="3" scope="row">이미지 변경</th>
+                  <td rowspan="3" class="athlete_img">
+                    <img src="assets/images/imageTest.jpg" alt="" />
+                  </td>
+                  <th scope="row"><label for="mb_id">이름</label></th>
+                  <td>
+                    <input type="text" class="frm_input required alnum_" value="정태" size="15" maxlength="20" />
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><label for="mb_id">성</label></th>
+                  <td>
+                    <input type="text" value="배" class="frm_input required alnum_" size="15" maxlength="20" />
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><label for="mb_country">국가</label></th>
+                  <td>
+                    <select aria-placeholder="국가 선택" name="coach_country" required="">
+                      <option value="non" selected="" disabled="" hidden="">
+                        대한민국
+                      </option>
+                      <option value="NPL">네팔</option>
+                      <option value="TPE">대만</option>
+                      <option value="KOR">대한민국</option>
+                      <option value="TLS">동티모르</option>
+                      <option value="LAO">라오스</option>
+                      <option value="LBN">레바논</option>
+                      <option value="MAC">마카오</option>
+                      <option value="MAS">말레이시아</option>
+                      <option value="MDV">몰디브</option>
+                      <option value="MGL">몽골</option>
+                      <option value="MMR">미얀마</option>
+                      <option value="BHR">바레인</option>
+                      <option value="BAN">방글라데시</option>
+                      <option value="VIE">베트남</option>
+                      <option value="BTN">부탄</option>
+                      <option value="PRK">북한</option>
+                      <option value="BRU">브루나이</option>
+                      <option value="KSA">사우디아라비아</option>
+                      <option value="SRI">스리랑카</option>
+                      <option value="SYR">시리아</option>
+                      <option value="SGP">싱가포르</option>
+                      <option value="ARE">아랍에미리트</option>
+                      <option value="AFG">아프가니스탄</option>
+                      <option value="YEM">예멘</option>
+                      <option value="OMA">오만</option>
+                      <option value="JOR">요르단</option>
+                      <option value="UZB">우즈베키스탄</option>
+                      <option value="IRQ">이라크</option>
+                      <option value="IRI">이란</option>
+                      <option value="IND">인도</option>
+                      <option value="INA">인도네시아</option>
+                      <option value="JPN">일본</option>
+                      <option value="CHN">중국</option>
+                      <option value="KAZ">카자흐스탄</option>
+                      <option value="QAT">카타르</option>
+                      <option value="KHM">캄보디아</option>
+                      <option value="KUW">쿠웨이트</option>
+                      <option value="KGZ">키르기스스탄</option>
+                      <option value="TJK">타지키스탄</option>
+                      <option value="THA">태국</option>
+                      <option value="TKM">투르크메니스탄</option>
+                      <option value="PAK">파키스탄</option>
+                      <option value="PSE">팔레스타인</option>
+                      <option value="PHI">필리핀</option>
+                      <option value="HKG">홍콩</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><label for="mb_area">직무</label></th>
+                  <td>
+                    <select name="judge_duty" id="judge_duty">
+                      <option value="경보심판원(IWJ)" selected="">
+                        경보심판원(IWJ)
+                      </option>
+                      <option value="사진판정심판(PFJ)">
+                        사진판정심판(PFJ)
+                      </option>
+                      <option value="상소심판(JOA)">상소심판(JOA)</option>
+                      <option value="상소심판원">상소심판원</option>
+                      <option value="수평도약심판원">수평도약심판원</option>
+                      <option value="수평착지심판원">수평착지심판원</option>
+                      <option value="수직도약심판원">수직도약심판원</option>
+                      <option value="풍속계심판원">풍속계심판원</option>
+                      <option value="전자계측심판원">전자계측심판원</option>
+                      <option value="국제심판지원계">국제심판지원계</option>
+                      <option value="직선투척심판원">직선투척심판원</option>
+                      <option value="회전투척심판원">회전투척심판원</option>
+                      <option value="착심전담심판원">착심전담심판원</option>
+                      <option value="전자계측심판원">전자계측심판원</option>
+                      <option value="트랙 심판장보조원">
+                        트랙 심판장보조원
+                      </option>
+                      <option value="트랙 심판원">트랙 심판원</option>
+                      <option value="채점심판원">채점심판원</option>
+                    </select>
+                  </td>
+                  <th scope="row"><label for="mb_team">소속</label></th>
+                  <td>
+                    <select name="coach_division" required="">
+                      <option value="" selected="" disabled="" hidden="">
+                        AAA(AA)
+                      </option>
+                      <option value="">소속 선택</option>
+                      <option value="">KAAF(KF)</option>
+                      <option value="">LOC(LO)</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">성별</th>
+                  <td>
+                    <select name="coach_gender" required="">
+                      <option value="m" selected="" disabled="" hidden="">
+                        남자
+                      </option>
+                      <option value="">성별 선택</option>
+                      <option value="f">여자</option>
+                    </select>
+                  </td>
+                  <th scope="row"><label for="mb_Br">생년월일</label></th>
+                  <td>
+                    <input type="text" class="frm_input required alnum_" size="10" maxlength="20" value="1998" />
+                    <input type="text" class="frm_input required alnum_" size="10" maxlength="20" value="04" />
+                    <input type="text" class="frm_input required alnum_" size="10" maxlength="20" value="21" />
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><label for="mb_age">나이</label></th>
+                  <td>
+                    <input type="text" class="frm_input required alnum_" size="15" maxlength="20" value="26" />
+                  </td>
+                  <th scope="row">AD 카드직무</th>
+                  <td>
+                    <input type="text" class="frm_input required alnum_" size="15" maxlength="20" value="X" />
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">식사 가능 여부</th>
+                  <td>
+                    <input type="checkbox" class="frm_input required alnum_" size="15" maxlength="20" />
+                  </td>
+                  <th scope="row">경기장 내 좌석</th>
+                  <td>
+                    <select name="coach_seats">
+                      <option value="RS" selected="" hidden="">VIP석</option>
+                      <option value="">좌석선택</option>
+                      <option value="GS">VIP석</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">접근시설선택</th>
+                  <td>
+                    <select name="coach_village">
+                      <option value="AV" selected="" hidden="">
+                        선수촌 거주 허용
+                      </option>
+                      <option value="">접근시설선택</option>
+                    </select>
+                  </td>
+                  <th scope="row">경기장 내 접근 허용</th>
+                  <td>
+                    <select name="sector" required="">
+                      <option value="" selected="" disabled="" hidden="">
+                        접근구역선택
+                      </option>
+                      <option value="">경기장 내 전구역</option>
+                      <option value="">경기구역</option>
+                      <option value="">선수준비구역(실내훈련장)</option>
+                      <option value="">경기행정구역(기능실)</option>
+                      <option value="">취재구역</option>
+                      <option value="">VIP구역</option>
+                      <option value="">∞</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">직책</th>
+                  <td colspan="3">
+                    <select name="judge_position" id="judge_position">
+                      <option value="">∞</option>
+                      <option value="">경기장 내 전구역</option>
+                      <option value="">경기구역</option>
+                      <option value="">선수준비구역(실내훈련장)</option>
+                      <option value="">경기행정구역(기능실)</option>
+                      <option value="">취재구역</option>
+                      <option value="">VIP구역</option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ViewList">
+            <div class="info_table">
+              <div class="modify_enter">
+                <p class="tit_left_red">참석 경기</p>
+                <div class="attend">
+                  <table class="box_table">
+                    <colgroup>
+                      <col style="width: auto" />
+                    </colgroup>
+                    <thead class="result_table entry_table">
+                      <tr>
+                        <th>종목 이름</th>
+                        <th>경기 이름</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table_tbody entry_table">
+                      <tr>
+                        <td>필드경기</td>
+                        <td>Hammer Throw</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="addBtn">
+            <a class="btn btn_02" href="/judge_list.html">목록</a>
+            <button class="btn_submit btn" type="submit">확인</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- #adm_cont-->
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

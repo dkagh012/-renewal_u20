@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <link rel="stylesheet" href="assets/css/pdf.css" />
+
+    <style>
+      @page {
+        size: 210mm 297mm;
+        /*A4*/
+      }
+
+      @media print {
+        .PDF_wrap {
+        }
+
+        html,
+        body {
+          -webkit-print-color-adjust: exact;
+          width: 210mm;
+          height: 297mm;
+        }
+      }
+
+      table {
+        width: 100%;
+      }
+
+      .PDF_wrap {
+        padding: 0.5cm 0.7cm 2cm 0.7cm;
+      }
+
+      .PDF_wrap .header_table > th {
+        border: 0;
+        height: 30px;
+        padding: 0 3px;
+      }
+
+      .PDF_wrap .pdf_table_body > tr > td {
+        border: 0;
+        padding: 0 3px;
+      }
+
+      .hori_pdf .pdf_table_body {
+        border-bottom: 1px solid black;
+      }
+
+      .PDF_wrap .world_record {
+        position: absolute;
+        width: calc(100% - 1.4cm);
+        bottom: 57px;
+      }
+
+      .PDF_wrap .world_record > table > tbody > tr > td {
+        border: 0;
+        border-bottom: 1px solid #000;
+        padding: 3px;
+      }
+
+      .PDF_wrap .PDF_footer,
+      .PDF_wrap .en_PDF_footer {
+        width: calc(100% - 1.4cm);
+      }
+
+      .page_number {
+        right: 0.7cm;
+      }
+    </style>
+    <script>
+      window.print();
+    </script>
+    <!-- 
+인원은17명이 한 페이지에 오게 해주시면  됩니다
+-->
+  </head>
+  <body>
+    <div class="PDF_wrap ko_wrap hori_pdf">
+      <header class="pdf_header">
+        <div class="pdf_right_logo">
+          <img src="assets/images/logo3.png" alt="" />
+        </div>
+        <div class="pdf_left_logo">
+          <img src="assets/images/logo.png" alt="" />
+        </div>
+        <div>
+          <div class="PDF_tit">
+            <p class="main_title">제20회 예천아시아 U20 육상경기선수권대회</p>
+            <p>예천</p>
+            <p>2023. 6. 4 ~ 6. 7</p>
+          </div>
+          <div class="PDF_result">
+            <p>RESULT</p>
+          </div>
+        </div>
+      </header>
+      <div class="page_number">
+        <p>Page</p>
+        <p class="pageNumber">1</p>
+        <span>/</span>
+        <p class="pageAllNumber">1</p>
+      </div>
+      <div class="word_wrap">
+        <div class="word_container">
+          <div class="pdf_info_two">
+            <div>
+              <p>Javelin Throw WOMEN</p>
+            </div>
+            <div>
+              <p>Final</p>
+              <p>2023-06-04 17:00</p>
+            </div>
+          </div>
+          <div class="word_run">
+            <table class="box_table">
+              <!-- 달리기 테이블  -->
+              <colgroup>
+                <col width="4%" />
+                <col width="4%" />
+                <col width="5%" />
+                <col width="15%" />
+                <col width="4%" />
+                <col width="10%" />
+                <col width="6%" />
+                <col width="6%" />
+                <col width="6%" />
+                <col width="6%" />
+                <col width="6%" />
+                <col width="6%" />
+                <col width="8%" />
+                <col width="10%" />
+              </colgroup>
+              <thead class="pdf_table_head">
+                <tr class="header_table">
+                  <th
+                    scope="col"
+                    style="font-size: 10px; text-align: right"
+                    rowspan="2"
+                  >
+                    순위
+                  </th>
+                  <th scope="col" style="font-size: 10px" rowspan="2">순서</th>
+                  <th scope="col" style="font-size: 10px" rowspan="2">Bib</th>
+                  <th
+                    scope="col"
+                    style="font-size: 10px; text-align: left"
+                    rowspan="2"
+                  >
+                    이름
+                  </th>
+                  <th
+                    scope="col"
+                    style="font-size: 10px; text-align: left"
+                    rowspan="2"
+                  >
+                    국가
+                  </th>
+                  <th
+                    scope="col"
+                    style="font-size: 10px; text-align: right"
+                    rowspan="2"
+                  >
+                    생년월일
+                  </th>
+
+                  <th rowspan="2">1차</th>
+                  <th rowspan="2">2차</th>
+                  <th rowspan="2">3차</th>
+                  <th rowspan="2">4차</th>
+                  <th rowspan="2">5차</th>
+                  <th rowspan="2">6차</th>
+                  <th
+                    scope="col"
+                    style="font-size: 10px; text-align: center"
+                    rowspan="2"
+                  >
+                    기록
+                  </th>
+                  <th scope="col" style="font-size: 10px" rowspan="2"></th>
+                </tr>
+                <tr class="header_table"></tr>
+              </thead>
+              <tbody class="pdf_table_body">
+                <tr>
+                  <td
+                    rowspan="2"
+                    style="text-align: right; font-weight: bold"
+                  ></td>
+                  <td rowspan="2" style="text-align: right">1</td>
+                  <td rowspan="2">416</td>
+                  <td rowspan="2" style="text-align: left; font-weight: bold">
+                    Yang Fang
+                  </td>
+                  <td rowspan="2" style="text-align: left">CHN</td>
+                  <td rowspan="2" style="text-align: right">2004-04-22</td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+
+                  <td
+                    rowspan="2"
+                    style="
+                      font-weight: bold;
+                      text-align: center;
+                      position: relative;
+                    "
+                  >
+                    DQ<span class="DQ_result">(0.123)</span>
+                  </td>
+                  <td
+                    rowspan="2"
+                    style="font-weight: bold; text-align: left"
+                  ></td>
+                </tr>
+              </tbody>
+              <tbody class="pdf_table_body">
+                <tr>
+                  <td
+                    rowspan="2"
+                    style="text-align: right; font-weight: bold"
+                  ></td>
+                  <td rowspan="2" style="text-align: right">2</td>
+                  <td rowspan="2">457</td>
+                  <td rowspan="2" style="text-align: left; font-weight: bold">
+                    Mana Hosseini
+                  </td>
+                  <td rowspan="2" style="text-align: left">IRI</td>
+                  <td rowspan="2" style="text-align: right">2005-02-12</td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+
+                  <td
+                    rowspan="2"
+                    style="
+                      font-weight: bold;
+                      text-align: center;
+                      position: relative;
+                    "
+                  >
+                    DQ<span class="DQ_result">(0.123)</span>
+                  </td>
+                  <td
+                    rowspan="2"
+                    style="font-weight: bold; text-align: left"
+                  ></td>
+                </tr>
+              </tbody>
+              <tbody class="pdf_table_body">
+                <tr>
+                  <td
+                    rowspan="2"
+                    style="text-align: right; font-weight: bold"
+                  ></td>
+                  <td rowspan="2" style="text-align: right">3</td>
+                  <td rowspan="2">504</td>
+                  <td rowspan="2" style="text-align: left; font-weight: bold">
+                    Kang Hyunjin
+                  </td>
+                  <td rowspan="2" style="text-align: left">KOR</td>
+                  <td rowspan="2" style="text-align: right">2005-08-13</td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+
+                  <td
+                    rowspan="2"
+                    style="
+                      font-weight: bold;
+                      text-align: center;
+                      position: relative;
+                    "
+                  >
+                    DQ<span class="DQ_result">(0.123)</span>
+                  </td>
+                  <td
+                    rowspan="2"
+                    style="font-weight: bold; text-align: left"
+                  ></td>
+                </tr>
+              </tbody>
+              <tbody class="pdf_table_body">
+                <tr>
+                  <td
+                    rowspan="2"
+                    style="text-align: right; font-weight: bold"
+                  ></td>
+                  <td rowspan="2" style="text-align: right">4</td>
+                  <td rowspan="2">507</td>
+                  <td rowspan="2" style="text-align: left; font-weight: bold">
+                    Kim Minseon
+                  </td>
+                  <td rowspan="2" style="text-align: left">KOR</td>
+                  <td rowspan="2" style="text-align: right">2005-08-15</td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+
+                  <td
+                    rowspan="2"
+                    style="
+                      font-weight: bold;
+                      text-align: center;
+                      position: relative;
+                    "
+                  >
+                    DQ<span class="DQ_result">(0.123)</span>
+                  </td>
+                  <td
+                    rowspan="2"
+                    style="font-weight: bold; text-align: left"
+                  ></td>
+                </tr>
+              </tbody>
+              <tbody class="pdf_table_body">
+                <tr>
+                  <td
+                    rowspan="2"
+                    style="text-align: right; font-weight: bold"
+                  ></td>
+                  <td rowspan="2" style="text-align: right">5</td>
+                  <td rowspan="2">525</td>
+                  <td rowspan="2" style="text-align: left; font-weight: bold">
+                    Yang Seokju
+                  </td>
+                  <td rowspan="2" style="text-align: left">KOR</td>
+                  <td rowspan="2" style="text-align: right">2005-01-06</td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+
+                  <td
+                    rowspan="2"
+                    style="
+                      font-weight: bold;
+                      text-align: center;
+                      position: relative;
+                    "
+                  >
+                    DQ<span class="DQ_result">(0.123)</span>
+                  </td>
+                  <td
+                    rowspan="2"
+                    style="font-weight: bold; text-align: left"
+                  ></td>
+                </tr>
+              </tbody>
+              <tbody class="pdf_table_body">
+                <tr>
+                  <td
+                    rowspan="2"
+                    style="text-align: right; font-weight: bold"
+                  ></td>
+                  <td rowspan="2" style="text-align: right">6</td>
+                  <td rowspan="2">560</td>
+                  <td rowspan="2" style="text-align: left; font-weight: bold">
+                    Chu, Pin Hsun
+                  </td>
+                  <td rowspan="2" style="text-align: left">TPE</td>
+                  <td rowspan="2" style="text-align: right">2005-04-08</td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+
+                  <td
+                    rowspan="2"
+                    style="
+                      font-weight: bold;
+                      text-align: center;
+                      position: relative;
+                    "
+                  >
+                    DQ<span class="DQ_result">(0.123)</span>
+                  </td>
+                  <td
+                    rowspan="2"
+                    style="font-weight: bold; text-align: left"
+                  ></td>
+                </tr>
+              </tbody>
+              <tbody class="pdf_table_body">
+                <tr>
+                  <td
+                    rowspan="2"
+                    style="text-align: right; font-weight: bold"
+                  ></td>
+                  <td rowspan="2" style="text-align: right">7</td>
+                  <td rowspan="2">471</td>
+                  <td rowspan="2" style="text-align: left; font-weight: bold">
+                    Sakurai Nozomi
+                  </td>
+                  <td rowspan="2" style="text-align: left">JPN</td>
+                  <td rowspan="2" style="text-align: right">2005-04-27</td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+
+                  <td
+                    rowspan="2"
+                    style="
+                      font-weight: bold;
+                      text-align: center;
+                      position: relative;
+                    "
+                  >
+                    DQ<span class="DQ_result">(0.123)</span>
+                  </td>
+                  <td
+                    rowspan="2"
+                    style="font-weight: bold; text-align: left"
+                  ></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="world_record">
+        <div class="PDF_result">
+          <p>역대 기록</p>
+        </div>
+        <table>
+          <thead>
+            <tr class="header_table">
+              <th>구분</th>
+              <th>기록</th>
+              <th>풍속</th>
+              <th>성명</th>
+              <th>국가</th>
+              <th>장소</th>
+              <th>일자</th>
+            </tr>
+          </thead>
+          <tbody style="text-align: center; border: 0">
+            <tr>
+              <td style="line-height: 15px; font-size: 10px">WU20R</td>
+              <td style="line-height: 15px; font-size: 10px">63.86</td>
+              <td style="line-height: 15px; font-size: 10px">0</td>
+              <td style="line-height: 15px; font-size: 10px">
+                Yulenmis AGUILAR
+              </td>
+              <td style="line-height: 15px; font-size: 10px">CUB</td>
+              <td style="line-height: 15px; font-size: 10px">Edmonton (CAN)</td>
+              <td style="line-height: 15px; font-size: 10px">2015-08-02</td>
+            </tr>
+            <tr>
+              <td style="line-height: 15px; font-size: 10px">WU20R</td>
+              <td style="line-height: 15px; font-size: 10px">63.86</td>
+              <td style="line-height: 15px; font-size: 10px">0</td>
+              <td style="line-height: 15px; font-size: 10px">
+                Yulenmis AGUILAR
+              </td>
+              <td style="line-height: 15px; font-size: 10px">CUB</td>
+              <td style="line-height: 15px; font-size: 10px">Edmonton (CAN)</td>
+              <td style="line-height: 15px; font-size: 10px">2015-08-02</td>
+            </tr>
+            <tr>
+              <td style="line-height: 15px; font-size: 10px">WU20R</td>
+              <td style="line-height: 15px; font-size: 10px">63.86</td>
+              <td style="line-height: 15px; font-size: 10px">0</td>
+              <td style="line-height: 15px; font-size: 10px">
+                Yulenmis AGUILAR
+              </td>
+              <td style="line-height: 15px; font-size: 10px">CUB</td>
+              <td style="line-height: 15px; font-size: 10px">Edmonton (CAN)</td>
+              <td style="line-height: 15px; font-size: 10px">2015-08-02</td>
+            </tr>
+            <tr>
+              <td style="line-height: 15px; font-size: 10px">AU20R</td>
+              <td style="line-height: 15px; font-size: 10px">62.93</td>
+              <td style="line-height: 15px; font-size: 10px">0</td>
+              <td style="line-height: 15px; font-size: 10px">Juan XUE</td>
+              <td style="line-height: 15px; font-size: 10px">CHN</td>
+              <td style="line-height: 15px; font-size: 10px">Changsha (CHN)</td>
+              <td style="line-height: 15px; font-size: 10px">2003-10-27</td>
+            </tr>
+            <tr>
+              <td style="line-height: 15px; font-size: 10px">CR</td>
+              <td style="line-height: 15px; font-size: 10px">60.74</td>
+              <td style="line-height: 15px; font-size: 10px">0</td>
+              <td style="line-height: 15px; font-size: 10px">Sun Xiurong</td>
+              <td style="line-height: 15px; font-size: 10px">CHN</td>
+              <td style="line-height: 15px; font-size: 10px">Jakarta(INA)</td>
+              <td style="line-height: 15px; font-size: 10px">1986-12-06</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

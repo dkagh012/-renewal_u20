@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>육상 경기 운영 시스템</title>
+  <!-- <link rel="stylesheet" href="./assets/css/style.css" /> -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/xeicon.min.css" />
+  <script src="assets/js/jquery.js"></script>
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicon/apple-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicon/apple-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicon/apple-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicon/apple-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicon/apple-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/images/favicon/apple-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicon/apple-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicon/apple-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon/android-icon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="assets/images/favicon/manifest.json" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+  <meta name="theme-color" content="#ffffff" />
+</head>
+
+<body>
+  <div id="sh_adm_wrap_index">
+    <!-- 관리자모드 HEADER -->
+    <header>
+      <div id="sh_adm_hd">
+        <h1><a href="/index.html">육상 경기 운영 시스템</a></h1>
+        <ul id="sh_adm_nav">
+          <li>
+            <a href="athlete_list.html">
+              <p>참가자관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <p>경기관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/sports_list.html">경기목록</a></li>
+
+              <li><a href="/schedule_list.html">일정목록</a></li>
+              <li><a href="/group_list.html">조편성</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>기록관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/history_list.html">역대기록목록</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>통계관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/player_ranking_list.html">선수별 순위보기</a></li>
+              <li><a href="/new_record_list.html">신기록 경기기록</a></li>
+              <li><a href="/all_record.html">전체 기록보기</a></li>
+              <li><a href="/schedule_medal_list.html">경기별 메달보기</a></li>
+              <li>
+                <a href="/country_ranking_list.html">소속별 순위보기</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>기록관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="mypage.html">계정 정보</a></li>
+              <li><a href="change_password.html">비밀번호 변경</a></li>
+              <li><a href="account_write.html">계정 생성</a></li>
+              <li><a href="account_list.html">계정 목록</a></li>
+              <li><a href="log_list.html">로그 목록</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul id="sh_adm_gnb">
+          <li id="tnb_logout">
+            <a href="login.html">로그아웃</a>
+          </li>
+          <li class="mypage">
+            <a href="mypage.html"><i class="xi-profile-o"></i></a>
+          </li>
+          <li>
+            <button type="button" class="MobileTabMenuBtn">
+              <i class="xi-bars"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="MobileTabMenu hidden">
+        <!-- 관리자모드 SNB -->
+        <!-- 퀵메뉴 설정 팝업 스크립트 -->
+        <div class="MobileMenu">
+          <div class=" ">
+            <ul class="MobileMenuList">
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  참가자관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="/athlete_list.html">선수목록</a></li>
+                  <li><a href="/coach_list.html">코치목록</a></li>
+                  <li><a href="/judge_list.html">심판목록</a></li>
+                  <li><a href="/director_list.html">임원목록</a></li>
+                  <li><a href="/certificate_list.html">참가증서목록</a></li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  경기관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="/sports_list.html">경기목록</a></li>
+
+                  <li><a href="/schedule_list.html">일정목록</a></li>
+                  <li><a href="/group_list.html">조편성</a></li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  기록관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="/history_list.html">역대기록목록</a></li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  통계관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li>
+                    <a href="/player_ranking_list.html">선수별 순위보기</a>
+                  </li>
+                  <li><a href="/new_record_list.html">신기록 경기기록</a></li>
+                  <li><a href="/all_record.html">전체 기록보기</a></li>
+                  <li>
+                    <a href="/schedule_medal_list.html">경기별 메달보기</a>
+                  </li>
+                  <li>
+                    <a href="/country_ranking_list.html">소속별 순위보기</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  기록관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="mypage.html">계정 정보</a></li>
+                  <li><a href="change_password.html">비밀번호 변경</a></li>
+                  <li><a href="account_write.html">계정 생성</a></li>
+                  <li><a href="account_list.html">계정 목록</a></li>
+                  <li><a href="log_list.html">로그 목록</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="MobileBackground hidden"></div>
+      <div class="top">
+        <div id="js-scroll">
+          <i class="xi-caret-up-min topBtn"> </i>
+          <p>TOP</p>
+        </div>
+      </div>
+    </header>
+    <div id="sh_adm_cont_wrap">
+      <div class="local_ov01 local_ov">
+        <section id="sh_adm_main_wrap">
+          <!-- #adm_new member -->
+          <div id="sh_adm_new_mb">
+            <h3>
+              소속랭킹<a href=""><i class="xi-ellipsis-v"></i></a>
+            </h3>
+            <table class="TableListBackground">
+              <colgroup>
+                <col width="10%" />
+                <col width="" />
+                <col width="10%" />
+                <col width="10%" />
+                <col width="10%" />
+                <col width="15%" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <p>순위</p>
+                  </th>
+                  <th scope="col">
+                    <p>소속</p>
+                  </th>
+                  <th scope="col">
+                    <p>금</p>
+                  </th>
+                  <th scope="col">
+                    <p>은</p>
+                  </th>
+                  <th scope="col">
+                    <p>동</p>
+                  </th>
+                  <th scope="col">
+                    <p>합계</p>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="All_result">
+                <tr>
+                  <td>2</td>
+                  <td>가톨릭대학교</td>
+                  <td>11</td>
+                  <td>5</td>
+                  <td>3</td>
+                  <td>19</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>가톨릭대학교</td>
+                  <td>11</td>
+                  <td>5</td>
+                  <td>3</td>
+                  <td>19</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>가톨릭대학교</td>
+                  <td>11</td>
+                  <td>5</td>
+                  <td>3</td>
+                  <td>19</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>가톨릭대학교</td>
+                  <td>11</td>
+                  <td>5</td>
+                  <td>3</td>
+                  <td>19</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>가톨릭대학교</td>
+                  <td>11</td>
+                  <td>5</td>
+                  <td>3</td>
+                  <td>19</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>가톨릭대학교</td>
+                  <td>11</td>
+                  <td>5</td>
+                  <td>3</td>
+                  <td>19</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>가톨릭대학교</td>
+                  <td>11</td>
+                  <td>5</td>
+                  <td>3</td>
+                  <td>19</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>가톨릭대학교</td>
+                  <td>11</td>
+                  <td>5</td>
+                  <td>3</td>
+                  <td>19</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="sh_adm_new_mb">
+            <h3>
+              선수랭킹<a href=""><i class="xi-ellipsis-v"></i></a>
+            </h3>
+            <table class="TableListBackground">
+              <colgroup>
+                <col width="10%" />
+                <col width="15%" />
+                <col width="20%" />
+                <col width="5%" />
+                <col width="auto" />
+                <col width="10%" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <p>기록구분</p>
+                  </th>
+                  <th scope="col">
+                    <p>종목</p>
+                  </th>
+                  <th scope="col">
+                    <p>소속</p>
+                  </th>
+                  <th scope="col">
+                    <p>성별</p>
+                  </th>
+                  <th scope="col">
+                    <p>이름</p>
+                  </th>
+                  <th scope="col">
+                    <p>기록</p>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="All_result">
+                <tr>
+                  <td>PB</td>
+                  <td>hammerthrow</td>
+                  <td>강서대학교</td>
+                  <td>m</td>
+                  <td>배정태</td>
+                  <td>64.78</td>
+                </tr>
+                <tr>
+                  <td>PB</td>
+                  <td>hammerthrow</td>
+                  <td>강서대학교</td>
+                  <td>m</td>
+                  <td>배정태</td>
+                  <td>64.78</td>
+                </tr>
+                <tr>
+                  <td>PB</td>
+                  <td>hammerthrow</td>
+                  <td>강서대학교</td>
+                  <td>m</td>
+                  <td>배정태</td>
+                  <td>64.78</td>
+                </tr>
+                <tr>
+                  <td>PB</td>
+                  <td>highjump</td>
+                  <td>삼육대학교</td>
+                  <td>m</td>
+                  <td>배정태</td>
+                  <td>2.12</td>
+                </tr>
+                <tr>
+                  <td>PB</td>
+                  <td>hammerthrow</td>
+                  <td>강서대학교</td>
+                  <td>m</td>
+                  <td>배정태</td>
+                  <td>64.78</td>
+                </tr>
+                <tr>
+                  <td>PB</td>
+                  <td>highjump</td>
+                  <td>삼육대학교</td>
+                  <td>m</td>
+                  <td>배정태</td>
+                  <td>2.12</td>
+                </tr>
+                <tr>
+                  <td>PB</td>
+                  <td>hammerthrow</td>
+                  <td>강서대학교</td>
+                  <td>m</td>
+                  <td>배정태</td>
+                  <td>64.78</td>
+                </tr>
+                <tr>
+                  <td>PB</td>
+                  <td>highjump</td>
+                  <td>삼육대학교</td>
+                  <td>m</td>
+                  <td>배정태</td>
+                  <td>2.12</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="sh_adm_new_mb" style="width: 100%; height: 656px">
+            <h3>
+              일정관리<a href=""><i class="xi-ellipsis-v"></i></a>
+            </h3>
+            <table class="TableTbodyBackground EntryTable">
+              <colgroup>
+                <col width="10%" />
+                <col width="10%" />
+                <col width="15%" />
+                <col width="auto" />
+                <col width="10%" />
+                <col width="10%" />
+                <col width="10%" />
+                <col width="10%" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th rowspan="2">구분</th>
+                  <th>라운드</th>
+                  <th>날짜</th>
+                  <th rowspan="2"><a href="">경기종목</a></th>
+                  <th rowspan="2">진행상태</th>
+                  <th colspan="2">SUMMARY</th>
+                  <th>수정</th>
+                </tr>
+                <tr>
+                  <th>성별</th>
+                  <th>시간</th>
+                  <th colspan="2">경기정보</th>
+                  <th>삭제</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="2">트랙경기</td>
+                  <td>heats</td>
+                  <td>2023-06-04</td>
+                  <td rowspan="2">Heptathlon</td>
+                  <td rowspan="2" class="result">
+                    <span class="official defaultBtn">
+                      <p>Official Result</p>
+                    </span>
+                  </td>
+                  <td>
+                    <button type="button" class="defaultBtn BTN_Red" onclick="window.open('summary_pdf.html')">
+                      PDF
+                    </button>
+                  </td>
+                  <td>
+                    <button type="button" class="defaultBtn excel_Print filedBTN">
+                      Excel
+                    </button>
+                  </td>
+                  <td>
+                    <a href="schedule_modify.html" class="defaultBtn BTN_Blue outBtn">수정</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>여성</td>
+                  <td>09:15</td>
+                  <td colspan="2">
+                    <a href="schedule_heptathlon.html" class="defaultBtn BTN_DarkBlue cetificateBtn outBtn">상세정보</a>
+                  </td>
+                  <td>
+                    <button class="defaultBtn BTN_Red" type="button">
+                      삭제
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td rowspan="2">트랙경기</td>
+                  <td>heats</td>
+                  <td>2023-06-04</td>
+                  <td rowspan="2">Decathlon</td>
+                  <td rowspan="2" class="result">
+                    <span class="official defaultBtn">
+                      <p>Official Result</p>
+                    </span>
+                  </td>
+                  <td>
+                    <button type="button" class="defaultBtn BTN_Red" onclick="window.open('summary_pdf.html')">
+                      PDF
+                    </button>
+                  </td>
+                  <td>
+                    <button type="button" class="defaultBtn excel_Print filedBTN">
+                      Excel
+                    </button>
+                  </td>
+                  <td>
+                    <a href="schedule_modify.html" class="defaultBtn BTN_Blue outBtn">수정</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>여성</td>
+                  <td>09:15</td>
+                  <td colspan="2">
+                    <a href="schedule_decathlon.html" class="defaultBtn BTN_DarkBlue cetificateBtn outBtn">상세정보</a>
+                  </td>
+                  <td>
+                    <button class="defaultBtn BTN_Red" type="button">
+                      삭제
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td rowspan="2">트랙경기</td>
+                  <td>heats</td>
+                  <td>2023-06-04</td>
+                  <td rowspan="2">400m</td>
+                  <td rowspan="2" class="result">
+                    <span class="official defaultBtn">
+                      <p>Official Result</p>
+                    </span>
+                  </td>
+                  <td>
+                    <button type="button" class="defaultBtn BTN_Red" onclick="window.open('summary_pdf.html')">
+                      PDF
+                    </button>
+                  </td>
+                  <td>
+                    <button type="button" class="defaultBtn excel_Print filedBTN">
+                      Excel
+                    </button>
+                  </td>
+                  <td>
+                    <a href="schedule_modify.html" class="defaultBtn BTN_Blue outBtn">수정</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>여성</td>
+                  <td>09:15</td>
+                  <td colspan="2">
+                    <a href="schedule_track.html" class="defaultBtn BTN_DarkBlue cetificateBtn outBtn">상세정보</a>
+                  </td>
+                  <td>
+                    <button class="defaultBtn BTN_Red" type="button">
+                      삭제
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td rowspan="2">트랙경기</td>
+                  <td>heats</td>
+                  <td>2023-06-04</td>
+                  <td rowspan="2">Pole Vault</td>
+                  <td rowspan="2" class="result">
+                    <span class="official defaultBtn">
+                      <p>Official Result</p>
+                    </span>
+                  </td>
+                  <td>
+                    <button type="button" class="defaultBtn BTN_Red" onclick="window.open('summary_pdf.html')">
+                      PDF
+                    </button>
+                  </td>
+                  <td>
+                    <button type="button" class="defaultBtn excel_Print filedBTN">
+                      Excel
+                    </button>
+                  </td>
+                  <td>
+                    <a href="schedule_modify.html" class="defaultBtn BTN_Blue outBtn">수정</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>여성</td>
+                  <td>09:15</td>
+                  <td colspan="2">
+                    <a href="schedule_vertical.html" class="defaultBtn BTN_DarkBlue cetificateBtn outBtn">상세정보</a>
+                  </td>
+                  <td>
+                    <button class="defaultBtn BTN_Red" type="button">
+                      삭제
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td rowspan="2">트랙경기</td>
+                  <td>heats</td>
+                  <td>2023-06-04</td>
+                  <td rowspan="2">Triple Jump</td>
+                  <td rowspan="2" class="result">
+                    <span class="defaultBtn Live">
+                      <p>Live Result</p>
+                    </span>
+                  </td>
+                  <td>
+                    <button type="button" class="defaultBtn BTN_Red" onclick="window.open('summary_pdf.html')">
+                      PDF
+                    </button>
+                  </td>
+                  <td>
+                    <button type="button" class="defaultBtn excel_Print filedBTN">
+                      Excel
+                    </button>
+                  </td>
+                  <td>
+                    <a href="schedule_modify.html" class="defaultBtn BTN_Blue outBtn">수정</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>여성</td>
+                  <td>09:15</td>
+                  <td colspan="2">
+                    <a href="schedule_horizontal.html" class="defaultBtn BTN_DarkBlue cetificateBtn outBtn">상세정보</a>
+                  </td>
+                  <td>
+                    <button class="defaultBtn BTN_Red" type="button">
+                      삭제
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td rowspan="2">트랙경기</td>
+                  <td>heats</td>
+                  <td>2023-06-04</td>
+                  <td rowspan="2">Javelin Throw</td>
+                  <td rowspan="2" class="result">
+                    <span class="Start defaultBtn">
+                      <p>Start List</p>
+                    </span>
+                  </td>
+                  <td>
+                    <button type="button" class="defaultBtn BTN_Red" onclick="window.open('summary_pdf.html')">
+                      PDF
+                    </button>
+                  </td>
+                  <td>
+                    <button type="button" class="defaultBtn excel_Print filedBTN">
+                      Excel
+                    </button>
+                  </td>
+                  <td>
+                    <a href="schedule_modify.html" class="defaultBtn BTN_Blue outBtn">수정</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>여성</td>
+                  <td>09:15</td>
+                  <td colspan="2">
+                    <a href="schedule_throw.html" class="defaultBtn BTN_DarkBlue cetificateBtn outBtn">상세정보</a>
+                  </td>
+                  <td>
+                    <button class="defaultBtn BTN_Red" type="button">
+                      삭제
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td rowspan="2">트랙경기</td>
+                  <td>heats</td>
+                  <td>2023-06-04</td>
+                  <td rowspan="2">4x100m Relay</td>
+                  <td rowspan="2" class="result">
+                    <span class="Start defaultBtn">
+                      <p>Start List</p>
+                    </span>
+                  </td>
+                  <td>
+                    <button type="button" class="defaultBtn BTN_Red" onclick="window.open('summary_pdf.html')">
+                      PDF
+                    </button>
+                  </td>
+                  <td>
+                    <button type="button" class="defaultBtn excel_Print filedBTN">
+                      Excel
+                    </button>
+                  </td>
+                  <td>
+                    <a href="schedule_modify.html" class="defaultBtn BTN_Blue outBtn">수정</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>여성</td>
+                  <td>09:15</td>
+                  <td colspan="2">
+                    <a href="schedule_Relay.html" class="defaultBtn BTN_DarkBlue cetificateBtn outBtn">상세정보</a>
+                  </td>
+                  <td>
+                    <button class="defaultBtn BTN_Red" type="button">
+                      삭제
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- #adm_cont_wrap -->
+  </div>
+  <!-- #adm_cont-->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

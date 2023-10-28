@@ -1,0 +1,3956 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7종경기</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/xeicon.min.css" />
+  <script src="assets/js/jquery.js"></script>
+</head>
+<!-- 일정목록 7종경기 -->
+
+<body>
+  <div id="sh_adm_wrap_index">
+    <!-- 관리자모드 HEADER -->
+    <header>
+      <div id="sh_adm_hd">
+        <h1><a href="/index.html">육상 경기 운영 시스템</a></h1>
+        <ul id="sh_adm_nav">
+          <li>
+            <a href="/athlete_list.html">
+              <p>선수관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <p>경기관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/sports_list.html">경기목록</a></li>
+
+              <li>
+                <a class="clicked" href="/schedule_list.html">일정목록</a>
+              </li>
+              <li><a href="/group_list.html">조편성</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>기록관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/history_list.html">역대기록목록</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>통계관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/player_ranking_list.html">선수별 순위보기</a></li>
+              <li><a href="/new_record_list.html">신기록 경기기록</a></li>
+              <li><a href="/all_record.html">전체 기록보기</a></li>
+              <li><a href="/schedule_medal_list.html">경기별 메달보기</a></li>
+              <li>
+                <a href="/country_ranking_list.html">소속별 순위보기</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>기록관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="mypage.html">계정 정보</a></li>
+              <li><a href="change_password.html">비밀번호 변경</a></li>
+              <li><a href="account_write.html">계정 생성</a></li>
+              <li><a href="account_list.html">계정 목록</a></li>
+              <li><a href="log_list.html">로그 목록</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul id="sh_adm_gnb">
+          <li id="tnb_logout">
+            <a href="login.html">로그아웃</a>
+          </li>
+          <li class="mypage">
+            <a href="mypage.html"><i class="xi-profile-o"></i></a>
+          </li>
+          <li>
+            <button type="button" class="MobileTabMenuBtn">
+              <i class="xi-bars"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="MobileTabMenu hidden">
+        <!-- 관리자모드 SNB -->
+        <!-- 퀵메뉴 설정 팝업 스크립트 -->
+        <div class="MobileMenu">
+          <div class=" ">
+            <ul class="MobileMenuList">
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  참가자관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li>
+                    <a href="/athlete_list.html">선수목록</a>
+                  </li>
+                  <li><a href="/coach_list.html">코치목록</a></li>
+                  <li><a href="/judge_list.html">심판목록</a></li>
+                  <li><a href="/director_list.html">임원목록</a></li>
+                  <li>
+                    <a href="/certificate_list.html">참가증서목록</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  경기관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="/sports_list.html">경기목록</a></li>
+
+                  <li>
+                    <a class="clicked" href="/schedule_list.html">일정목록</a>
+                  </li>
+                  <li>
+                    <a href="/group_list.html">조편성</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  기록관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="/history_list.html">역대기록목록</a></li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  통계관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li>
+                    <a href="/player_ranking_list.html">선수별 순위보기</a>
+                  </li>
+                  <li><a href="/new_record_list.html">신기록 경기기록</a></li>
+                  <li><a href="/all_record.html">전체 기록보기</a></li>
+                  <li>
+                    <a href="/schedule_medal_list.html">경기별 메달보기</a>
+                  </li>
+                  <li>
+                    <a href="/country_ranking_list.html">소속별 순위보기</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  기록관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="mypage.html">계정 정보</a></li>
+                  <li><a href="change_password.html">비밀번호 변경</a></li>
+                  <li><a href="account_write.html">계정 생성</a></li>
+                  <li><a href="account_list.html">계정 목록</a></li>
+                  <li><a href="log_list.html">로그 목록</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="MobileBackground hidden"></div>
+      <div class="top">
+        <div id="js-scroll">
+          <i class="xi-caret-up-min topBtn"> </i>
+          <p>TOP</p>
+        </div>
+      </div>
+      <div id="sh_adm_count">
+        <ul>
+          <li><a href="/sports_list.html">경기목록</a></li>
+          <li>
+            <a href="/country_list.html">국가목록</a>
+          </li>
+          <li><a class="clicked" href="/schedule_list.html">일정목록</a></li>
+          <li><a href="/group_list.html">조편성</a></li>
+        </ul>
+      </div>
+    </header>
+    <div id="sh_adm_cont_wrap" class="MobileScroll">
+      <div class="local_ov01 local_ov UserTable tbl_head01 tbl_wrap">
+        <div class="schedule_Btn">
+          <button class="defaultBtn Start" type="button" onclick="window.open('StartList_PDF.html')">
+            Start List(PDF)
+          </button>
+          <button class="defaultBtn BTN_blue4" type="button" onclick="window.open('OfficialResult_pdf.html')">
+            Official Result(PDF)
+          </button>
+          <button type="button" class="defaultBtn BTN_Red" onclick="window.open('summary_pdf.html')">
+            Summary(PDF)
+          </button>
+          <button type="button" class="defaultBtn excel_Print filedBTN">
+            Summary(Excel)
+          </button>
+          <button class="defaultBtn BTN_DarkBlue" type="button">
+            기록 전환
+          </button>
+          <span class="Result">마감</span>
+        </div>
+        <ul class="changeTableList">
+          <li class="changeTableItem">
+            <button class="changeBtn_color changeTableBtn" type="button">
+              7종
+            </button>
+          </li>
+          <li class="changeTableItem">
+            <button class="changeTableBtn" type="button">100mH</button>
+          </li>
+          <li class="changeTableItem">
+            <button class="changeTableBtn" type="button">높이뛰기</button>
+          </li>
+          <li class="changeTableItem">
+            <button class="changeTableBtn" type="button">200m</button>
+          </li>
+          <li class="changeTableItem">
+            <button class="changeTableBtn" type="button">포환 던지기</button>
+          </li>
+          <li class="changeTableItem">
+            <button class="changeTableBtn" type="button">멀리뛰기</button>
+          </li>
+          <li class="changeTableItem">
+            <button class="changeTableBtn" type="button">창던지기</button>
+          </li>
+          <li class="changeTableItem">
+            <button class="changeTableBtn" type="button">800m</button>
+          </li>
+        </ul>
+        <!-- 점수판 -->
+        <div class="scheduleViewTable TableList">
+          <form action="">
+            <div class="ViewTitleHash">
+              <div class="ViewTableTit">
+                <p>1조</p>
+              </div>
+              <div class="official ViewHash">
+                <span>Official Result</span>
+              </div>
+            </div>
+            <table class="box_table decaBacground one_Tr">
+              <colgroup>
+                <col style="width: 3%" />
+                <col style="width: 13%" />
+                <col style="width: 7%" />
+                <col style="width: 7%" />
+                <col style="width: 9%" />
+                <col style="width: 7%" />
+                <col style="width: 7%" />
+                <col style="width: 7%" />
+                <col style="width: 7%" />
+                <col style="width: 7%" />
+                <col style="width: 7%" />
+              </colgroup>
+              <thead class="result_table entry_table">
+                <tr>
+                  <th>순위</th>
+                  <th>이름</th>
+                  <th>총점</th>
+                  <th>100mH</th>
+                  <th>highjump</th>
+                  <th>shotput</th>
+                  <th>200m</th>
+                  <th>longjump</th>
+                  <th>javelinthrow</th>
+                  <th>800m</th>
+                  <th>비고</th>
+                  <th>신기록</th>
+                </tr>
+              </thead>
+
+              <tbody class="table_tbody De_tbody entry_table">
+                <tr>
+                  <td>1</td>
+                  <td>Ugiloy Norboeva</td>
+                  <td>5130</td>
+                  <td>769(15.560)</td>
+                  <td>830(1.68)</td>
+                  <td>639(11.66)</td>
+                  <td>687(27.300)</td>
+                  <td>663(5.37)</td>
+                  <td>834(48.65)</td>
+                  <td>708(2:28.823)</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody class="table_tbody De_tbody entry_table Ranklist_Background">
+                <tr>
+                  <td>2</td>
+                  <td>Hayashi Miki</td>
+                  <td>5095</td>
+                  <td>966(14.081)</td>
+                  <td>759(1.62)</td>
+                  <td>549(10.30)</td>
+                  <td>843(25.478)</td>
+                  <td>694(5.48)</td>
+                  <td>510(31.75)</td>
+                  <td>774(2:23.700)</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody class="table_tbody De_tbody entry_table">
+                <tr>
+                  <td>3</td>
+                  <td>Lin, Pei Hsuan</td>
+                  <td>5070</td>
+                  <td>890(14.639)</td>
+                  <td>941(1.77)</td>
+                  <td>591(10.93)</td>
+                  <td>781(26.189)</td>
+                  <td>573(5.05)</td>
+                  <td>638(38.48)</td>
+                  <td>656(2:32.955)</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody class="table_tbody De_tbody entry_table Ranklist_Background">
+                <tr>
+                  <td>4</td>
+                  <td>Wang, Tzu Hsuan</td>
+                  <td>5031</td>
+                  <td>817(15.187)</td>
+                  <td>795(1.65)</td>
+                  <td>613(11.27)</td>
+                  <td>780(26.192)</td>
+                  <td>747(5.66)</td>
+                  <td>619(37.47)</td>
+                  <td>660(2:32.624)</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody class="table_tbody De_tbody entry_table">
+                <tr>
+                  <td>5</td>
+                  <td>Saba Khorasani Zavarehvar</td>
+                  <td>4599</td>
+                  <td>809(15.248)</td>
+                  <td>689(1.56)</td>
+                  <td>520(9.85)</td>
+                  <td>786(26.124)</td>
+                  <td>592(5.12)</td>
+                  <td>452(28.70)</td>
+                  <td>751(2:25.427)</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody class="table_tbody De_tbody entry_table Ranklist_Background">
+                <tr>
+                  <td>6</td>
+                  <td>Chistyakova Alina</td>
+                  <td>4409</td>
+                  <td>838(15.024)</td>
+                  <td>795(1.65)</td>
+                  <td>518(9.83)</td>
+                  <td>795(26.028)</td>
+                  <td>712(5.54)</td>
+                  <td>0(NM)</td>
+                  <td>751(2:25.424)</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody class="table_tbody De_tbody entry_table">
+                <tr>
+                  <td>7</td>
+                  <td>Lee Hayan</td>
+                  <td>4173</td>
+                  <td>756(15.659)</td>
+                  <td>555(1.44)</td>
+                  <td>492(9.42)</td>
+                  <td>729(26.788)</td>
+                  <td>628(5.25)</td>
+                  <td>454(28.81)</td>
+                  <td>559(2:41.203)</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody class="table_tbody De_tbody entry_table Ranklist_Background">
+                <tr>
+                  <td>8</td>
+                  <td>Avdeyenko Yekaterina</td>
+                  <td>744</td>
+                  <td>744(15.757)</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="scheduleBtn">
+              <div>
+                <button class="defaultBtn BTN_DarkBlue" type="button" onclick="window.open('electronic_display.html')">
+                  전광판
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn BTN_Red2" type="button" onclick="window.open('ko_PDF_heptathlon.html')">
+                  PDF(한)
+                </button>
+              </div>
+
+              <div>
+                <button class="defaultBtn excel_Print" type="button">
+                  엑셀
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- 100mh -->
+        <div class="scheduleViewTable TableList hidden">
+          <form action="">
+            <div class="ViewTitleHash">
+              <div class="ViewTableTit">
+                <p>1조</p>
+              </div>
+              <div class="official ViewHash">
+                <span>Official Result</span>
+              </div>
+            </div>
+            <table class="box_table throwBackground one_Tr">
+              <colgroup>
+                <col style="width: 7%" />
+                <col style="width: 7%" />
+                <col style="width: 7%" />
+                <col style="width: 23%" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: 8%" />
+              </colgroup>
+              <thead class="result_table entry_table">
+                <tr>
+                  <th scope="col" colspan="1">레인</th>
+                  <th scope="col" colspan="1">등수</th>
+                  <th scope="col" colspan="1">등번호</th>
+                  <th scope="col" colspan="1">이름</th>
+                  <th scope="col" colspan="1">기록</th>
+                  <th scope="col" colspan="1">Reaction Time</th>
+                  <th scope="col" colspan="1">비고</th>
+                  <th scope="col" colspan="1">참고기록</th>
+                  <th scope="col" colspan="1">Q/q</th>
+                  <th scope="col" colspan="1">신기록</th>
+                </tr>
+              </thead>
+              <tbody class="table_tbody De_tbody entry_table">
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="6" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="1" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="446" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Rezoana Mallick Heena"
+                      maxlength="30" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="53.51"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="Q" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="4" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="2" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="564" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Liu, Chen Yu" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="55.80"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="Q" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="3" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="3" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="480" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Kidenko Sofya" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="56.13"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="Q" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="5" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="4" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="524" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Sin Hyunjin" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="56.76"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="q" maxlength="100" /></td>
+                  <td>SB</td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="8" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="5" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="516" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Lee Minkyung" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="57.01"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td>PB</td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="7" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="6" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="421" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Chow Chi Kiu" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="57.90"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="2" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="7" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="544" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Angkana Thongtae" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="59.07"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="scheduleBtn">
+              <div>
+                <button class="defaultBtn BTN_DarkBlue" type="button" onclick="window.open('electronic_display.html')">
+                  전광판
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn BTN_Red2" type="button" onclick="window.open('ko_PDF_run.html')">
+                  PDF(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn matchBtn" type="button" onclick="window.open('ko_PDF_run_sign.html')">
+                  사인란(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn BTN_Orange2" type="button" onclick="window.open('ko_PDF_heptathlon_SM.html')">
+                  PDF(SM)(한)
+                </button>
+              </div>
+
+              <div>
+                <button class="defaultBtn excel_Print" type="button">
+                  엑셀
+                </button>
+              </div>
+            </div>
+            <div class="scheduleInputBtn">
+              <button class="defaultBtn BIG_btn BTN_Orange" type="button"
+                onclick="window.open('track_result_view.html')">
+                기록 입력
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- 높이뛰기 -->
+        <div class="scheduleViewTable TableList hidden">
+          <form action="">
+            <div class="ViewTitleHash">
+              <div class="ViewTableTit">
+                <p>1조</p>
+              </div>
+              <div class="official ViewHash">
+                <span>Official Result</span>
+              </div>
+            </div>
+            <table class="box_table">
+              <colgroup>
+                <col style="width: 4%" />
+                <col style="width: 4%" />
+                <col style="width: 7%" />
+                <col style="width: 18%" />
+                <col style="width: 4%" />
+                <col style="width: 4%" />
+                <col style="width: 4%" />
+                <col style="width: 4%" />
+                <col style="width: 4%" />
+                <col style="width: 4%" />
+                <col style="width: 4%" />
+                <col style="width: 4%" />
+                <col style="width: 4%" />
+                <col style="width: 4%" />
+                <col style="width: 4%" />
+                <col style="width: 4%" />
+                <col style="width: 5%" />
+                <col style="width: 3%" />
+                <col style="width: 5%" />
+                <col style="width: 7%" />
+              </colgroup>
+              <thead class="result_table De_tbody entry_table">
+                <tr>
+                  <th rowspan="2">등수</th>
+                  <th rowspan="2">순서</th>
+                  <th rowspan="2">BIB</th>
+                  <th rowspan="2">이름</th>
+                  <th rowspan="1">4.50</th>
+                  <th rowspan="1">4.65</th>
+                  <th rowspan="1">4.80</th>
+                  <th rowspan="1">4.90</th>
+                  <th rowspan="1">5.00</th>
+                  <th rowspan="1">5.05</th>
+                  <th rowspan="1">5.10</th>
+                  <th rowspan="1">5.15</th>
+                  <th rowspan="1">5.20</th>
+                  <th rowspan="1">5.25</th>
+                  <th rowspan="1">5.36</th>
+                  <th rowspan="1">5.41</th>
+                  <th rowspan="2">기록</th>
+                  <th>비고</th>
+                  <th rowspan="2">참고기록</th>
+                  <th rowspan="2">메달</th>
+                </tr>
+                <tr>
+                  <th rowspan="1">5.50</th>
+                  <th rowspan="1"></th>
+                  <th rowspan="1"></th>
+                  <th rowspan="1"></th>
+                  <th rowspan="1"></th>
+                  <th rowspan="1"></th>
+                  <th rowspan="1"></th>
+                  <th rowspan="1"></th>
+                  <th rowspan="1"></th>
+                  <th rowspan="1"></th>
+                  <th rowspan="1"></th>
+                  <th rowspan="1"></th>
+                  <th>신기록</th>
+                </tr>
+              </thead>
+              <tbody class="table_tbody De_tbody entry_table Two_tr">
+                <tr id="col1" class="col1_1">
+                  <td rowspan="2">
+                    <input type="number" name="rank[326]" id="rank" value="1" min="1" required />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rain[326]" value="4" required />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" id="bib" name="playerbib[]" value="290" required readonly />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" id="name" name="playername[]"
+                      value="Seifeldin Mohamed A Abdelsalam" required readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult1" name="game_trial_result[326][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult2" name="game_trial_result[326][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult3" name="game_trial_result[326][]" value="O"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult4" name="game_trial_result[326][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult5" name="game_trial_result[326][]" value="O"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult6" name="game_trial_result[326][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult7" name="game_trial_result[326][]" value="O"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult8" name="game_trial_result[326][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult9" name="game_trial_result[326][]" value="O"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult10" name="game_trial_result[326][]" value="O"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult11" name="game_trial_result[326][]" value="O"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult12" name="game_trial_result[326][]" value="O"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[326]" value="5.50" required
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td><input type="text" name="bigo[326]" value="" /></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2">Gold</td>
+                </tr>
+                <tr id="col1" class="col2_1">
+                  <td rowspan="">
+                    <input type="text" id="gameresult13" name="game_trial_result[326][]" value="XO"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult14" name="game_trial_result[326][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult15" name="game_trial_result[326][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult16" name="game_trial_result[326][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult17" name="game_trial_result[326][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult18" name="game_trial_result[326][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult19" name="game_trial_result[326][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult20" name="game_trial_result[326][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult21" name="game_trial_result[326][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult22" name="game_trial_result[326][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult23" name="game_trial_result[326][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult24" name="game_trial_result[326][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td>
+                    <input type="text" name="newrecord[326]" value="CR" />
+                  </td>
+                </tr>
+                <tr id="col1" class="col1_2">
+                  <td rowspan="2">
+                    <input type="number" name="rank[9]" id="rank" value="2" min="1" required />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rain[9]" value="1" required />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" id="bib" name="playerbib[]" value="106" required readonly />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" id="name" name="playername[]" value="Liu Rui" required
+                      readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult1" name="game_trial_result[9][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult2" name="game_trial_result[9][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult3" name="game_trial_result[9][]" value="O"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult4" name="game_trial_result[9][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult5" name="game_trial_result[9][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult6" name="game_trial_result[9][]" value="O"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult7" name="game_trial_result[9][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult8" name="game_trial_result[9][]" value="O"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult9" name="game_trial_result[9][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult10" name="game_trial_result[9][]" value="XXX"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult11" name="game_trial_result[9][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult12" name="game_trial_result[9][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[9]" value="5.15" required onkeyup="highFormat(this)"
+                      readonly />
+                  </td>
+                  <td><input type="text" name="bigo[9]" value="" /></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2">Silver</td>
+                </tr>
+                <tr id="col1" class="col2_2">
+                  <td rowspan="">
+                    <input type="text" id="gameresult13" name="game_trial_result[9][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult14" name="game_trial_result[9][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult15" name="game_trial_result[9][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult16" name="game_trial_result[9][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult17" name="game_trial_result[9][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult18" name="game_trial_result[9][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult19" name="game_trial_result[9][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult20" name="game_trial_result[9][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult21" name="game_trial_result[9][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult22" name="game_trial_result[9][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult23" name="game_trial_result[9][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult24" name="game_trial_result[9][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td><input type="text" name="newrecord[9]" value="" /></td>
+                </tr>
+                <tr id="col1" class="col1_3">
+                  <td rowspan="2">
+                    <input type="number" name="rank[146]" id="rank" value="3" min="1" required />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rain[146]" value="8" required />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" id="bib" name="playerbib[]" value="177" required readonly />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" id="name" name="playername[]"
+                      value="Kitada(carle) Lui Oskar Seijiro" required readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult1" name="game_trial_result[146][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult2" name="game_trial_result[146][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult3" name="game_trial_result[146][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult4" name="game_trial_result[146][]" value="O"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult5" name="game_trial_result[146][]" value="XO"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult6" name="game_trial_result[146][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult7" name="game_trial_result[146][]" value="O"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult8" name="game_trial_result[146][]" value="XXX"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult9" name="game_trial_result[146][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult10" name="game_trial_result[146][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult11" name="game_trial_result[146][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult12" name="game_trial_result[146][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[146]" value="5.10" required
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td><input type="text" name="bigo[146]" value="" /></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2">Bronze</td>
+                </tr>
+                <tr id="col1" class="col2_3">
+                  <td rowspan="">
+                    <input type="text" id="gameresult13" name="game_trial_result[146][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult14" name="game_trial_result[146][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult15" name="game_trial_result[146][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult16" name="game_trial_result[146][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult17" name="game_trial_result[146][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult18" name="game_trial_result[146][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult19" name="game_trial_result[146][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult20" name="game_trial_result[146][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult21" name="game_trial_result[146][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult22" name="game_trial_result[146][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult23" name="game_trial_result[146][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult24" name="game_trial_result[146][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td>
+                    <input type="text" name="newrecord[146]" value="" />
+                  </td>
+                </tr>
+                <tr id="col1" class="col1_4">
+                  <td rowspan="2">
+                    <input type="number" name="rank[166]" id="rank" value="4" min="1" required />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rain[166]" value="9" required />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" id="bib" name="playerbib[]" value="192" required readonly />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" id="name" name="playername[]" value="Watanabe Eito" required
+                      readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult1" name="game_trial_result[166][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult2" name="game_trial_result[166][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult3" name="game_trial_result[166][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult4" name="game_trial_result[166][]" value="O"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult5" name="game_trial_result[166][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult6" name="game_trial_result[166][]" value="O"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult7" name="game_trial_result[166][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult8" name="game_trial_result[166][]" value="XXX"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult9" name="game_trial_result[166][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult10" name="game_trial_result[166][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult11" name="game_trial_result[166][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult12" name="game_trial_result[166][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[166]" value="5.05" required
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td><input type="text" name="bigo[166]" value="" /></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr id="col1" class="col2_4">
+                  <td rowspan="">
+                    <input type="text" id="gameresult13" name="game_trial_result[166][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult14" name="game_trial_result[166][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult15" name="game_trial_result[166][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult16" name="game_trial_result[166][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult17" name="game_trial_result[166][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult18" name="game_trial_result[166][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult19" name="game_trial_result[166][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult20" name="game_trial_result[166][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult21" name="game_trial_result[166][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult22" name="game_trial_result[166][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult23" name="game_trial_result[166][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult24" name="game_trial_result[166][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td>
+                    <input type="text" name="newrecord[166]" value="" />
+                  </td>
+                </tr>
+                <tr id="col1" class="col1_5">
+                  <td rowspan="2">
+                    <input type="number" name="rank[373]" id="rank" value="5" min="1" required />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rain[373]" value="7" required />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" id="bib" name="playerbib[]" value="318" required readonly />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" id="name" name="playername[]" value="Lin, Chun Yi" required
+                      readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult1" name="game_trial_result[373][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult2" name="game_trial_result[373][]" value="XXO"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult3" name="game_trial_result[373][]" value="XXO"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult4" name="game_trial_result[373][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult5" name="game_trial_result[373][]" value="O"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult6" name="game_trial_result[373][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult7" name="game_trial_result[373][]" value="XXX"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult8" name="game_trial_result[373][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult9" name="game_trial_result[373][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult10" name="game_trial_result[373][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult11" name="game_trial_result[373][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult12" name="game_trial_result[373][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[373]" value="5.00" required
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td><input type="text" name="bigo[373]" value="" /></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr id="col1" class="col2_5">
+                  <td rowspan="">
+                    <input type="text" id="gameresult13" name="game_trial_result[373][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult14" name="game_trial_result[373][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult15" name="game_trial_result[373][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult16" name="game_trial_result[373][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult17" name="game_trial_result[373][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult18" name="game_trial_result[373][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult19" name="game_trial_result[373][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult20" name="game_trial_result[373][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult21" name="game_trial_result[373][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult22" name="game_trial_result[373][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult23" name="game_trial_result[373][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult24" name="game_trial_result[373][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td>
+                    <input type="text" name="newrecord[373]" value="" />
+                  </td>
+                </tr>
+                <tr id="col1" class="col1_6">
+                  <td rowspan="2">
+                    <input type="number" name="rank[119]" id="rank" value="6" min="1" required />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rain[119]" value="3" required />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" id="bib" name="playerbib[]" value="157" required readonly />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" id="name" name="playername[]"
+                      value="Amirarshia Mosadeghi Dogaheh" required readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult1" name="game_trial_result[119][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult2" name="game_trial_result[119][]" value="XXO"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult3" name="game_trial_result[119][]" value="XO"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult4" name="game_trial_result[119][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult5" name="game_trial_result[119][]" value="XXX"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult6" name="game_trial_result[119][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult7" name="game_trial_result[119][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult8" name="game_trial_result[119][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult9" name="game_trial_result[119][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult10" name="game_trial_result[119][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult11" name="game_trial_result[119][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult12" name="game_trial_result[119][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[119]" value="4.80" required
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td><input type="text" name="bigo[119]" value="" /></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr id="col1" class="col2_6">
+                  <td rowspan="">
+                    <input type="text" id="gameresult13" name="game_trial_result[119][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult14" name="game_trial_result[119][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult15" name="game_trial_result[119][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult16" name="game_trial_result[119][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult17" name="game_trial_result[119][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult18" name="game_trial_result[119][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult19" name="game_trial_result[119][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult20" name="game_trial_result[119][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult21" name="game_trial_result[119][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult22" name="game_trial_result[119][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult23" name="game_trial_result[119][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult24" name="game_trial_result[119][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td>
+                    <input type="text" name="newrecord[119]" value="" />
+                  </td>
+                </tr>
+                <tr id="col1" class="col1_7">
+                  <td rowspan="2">
+                    <input type="number" name="rank[215]" id="rank" value="7" min="1" required />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rain[215]" value="5" required />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" id="bib" name="playerbib[]" value="217" required readonly />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" id="name" name="playername[]" value="Kim Chaemin" required
+                      readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult1" name="game_trial_result[215][]" value="O"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult2" name="game_trial_result[215][]" value="XXX"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult3" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult4" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult5" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult6" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult7" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult8" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult9" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult10" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult11" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult12" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[215]" value="4.50" required
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td><input type="text" name="bigo[215]" value="" /></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr id="col1" class="col2_7">
+                  <td rowspan="">
+                    <input type="text" id="gameresult13" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult14" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult15" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult16" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult17" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult18" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult19" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult20" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult21" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult22" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult23" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult24" name="game_trial_result[215][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td>
+                    <input type="text" name="newrecord[215]" value="" />
+                  </td>
+                </tr>
+                <tr id="col1" class="col1_8">
+                  <td rowspan="2">
+                    <input type="number" name="rank[68]" id="rank" value="8" min="1" required />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rain[68]" value="2" required />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" id="bib" name="playerbib[]" value="133" required readonly />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" id="name" name="playername[]" value="Dev Meena" required
+                      readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult1" name="game_trial_result[68][]" value="XXX"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult2" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult3" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult4" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult5" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult6" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult7" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult8" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult9" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult10" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult11" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult12" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[68]" value="NM" required onkeyup="highFormat(this)"
+                      readonly />
+                  </td>
+                  <td><input type="text" name="bigo[68]" value="" /></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr id="col1" class="col2_8">
+                  <td rowspan="">
+                    <input type="text" id="gameresult13" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult14" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult15" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult16" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult17" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult18" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult19" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult20" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult21" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult22" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult23" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult24" name="game_trial_result[68][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td><input type="text" name="newrecord[68]" value="" /></td>
+                </tr>
+                <tr id="col1" class="col1_9">
+                  <td rowspan="2">
+                    <input type="number" name="rank[387]" id="rank" value="8" min="1" required />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rain[387]" value="6" required />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" id="bib" name="playerbib[]" value="330" required readonly />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" id="name" name="playername[]" value="Wu, Yan Han" required
+                      readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult1" name="game_trial_result[387][]" value="-"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult2" name="game_trial_result[387][]" value="XXX"
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult3" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult4" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult5" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult6" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult7" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult8" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult9" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult10" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult11" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="1">
+                    <input type="text" id="gameresult12" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[387]" value="NM" required onkeyup="highFormat(this)"
+                      readonly />
+                  </td>
+                  <td><input type="text" name="bigo[387]" value="" /></td>
+                  <td rowspan="2"></td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr id="col1" class="col2_9">
+                  <td rowspan="">
+                    <input type="text" id="gameresult13" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult14" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult15" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult16" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult17" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult18" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult19" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult20" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult21" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult22" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult23" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td rowspan="">
+                    <input type="text" id="gameresult24" name="game_trial_result[387][]" value=""
+                      onkeyup="highFormat(this)" readonly />
+                  </td>
+                  <td>
+                    <input type="text" name="newrecord[387]" value="" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="scheduleBtn">
+              <div>
+                <button class="defaultBtn BTN_DarkBlue" type="button" onclick="window.open('electronic_display.html')">
+                  전광판
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn BTN_Red2" type="button" onclick="window.open('ko_PDF_vertical.html')">
+                  PDF(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn matchBtn" type="button" onclick="window.open('ko_PDF_vertical_sign.html')">
+                  사인란(한)
+                </button>
+              </div>
+
+              <div>
+                <button class="defaultBtn changeBtn_color" type="button"
+                  onclick="window.open('ko_PDF_vertical_enter.html')">
+                  기록지(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn excel_Print" type="button">
+                  엑셀
+                </button>
+              </div>
+            </div>
+            <div class="scheduleInputBtn">
+              <button class="defaultBtn BIG_btn BTN_Orange" type="button"
+                onclick="window.open('vertical_result_view.html')">
+                기록 입력
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- 200m -->
+        <div class="scheduleViewTable TableList hidden">
+          <form action="">
+            <div class="ViewTitleHash">
+              <div class="ViewTableTit">
+                <p>1조</p>
+              </div>
+              <div class="official ViewHash">
+                <span>Official Result</span>
+              </div>
+            </div>
+            <table class="box_table throwBackground one_Tr">
+              <colgroup>
+                <col style="width: 7%" />
+                <col style="width: 7%" />
+                <col style="width: 7%" />
+                <col style="width: 23%" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: 8%" />
+              </colgroup>
+              <thead class="result_table entry_table">
+                <tr>
+                  <th scope="col" colspan="1">레인</th>
+                  <th scope="col" colspan="1">등수</th>
+                  <th scope="col" colspan="1">등번호</th>
+                  <th scope="col" colspan="1">이름</th>
+                  <th scope="col" colspan="1">기록</th>
+                  <th scope="col" colspan="1">Reaction Time</th>
+                  <th scope="col" colspan="1">비고</th>
+                  <th scope="col" colspan="1">참고기록</th>
+                  <th scope="col" colspan="1">Q/q</th>
+                  <th scope="col" colspan="1">신기록</th>
+                </tr>
+              </thead>
+              <tbody class="table_tbody De_tbody entry_table">
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="6" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="1" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="446" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Rezoana Mallick Heena"
+                      maxlength="30" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="53.51"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="Q" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="4" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="2" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="564" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Liu, Chen Yu" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="55.80"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="Q" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="3" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="3" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="480" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Kidenko Sofya" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="56.13"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="Q" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="5" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="4" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="524" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Sin Hyunjin" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="56.76"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="q" maxlength="100" /></td>
+                  <td>SB</td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="8" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="5" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="516" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Lee Minkyung" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="57.01"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td>PB</td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="7" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="6" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="421" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Chow Chi Kiu" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="57.90"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="2" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="7" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="544" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Angkana Thongtae" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="59.07"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="scheduleBtn">
+              <div>
+                <button class="defaultBtn BTN_DarkBlue" type="button" onclick="window.open('electronic_display.html')">
+                  전광판
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn BTN_Red2" type="button" onclick="window.open('ko_PDF_run.html')">
+                  PDF(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn matchBtn" type="button" onclick="window.open('ko_PDF_run_sign.html')">
+                  사인란(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn BTN_Orange2" type="button" onclick="window.open('ko_PDF_heptathlon_SM.html')">
+                  PDF(SM)(한)
+                </button>
+              </div>
+
+              <div>
+                <button class="defaultBtn excel_Print" type="button">
+                  엑셀
+                </button>
+              </div>
+            </div>
+            <div class="scheduleInputBtn">
+              <button class="defaultBtn BIG_btn BTN_Orange" type="button"
+                onclick="window.open('track_result_view.html')">
+                기록 입력
+              </button>
+            </div>
+          </form>
+          <form action="">
+            <div class="ViewTitleHash">
+              <div class="ViewTableTit">
+                <p>2조</p>
+              </div>
+              <div class="official ViewHash">
+                <span>Official Result</span>
+              </div>
+            </div>
+            <table class="box_table throwBackground">
+              <colgroup>
+                <col style="width: 7%" />
+                <col style="width: 7%" />
+                <col style="width: 7%" />
+                <col style="width: 23%" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: 8%" />
+              </colgroup>
+              <thead class="result_table entry_table">
+                <tr>
+                  <th scope="col" colspan="1">레인</th>
+                  <th scope="col" colspan="1">등수</th>
+                  <th scope="col" colspan="1">등번호</th>
+                  <th scope="col" colspan="1">이름</th>
+                  <th scope="col" colspan="1">기록</th>
+                  <th scope="col" colspan="1">Reaction Time</th>
+                  <th scope="col" colspan="1">비고</th>
+                  <th scope="col" colspan="1">참고기록</th>
+                  <th scope="col" colspan="1">Q/q</th>
+                  <th scope="col" colspan="1">신기록</th>
+                </tr>
+              </thead>
+              <tbody class="table_tbody De_tbody entry_table">
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="6" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="1" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="446" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Rezoana Mallick Heena"
+                      maxlength="30" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="53.51"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="Q" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="4" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="2" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="564" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Liu, Chen Yu" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="55.80"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="Q" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="3" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="3" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="480" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Kidenko Sofya" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="56.13"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="Q" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="5" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="4" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="524" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Sin Hyunjin" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="56.76"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="q" maxlength="100" /></td>
+                  <td>SB</td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="8" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="5" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="516" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Lee Minkyung" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="57.01"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td>PB</td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="7" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="6" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="421" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Chow Chi Kiu" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="57.90"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="2" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="7" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="544" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Angkana Thongtae" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="59.07"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="scheduleBtn">
+              <div>
+                <button class="defaultBtn BTN_DarkBlue" type="button" onclick="window.open('electronic_display.html')">
+                  전광판
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn BTN_Red2" type="button" onclick="window.open('ko_PDF_run.html')">
+                  PDF(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn matchBtn" type="button" onclick="window.open('ko_PDF_run_sign.html')">
+                  사인란(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn BTN_Orange2" type="button" onclick="window.open('ko_PDF_heptathlon_SM.html')">
+                  PDF(SM)(한)
+                </button>
+              </div>
+
+              <div>
+                <button class="defaultBtn excel_Print" type="button">
+                  엑셀
+                </button>
+              </div>
+            </div>
+            <div class="scheduleInputBtn">
+              <button class="defaultBtn BIG_btn BTN_Orange" type="button"
+                onclick="window.open('track_result_view.html')">
+                기록 입력
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- 포환 던지기 -->
+        <div class="scheduleViewTable TableList hidden">
+          <form action="">
+            <div class="ViewTitleHash">
+              <div class="ViewTableTit">
+                <p>1조</p>
+              </div>
+              <div class="Start ViewHash">
+                <span>Start List</span>
+              </div>
+            </div>
+            <table class="box_table">
+              <colgroup>
+                <col style="width: 3%" />
+                <col style="width: 3%" />
+                <col style="width: 6%" />
+                <col style="width: 14%" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: 10%" />
+                <col style="width: 10%" />
+              </colgroup>
+              <thead class="result_table De_tbody entry_table">
+                <tr>
+                  <th rowspan="2">순서</th>
+                  <th rowspan="2">등수</th>
+                  <th rowspan="2">BIB</th>
+                  <th rowspan="2">이름</th>
+                  <th rowspan="2">1차 시기</th>
+                  <th rowspan="2">2차 시기</th>
+                  <th rowspan="2">3차 시기</th>
+                  <th rowspan="2">기록</th>
+                  <th>비고</th>
+                  <th rowspan="2">참고기록</th>
+                </tr>
+                <tr>
+                  <th>신기록</th>
+                </tr>
+              </thead>
+              <tbody class="table_tbody De_tbody entry_table Two_tr">
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="4" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="1" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="340" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Makhmudov Samandar" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="13.54" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="13.43" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="14.05" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="14.05" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="3" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="2" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="200" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Sening Ivan" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="13.03" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="12.18" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="X" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="13.03" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="8" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="3" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="342" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Nodir Norbaev" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="12.60" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="12.27" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="12.78" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="12.78" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="1" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="4" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="228" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Lee Yuseong" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="12.01" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="X" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="X" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="12.01" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="7" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="5" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="154" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Sunil Kumar" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="11.58" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="11.93" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="X" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="11.93" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="6" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="6" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="270" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Wilson Quaik Zhen Han" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="11.29" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="10.74" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="10.74" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="11.29" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="5" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="7" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="231" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Nam Hyunbin" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="10.94" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="10.91" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="X" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="10.94" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="scheduleBtn">
+              <div>
+                <button class="defaultBtn BTN_DarkBlue" type="button" onclick="window.open('electronic_display.html')">
+                  전광판
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn BTN_Red2" type="button" onclick="window.open('ko_PDF_throw.html')">
+                  PDF(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn matchBtn" type="button" onclick="window.open('ko_PDF_throw_sign.html')">
+                  사인란(한)
+                </button>
+              </div>
+
+              <div>
+                <button class="defaultBtn changeBtn_color" type="button"
+                  onclick="window.open('ko_PDF_throw_enter.html')">
+                  기록지(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn excel_Print" type="button">
+                  엑셀
+                </button>
+              </div>
+            </div>
+            <div class="scheduleInputBtn">
+              <button class="defaultBtn BIG_btn BTN_Orange" type="button"
+                onclick="window.open('dehe_throw_result_view.html')">
+                기록 입력
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- 멀러뛰기 -->
+        <div class="scheduleViewTable TableList hidden">
+          <form action="">
+            <div class="ViewTitleHash">
+              <div class="ViewTableTit">
+                <p>1조</p>
+              </div>
+              <div class="Live ViewHash">
+                <span>Live Result</span>
+              </div>
+            </div>
+            <table class="box_table">
+              <colgroup>
+                <col style="width: 3%" />
+                <col style="width: 3%" />
+                <col style="width: 6%" />
+                <col style="width: 14%" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: 10%" />
+                <col style="width: 10%" />
+              </colgroup>
+              <thead class="result_table De_tbody entry_table">
+                <tr>
+                  <th rowspan="2">순서</th>
+                  <th rowspan="2">등수</th>
+                  <th rowspan="2">BIB</th>
+                  <th rowspan="2">이름</th>
+                  <th rowspan="2">1차 시기</th>
+                  <th rowspan="2">2차 시기</th>
+                  <th rowspan="2">3차 시기</th>
+                  <th rowspan="2">기록</th>
+                  <th>비고</th>
+                  <th rowspan="2">참고기록</th>
+                </tr>
+                <tr>
+                  <th>신기록</th>
+                </tr>
+              </thead>
+              <tbody class="table_tbody De_tbody entry_table Two_tr">
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="7" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="1" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="340" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Makhmudov Samandar" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="X" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="6.85" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="6.94" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="6.94" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="5" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="2" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="231" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Nam Hyunbin" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="X" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="6.63" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="6.89" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="6.89" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="4" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="3" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="342" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Nodir Norbaev" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="6.85" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="3.27" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="6.44" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="6.85" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="3" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="4" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="154" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Sunil Kumar" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="6.83" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="6.83" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="X" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="6.83" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="2" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="5" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="228" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Lee Yuseong" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="6.80" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="6.82" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="6.78" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="6.82" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="8" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="6" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="270" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Wilson Quaik Zhen Han" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="X" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="X" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="6.54" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="6.54" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="1" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="7" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="200" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Sening Ivan" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="6.07" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="6.45" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="6.46" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="6.46" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="scheduleBtn">
+              <div>
+                <button class="defaultBtn BTN_DarkBlue" type="button" onclick="window.open('electronic_display.html')">
+                  전광판
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn BTN_Red2" type="button" onclick="window.open('ko_PDF_horizontal.html')">
+                  PDF(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn matchBtn" type="button" onclick="window.open('ko_PDF_horizontal_sign.html')">
+                  사인란(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn changeBtn_color" type="button"
+                  onclick="window.open('ko_PDF_horizontal_enter.html')">
+                  기록지(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn excel_Print" type="button">
+                  엑셀
+                </button>
+              </div>
+            </div>
+            <div class="scheduleInputBtn">
+              <button class="defaultBtn BIG_btn BTN_Orange" type="button"
+                onclick="window.open('dehe_horizontal_result_view.html')">
+                기록 입력
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- 창 던지기 -->
+        <div class="scheduleViewTable TableList hidden">
+          <form action="">
+            <div class="ViewTitleHash">
+              <div class="ViewTableTit">
+                <p>1조</p>
+              </div>
+              <div class="Start ViewHash">
+                <span>Start List</span>
+              </div>
+            </div>
+            <table class="box_table">
+              <colgroup>
+                <col style="width: 3%" />
+                <col style="width: 3%" />
+                <col style="width: 6%" />
+                <col style="width: 14%" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: 10%" />
+                <col style="width: 10%" />
+              </colgroup>
+              <thead class="result_table De_tbody entry_table">
+                <tr>
+                  <th rowspan="2">순서</th>
+                  <th rowspan="2">등수</th>
+                  <th rowspan="2">BIB</th>
+                  <th rowspan="2">이름</th>
+                  <th rowspan="2">1차 시기</th>
+                  <th rowspan="2">2차 시기</th>
+                  <th rowspan="2">3차 시기</th>
+                  <th rowspan="2">기록</th>
+                  <th>비고</th>
+                  <th rowspan="2">참고기록</th>
+                </tr>
+                <tr>
+                  <th>신기록</th>
+                </tr>
+              </thead>
+              <tbody class="table_tbody De_tbody entry_table Two_tr">
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="4" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="1" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="340" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Makhmudov Samandar" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="13.54" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="13.43" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="14.05" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="14.05" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="3" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="2" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="200" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Sening Ivan" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="13.03" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="12.18" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="X" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="13.03" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="8" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="3" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="342" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Nodir Norbaev" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="12.60" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="12.27" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="12.78" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="12.78" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="1" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="4" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="228" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Lee Yuseong" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="12.01" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="X" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="X" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="12.01" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="7" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="5" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="154" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Sunil Kumar" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="11.58" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="11.93" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="X" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="11.93" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="6" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="6" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="270" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Wilson Quaik Zhen Han" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="11.29" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="10.74" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="10.74" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="11.29" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">
+                    <input type="number" name="rain[]" value="5" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="number" name="rank[]" id="rank" value="7" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="BIB" type="text" value="231" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input placeholder="선수 이름" type="text" value="Nam Hyunbin" required="" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="10.94" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="10.91" readonly="" />
+                  </td>
+                  <td rowspan="2">
+                    <input type="text" name="game_trial_result[]" value="X" readonly="" />
+                  </td>
+
+                  <td rowspan="2">
+                    <input id="result" type="text" name="gameresult[]" value="10.94" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" readonly="" />
+                  </td>
+                  <td rowspan="2"></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="scheduleBtn">
+              <div>
+                <button class="defaultBtn BTN_DarkBlue" type="button" onclick="window.open('electronic_display.html')">
+                  전광판
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn BTN_Red2" type="button" onclick="window.open('ko_PDF_throw.html')">
+                  PDF(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn matchBtn" type="button" onclick="window.open('ko_PDF_throw_sign.html')">
+                  사인란(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn changeBtn_color" type="button"
+                  onclick="window.open('ko_PDF_throw_enter.html')">
+                  기록지(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn excel_Print" type="button">
+                  엑셀
+                </button>
+              </div>
+            </div>
+            <div class="scheduleInputBtn">
+              <button class="defaultBtn BIG_btn BTN_Orange" type="button"
+                onclick="window.open('dehe_throw_result_view.html')">
+                기록 입력
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- 800m -->
+        <div class="scheduleViewTable TableList hidden">
+          <form action="">
+            <div class="ViewTitleHash">
+              <div class="ViewTableTit">
+                <p>1조</p>
+              </div>
+              <div class="official ViewHash">
+                <span>Official Result</span>
+              </div>
+            </div>
+            <table class="box_table throwBackground one_Tr">
+              <colgroup>
+                <col style="width: 7%" />
+                <col style="width: 7%" />
+                <col style="width: 7%" />
+                <col style="width: 23%" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: 8%" />
+              </colgroup>
+              <thead class="result_table entry_table">
+                <tr>
+                  <th scope="col" colspan="1">레인</th>
+                  <th scope="col" colspan="1">등수</th>
+                  <th scope="col" colspan="1">등번호</th>
+                  <th scope="col" colspan="1">이름</th>
+                  <th scope="col" colspan="1">기록</th>
+                  <th scope="col" colspan="1">Reaction Time</th>
+                  <th scope="col" colspan="1">비고</th>
+                  <th scope="col" colspan="1">참고기록</th>
+                  <th scope="col" colspan="1">Q/q</th>
+                  <th scope="col" colspan="1">신기록</th>
+                </tr>
+              </thead>
+              <tbody class="table_tbody De_tbody entry_table">
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="6" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="1" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="446" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Rezoana Mallick Heena"
+                      maxlength="30" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="53.51"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="Q" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="4" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="2" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="564" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Liu, Chen Yu" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="55.80"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="Q" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="3" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="3" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="480" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Kidenko Sofya" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="56.13"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="Q" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="5" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="4" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="524" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Sin Hyunjin" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="56.76"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="q" maxlength="100" /></td>
+                  <td>SB</td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="8" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="5" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="516" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Lee Minkyung" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="57.01"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td>PB</td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="7" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="6" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="421" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Chow Chi Kiu" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="57.90"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="2" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="7" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="544" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Angkana Thongtae" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="59.07"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="scheduleBtn">
+              <div>
+                <button class="defaultBtn BTN_DarkBlue" type="button" onclick="window.open('electronic_display.html')">
+                  전광판
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn BTN_Red2" type="button" onclick="window.open('ko_PDF_run.html')">
+                  PDF(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn matchBtn" type="button" onclick="window.open('ko_PDF_run_sign.html')">
+                  사인란(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn excel_Print" type="button">
+                  엑셀
+                </button>
+              </div>
+            </div>
+            <div class="scheduleInputBtn">
+              <button class="defaultBtn BIG_btn BTN_Orange" type="button"
+                onclick="window.open('track_result_view.html')">
+                기록 입력
+              </button>
+            </div>
+          </form>
+          <form action="">
+            <div class="ViewTitleHash">
+              <div class="ViewTableTit">
+                <p>2조</p>
+              </div>
+              <div class="official ViewHash">
+                <span>Official Result</span>
+              </div>
+            </div>
+            <table class="box_table throwBackground">
+              <colgroup>
+                <col style="width: 7%" />
+                <col style="width: 7%" />
+                <col style="width: 7%" />
+                <col style="width: 23%" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: 8%" />
+              </colgroup>
+              <thead class="result_table entry_table">
+                <tr>
+                  <th scope="col" colspan="1">레인</th>
+                  <th scope="col" colspan="1">등수</th>
+                  <th scope="col" colspan="1">등번호</th>
+                  <th scope="col" colspan="1">이름</th>
+                  <th scope="col" colspan="1">기록</th>
+                  <th scope="col" colspan="1">Reaction Time</th>
+                  <th scope="col" colspan="1">비고</th>
+                  <th scope="col" colspan="1">참고기록</th>
+                  <th scope="col" colspan="1">Q/q</th>
+                  <th scope="col" colspan="1">신기록</th>
+                </tr>
+              </thead>
+              <tbody class="table_tbody De_tbody entry_table">
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="6" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="1" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="446" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Rezoana Mallick Heena"
+                      maxlength="30" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="53.51"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="Q" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="4" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="2" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="564" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Liu, Chen Yu" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="55.80"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="Q" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="3" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="3" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="480" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Kidenko Sofya" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="56.13"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="Q" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="5" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="4" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="524" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Sin Hyunjin" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="56.76"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="q" maxlength="100" /></td>
+                  <td>SB</td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="8" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="5" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="516" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Lee Minkyung" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="57.01"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td>PB</td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="7" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="6" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="421" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Chow Chi Kiu" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="57.90"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="number" name="rain[]" value="2" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" value="7" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="544" maxlength="30" required=""
+                      readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="선수 이름" type="text" name="playername[]" value="Angkana Thongtae" maxlength="30"
+                      required="" readonly="" />
+                  </td>
+                  <td>
+                    <input placeholder="경기 결과" type="text" name="gameresult[]" value="59.07"
+                      onkeyup="trackResultForm(this)" style="" />
+                  </td>
+                  <td>
+                    <input type="text" name="reactiontime[]" value="" onkeyup="trackReactionTimeForm(this)" style="" />
+                  </td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="scheduleBtn">
+              <div>
+                <button class="defaultBtn BTN_DarkBlue" type="button" onclick="window.open('electronic_display.html')">
+                  전광판
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn BTN_Red2" type="button" onclick="window.open('ko_PDF_run.html')">
+                  PDF(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn matchBtn" type="button" onclick="window.open('ko_PDF_run_sign.html')">
+                  사인란(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn excel_Print" type="button">
+                  엑셀
+                </button>
+              </div>
+            </div>
+            <div class="scheduleInputBtn">
+              <button class="defaultBtn BIG_btn BTN_Orange" type="button"
+                onclick="window.open('track_result_view.html')">
+                기록 입력
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- #adm_cont-->
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

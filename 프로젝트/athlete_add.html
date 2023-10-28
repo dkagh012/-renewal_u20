@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>선수 추가</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/xeicon.min.css" />
+  <script src="assets/js/jquery.js"></script>
+</head>
+<!-- 선수 추가 페이지 -->
+
+<body>
+  <div id="sh_adm_wrap_index">
+    <!-- 관리자모드 HEADER -->
+    <header>
+      <div id="sh_adm_hd">
+        <h1><a href="/index.html">육상 경기 운영 시스템</a></h1>
+        <ul id="sh_adm_nav">
+          <li>
+            <a href="/athlete_list.html">
+              <p>선수관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <p>경기관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/sports_list.html">경기목록</a></li>
+
+              <li><a href="/schedule_list.html">일정목록</a></li>
+              <li><a href="/group_list.html">조편성</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>기록관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/history_list.html">역대기록목록</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>통계관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/player_ranking_list.html">선수별 순위보기</a></li>
+              <li><a href="/new_record_list.html">신기록 경기기록</a></li>
+              <li><a href="/all_record.html">전체 기록보기</a></li>
+              <li><a href="/schedule_medal_list.html">경기별 메달보기</a></li>
+              <li>
+                <a href="/country_ranking_list.html">소속별 순위보기</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>기록관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="mypage.html">계정 정보</a></li>
+              <li><a href="change_password.html">비밀번호 변경</a></li>
+              <li><a href="account_write.html">계정 생성</a></li>
+              <li><a href="account_list.html">계정 목록</a></li>
+              <li><a href="log_list.html">로그 목록</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul id="sh_adm_gnb">
+          <li id="tnb_logout">
+            <a href="login.html">로그아웃</a>
+          </li>
+          <li class="mypage">
+            <a href="mypage.html"><i class="xi-profile-o"></i></a>
+          </li>
+          <li>
+            <button type="button" class="MobileTabMenuBtn">
+              <i class="xi-bars"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="MobileTabMenu hidden">
+        <!-- 관리자모드 SNB -->
+        <!-- 퀵메뉴 설정 팝업 스크립트 -->
+        <div class="MobileMenu">
+          <div class=" ">
+            <ul class="MobileMenuList">
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  참가자관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li>
+                    <a class="clicked" href="/athlete_list.html">선수목록</a>
+                  </li>
+                  <li><a href="/coach_list.html">코치목록</a></li>
+                  <li><a href="/judge_list.html">심판목록</a></li>
+                  <li><a href="/director_list.html">임원목록</a></li>
+                  <li><a href="/certificate_list.html">참가증서목록</a></li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  경기관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="/sports_list.html">경기목록</a></li>
+
+                  <li><a href="/schedule_list.html">일정목록</a></li>
+                  <li><a href="/group_list.html">조편성</a></li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  기록관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="/history_list.html">역대기록목록</a></li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  통계관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li>
+                    <a href="/player_ranking_list.html">선수별 순위보기</a>
+                  </li>
+                  <li><a href="/new_record_list.html">신기록 경기기록</a></li>
+                  <li><a href="/all_record.html">전체 기록보기</a></li>
+                  <li>
+                    <a href="/schedule_medal_list.html">경기별 메달보기</a>
+                  </li>
+                  <li>
+                    <a href="/country_ranking_list.html">소속별 순위보기</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  기록관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="mypage.html">계정 정보</a></li>
+                  <li><a href="change_password.html">비밀번호 변경</a></li>
+                  <li><a href="account_write.html">계정 생성</a></li>
+                  <li><a href="account_list.html">계정 목록</a></li>
+                  <li><a href="log_list.html">로그 목록</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="MobileBackground hidden"></div>
+      <div class="top">
+        <div id="js-scroll">
+          <i class="xi-caret-up-min topBtn"> </i>
+          <p>TOP</p>
+        </div>
+      </div>
+      <div id="sh_adm_count">
+        <ul>
+          <li><a class="clicked" href="/athlete_list.html">선수관리</a></li>
+        </ul>
+      </div>
+    </header>
+    <div id="sh_adm_cont_wrap" class="MobileScroll">
+      <div class="local_ov01 local_ov UserTable">
+        <div class="UserCnt">
+          <div class="title">
+            <h2>선수 등록</h2>
+          </div>
+        </div>
+
+        <form action="">
+          <div class="tbl_frm01 tbl_wrap">
+            <table>
+              <colgroup>
+                <col width="6%" />
+                <col width="44%" />
+                <col width="6%" />
+                <col width="44%" />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row"><label for="mb_id">이름</label></th>
+                  <td>
+                    <input type="text" class="frm_input required alnum_" name="athlete_name" id="athlete_name" size="15"
+                      value="" placeholder="이름을 입력해 주세요" required="" />
+                  </td>
+                  <th scope="row">성별</th>
+                  <td>
+                    <select name="athlete_gender" required="">
+                      <option value="" selected="" disabled="" hidden="">
+                        성별 선택
+                      </option>
+                      <option value="m">남자</option>
+                      <option value="f">여자</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><label for="mb_area">BIB</label></th>
+                  <td>
+                    <input type="number" class="frm_input alnum_" name="athlete_bib" id="athlete_bib" value="" size="10"
+                      placeholder="등번호를 입력해 주세요" maxlength="6" oninput="maxLengthCheck(this)" />
+                  </td>
+                  <th scope="row"><label for="mb_team">지역</label></th>
+                  <td>
+                    <input type="text" name="athlete_region" class="frm_input required alnum_" id="athlete_region"
+                      size="15" value="" placeholder="지역을 입력해 주세요" required="" />
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><label for="mb_team">소속</label></th>
+                  <td>
+                    <input type="text" name="athlete_division" class="frm_input required alnum_" id="athlete_division"
+                      size="15" value="" placeholder="소속을 입력해 주세요" required="" />
+                  </td>
+                  <th scope="row"><label for="mb_age">나이</label></th>
+                  <td>
+                    <input type="number" name="athlete_age" class="frm_input required alnum_" id="athlete_age" value=""
+                      size="10" maxlength="2" oninput="maxLengthCheck(this)" placeholder="나이를 입력해 주세요" required="" />
+                  </td>
+                </tr>
+
+                <tr>
+                  <th scope="row"><label for="mb_Br">생년월일</label></th>
+                  <td>
+                    <input type="number" name="athlete_birth_year" size="10" class="frm_input required alnum_"
+                      placeholder="연" maxlength="4" oninput="maxLengthCheck(this)" required="" />
+                    <input type="number" name="athlete_birth_month" size="10" class="frm_input required alnum_"
+                      placeholder="월" maxlength="2" oninput="maxLengthCheck(this)" required="" />
+                    <input type="number" name="athlete_birth_day" size="10" class="frm_input required alnum_"
+                      placeholder="일" maxlength="2" oninput="maxLengthCheck(this)" required="" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modifyform">
+            <div class="modify_check fullwidth">
+              <div class="modify_enter modify_tit_color">
+                <p class="tit_left_red">참석예정경기</p>
+                <ul class="modify_checkList">
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="100m"
+                        id="100m" /><span>100m</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="100mH" id="100m Hurdles" /><span>100m
+                        Hurdles</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="110mH" id="110m Hurdles" /><span>110m
+                        Hurdles</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="200m"
+                        id="200m" /><span>200m</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="400m"
+                        id="400m" /><span>400m</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="400mH" id="400m Hurdles" /><span>400m
+                        Hurdles</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="4x100mR"
+                        id="4x100 Relay" /><span>4x100 Relay</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="4x400mR"
+                        id="4x400 Relay" /><span>4x400 Relay</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="4x400mR(Mixed)"
+                        id="4x400 Mixed Relay" /><span>4x400 Mixed Relay</span></label>
+                  </li>
+
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="800m"
+                        id="800m" /><span>800m</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="1500m"
+                        id="1500m" /><span>1500m</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="3000m"
+                        id="3000m" /><span>3000m</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="3000mSC"
+                        id="3000m Steeplechase" /><span>3000m Steeplechase</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="5000m"
+                        id="5000m" /><span>5000m</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="10000mW"
+                        id="10000m Race Walk" /><span>10000m Race Walk</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="decathlon"
+                        id="Decathlon" /><span>Decathlon</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="discusthrow"
+                        id="Discus Throw" /><span>Discus Throw</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="hammerthrow"
+                        id="Hammer Throw" /><span>Hammer Throw</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="heptathlon"
+                        id="Heptathlon" /><span>Heptathlon</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="highjump" id="High Jump" /><span>High
+                        Jump</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="javelinthrow"
+                        id="Javelin Throw" /><span>Javelin Throw</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="longjump" id="Long Jump" /><span>Long
+                        Jump</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="polevault"
+                        id="Pole Vault" /><span>Pole Vault</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="shotput"
+                        id="ShotPut" /><span>ShotPut</span></label>
+                  </li>
+                  <li>
+                    <label><input type="checkbox" name="athlete_schedule[]" value="triplejump"
+                        id="Triple Jump" /><span>Triple Jump</span></label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="modifyform athleteCheck">
+            <div class="modify_check">
+              <div class="modify_enter modify_tit_color" id="sb-section">
+                <p class="">SB</p>
+                <ul class="modify_checkList" id="sb-input">
+                  <select name="athlete_sb_sports[]" id="sb-sports-select" class="Input_height Sb_Pb_width">
+                    <option value="" selected="" disabled="" hidden="">
+                      종목 선택
+                    </option>
+
+                    <option value="10000mW">10000m Race Walk</option>
+                    <option value="100m">100m</option>
+                    <option value="100mH">100m Hurdles</option>
+                    <option value="110mH">110m Hurdles</option>
+                    <option value="1500m">1500m</option>
+                    <option value="200m">200m</option>
+                    <option value="3000m">3000m</option>
+                    <option value="3000mSC">3000m Steeplechase</option>
+                    <option value="400m">400m</option>
+                    <option value="400mH">400m Hurdles</option>
+                    <option value="4x100mR">4x100 Relay</option>
+                    <option value="4x400mR">4x400 Relay</option>
+                    <option value="4x400mR(Mixed)">4x400 Mixed Relay</option>
+                    <option value="5000m">5000m</option>
+                    <option value="800m">800m</option>
+                    <option value="discusthrow">Discus Throw</option>
+                    <option value="hammerthrow">Hammer Throw</option>
+                    <option value="highjump">High Jump</option>
+                    <option value="javelinthrow">Javelin Throw</option>
+                    <option value="longjump">Long Jump</option>
+                    <option value="polevault">Pole Vault</option>
+                    <option value="shotput">ShotPut</option>
+                    <option value="triplejump">Triple Jump</option>
+                    <option value="decathlon(100m)">Decathlon(100mH)</option>
+                    <option value="decathlon(longjump)">
+                      Decathlon(longjump)
+                    </option>
+                    <option value="decathlon(shotput)">
+                      Decathlon(shotput)
+                    </option>
+                    <option value="decathlon(highjump)">
+                      Decathlon(highjump)
+                    </option>
+                    <option value="decathlon(400m)">Decathlon(400m)</option>
+                    <option value="decathlon(110mH)">Decathlon(110mH)</option>
+                    <option value="decathlon(discusthrow)">
+                      Decathlon(discusthrow)
+                    </option>
+                    <option value="decathlon(polevalut)">
+                      Decathlon(polevalut)
+                    </option>
+                    <option value="decathlon(javelinthrow)">
+                      Decathlon(javelinthrow)
+                    </option>
+                    <option value="decathlon(1500m)">Decathlon(1500m)</option>
+                    <option value="heptathlon(100mH)">
+                      Heptathlon(100mH)
+                    </option>
+                    <option value="heptathlon(highjump)">
+                      Heptathlon(highjump)
+                    </option>
+                    <option value="heptathlon(shotput)">
+                      Heptathlon(shotput)
+                    </option>
+                    <option value="heptathlon(longjump)">
+                      Heptathlon(longjump)
+                    </option>
+                    <option value="heptathlon(javelinthrow)">
+                      Heptathlon(javelinthrow)
+                    </option>
+                    <option value="heptathlon(800m)">Heptathlon(800m)</option>
+                  </select>
+                  <input type="text" class="Input_height" name="athlete_sb[]" id="athlete_sb" value=""
+                    placeholder="SB를 입력해 주세요" />
+                  <button type="button" class="defaultBtn BIG_btn delete-column-btn" id="delete-sb">
+                    <p>삭제</p>
+                  </button>
+                </ul>
+              </div>
+              <div class="filed_BTN2">
+                <button type="button" class="defaultBtn add-column-btn BIG_btn" id="add-sb">
+                  <p>추가</p>
+                </button>
+              </div>
+            </div>
+            <div class="modify_check">
+              <div class="modify_enter" id="pb-section">
+                <p class="tit_left_green">PB</p>
+                <ul class="modify_checkList" id="pb-input">
+                  <select name="athlete_pb_sports[]" class="Input_height Sb_Pb_width" id="pb-sports-select">
+                    <option value="" selected="" disabled="" hidden="">
+                      종목 선택
+                    </option>
+                    <option value="10000mW">10000m Race Walk</option>
+                    <option value="100m">100m</option>
+                    <option value="100mH">100m Hurdles</option>
+                    <option value="110mH">110m Hurdles</option>
+                    <option value="1500m">1500m</option>
+                    <option value="200m">200m</option>
+                    <option value="3000m">3000m</option>
+                    <option value="3000mSC">3000m Steeplechase</option>
+                    <option value="400m">400m</option>
+                    <option value="400mH">400m Hurdles</option>
+                    <option value="4x100mR">4x100 Relay</option>
+                    <option value="4x400mR">4x400 Relay</option>
+                    <option value="4x400mR(Mixed)">4x400 Mixed Relay</option>
+                    <option value="5000m">5000m</option>
+                    <option value="800m">800m</option>
+                    <option value="discusthrow">Discus Throw</option>
+                    <option value="hammerthrow">Hammer Throw</option>
+                    <option value="highjump">High Jump</option>
+                    <option value="javelinthrow">Javelin Throw</option>
+                    <option value="longjump">Long Jump</option>
+                    <option value="polevault">Pole Vault</option>
+                    <option value="shotput">ShotPut</option>
+                    <option value="triplejump">Triple Jump</option>
+                    <option value="decathlon(100m)">Decathlon(100mH)</option>
+                    <option value="decathlon(longjump)">
+                      Decathlon(longjump)
+                    </option>
+                    <option value="decathlon(shotput)">
+                      Decathlon(shotput)
+                    </option>
+                    <option value="decathlon(highjump)">
+                      Decathlon(highjump)
+                    </option>
+                    <option value="decathlon(400m)">Decathlon(400m)</option>
+                    <option value="decathlon(110mH)">Decathlon(110mH)</option>
+                    <option value="decathlon(discusthrow)">
+                      Decathlon(discusthrow)
+                    </option>
+                    <option value="decathlon(polevalut)">
+                      Decathlon(polevalut)
+                    </option>
+                    <option value="decathlon(javelinthrow)">
+                      Decathlon(javelinthrow)
+                    </option>
+                    <option value="decathlon(1500m)">Decathlon(1500m)</option>
+                    <option value="heptathlon(100mH)">
+                      Heptathlon(100mH)
+                    </option>
+                    <option value="heptathlon(highjump)">
+                      Heptathlon(highjump)
+                    </option>
+                    <option value="heptathlon(shotput)">
+                      Heptathlon(shotput)
+                    </option>
+                    <option value="heptathlon(longjump)">
+                      Heptathlon(longjump)
+                    </option>
+                    <option value="heptathlon(javelinthrow)">
+                      Heptathlon(javelinthrow)
+                    </option>
+                    <option value="heptathlon(800m)">Heptathlon(800m)</option>
+                  </select>
+                  <input type="text" class="Input_height" name="athlete_pb[]" id="athlete_pb" value=""
+                    placeholder="PB를 입력해 주세요" />
+                  <button type="button" class="defaultBtn BIG_btn delete-column-btn" id="delete-pb">
+                    <p>삭제</p>
+                  </button>
+                </ul>
+              </div>
+              <div class="filed_BTN2">
+                <button type="button" class="defaultBtn add-column-btn BIG_btn" id="add-pb">
+                  <p>추가</p>
+                </button>
+              </div>
+            </div>
+            <script>
+              // sb 추가 버튼
+              $(document).ready(function () {
+                $("#add-sb").click(function () {
+                  var list = $("#sb-input").clone(); // Make a copy of the <ul> element
+                  $("#sb-section").append(list); // Append the copy to the body of the document
+                });
+              });
+              // pb 추가 버튼
+              $(document).ready(function () {
+                $("#add-pb").click(function () {
+                  var list = $("#pb-input").clone(); // Make a copy of the <ul> element
+                  $("#pb-section").append(list); // Append the copy to the body of the document
+                });
+              });
+              // sb 삭제 버튼
+              $(document).ready(function () {
+                $(document).on("click", "#delete-sb", function () {
+                  $(this).parent().remove();
+                });
+              });
+              // pb 삭제 버튼
+              $(document).ready(function () {
+                $(document).on("click", "#delete-pb", function () {
+                  $(this).parent().remove();
+                });
+              });
+            </script>
+          </div>
+          <div class="addBtn">
+            <a class="btn btn_02" href="/athlete_list.html">목록</a>
+            <button class="btn_submit btn" type="submit">확인</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- #adm_cont-->
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

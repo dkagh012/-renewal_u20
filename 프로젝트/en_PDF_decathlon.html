@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Word File Content</title>
+  <link rel="stylesheet" href="../assets/css/pdf.css" />
+</head>
+<script>
+  // window.print();
+</script>
+<!-- 
+  인원은12명이 한 페이지에 오게 해주시면  됩니다
+ -->
+<style>
+  @page {
+    size: 210mm 297mm;
+    /*A4*/
+  }
+
+  @media print {
+    .PDF_wrap {}
+
+    html,
+    body {
+      -webkit-print-color-adjust: exact;
+      width: 210mm;
+      height: 297mm;
+    }
+
+  }
+
+  table {
+    width: 100%;
+  }
+
+  .PDF_wrap {
+    padding: 0.5cm 0.7cm 2cm 0.7cm;
+  }
+
+  .PDF_wrap .header_table>th {
+    border: 0;
+    height: 30px;
+    padding: 0 5px;
+
+  }
+
+  .PDF_wrap .pdf_table_body>tr>td {
+    border: 0;
+    border-bottom: 1px solid #000;
+    height: 50px;
+    padding: 0 5px;
+  }
+
+  .PDF_wrap .world_record>table>tbody>tr>td {
+    border: 0;
+    border-bottom: 1px solid #000;
+    padding: 3px;
+  }
+
+  .PDF_wrap .PDF_footer,
+  .PDF_wrap .en_PDF_footer {
+    width: calc(100% - 1.4cm);
+  }
+
+  .page_number {
+    right: 0.7cm;
+  }
+
+  .pdf_table_body>tr>td:nth-child(1) {
+    text-align: right;
+    font-weight: bold;
+  }
+
+  .pdf_table_body>tr>td:nth-child(2) {
+    text-align: right;
+  }
+
+  .pdf_table_body>tr>td:nth-child(3) {
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .pdf_table_body>tr>td:nth-child(4) {
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .pdf_table_body>tr>td:nth-child(5) {
+    text-align: left;
+  }
+
+  .pdf_table_body>tr>td:nth-child(6) {
+    text-align: right;
+  }
+
+  .pdf_table_body>tr>td:nth-child(7) {
+    text-align: right;
+    font-weight: bold;
+  }
+
+  .pdf_table_body>tr>td:nth-child(8) {
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .pdf_table_body>tr>td:nth-child(8)>span {
+    background: #00a73c;
+    padding: 2px 4px;
+    color: white;
+  }
+
+  .pdf_table_head>tr>th:nth-child(1) {
+    text-align: right;
+  }
+
+  .pdf_table_head>tr>th:nth-child(2) {
+    text-align: right;
+  }
+
+  .pdf_table_head>tr>th:nth-child(3) {
+    text-align: center;
+  }
+
+  .pdf_table_head>tr>th:nth-child(4) {
+    text-align: left;
+  }
+
+  .pdf_table_head>tr>th:nth-child(5) {
+    text-align: left;
+  }
+
+  .pdf_table_head>tr>th:nth-child(6) {
+    text-align: right;
+  }
+
+  .pdf_table_head>tr>th:nth-child(7) {
+    text-align: right;
+  }
+</style>
+
+<body>
+  <div class="PDF_wrap en_wrap hori_pdf">
+    <header class="pdf_header">
+      <div class="pdf_right_logo">
+        <img src="assets/images/logo3.png" alt="">
+      </div>
+      <div class="pdf_left_logo">
+        <img src="assets/images/logo.png" alt="">
+      </div>
+      <div>
+        <div class="PDF_tit">
+          <p class="main_title">
+            20th ASIAN U20 ATHLETICS CHAMPIONSHIPS
+          </p>
+          <p>
+            Yecheon
+          </p>
+          <p>
+            4th - 7th June 2023
+          </p>
+        </div>
+        <div class="PDF_result">
+          <p>RESULT</p>
+        </div>
+      </div>
+    </header>
+    <div class="page_number">
+      <p>Page</p>
+      <p class="pageNumber">1</p>
+      <span>/</span>
+      <p class="pageAllNumber">1</p>
+    </div>
+    <div class="word_wrap">
+      <div class="word_container">
+        <div class="pdf_info_two">
+          <div>
+            <p>Decathlon MEN</p>
+          </div>
+          <div>
+            <p>Final</p>
+            <p>5 Jun 2023 / 00:00</p>
+          </div>
+        </div>
+        <div class="word_run" style="">
+          <table class="box_table">
+            <!-- 달리기 테이블  -->
+            <colgroup>
+              <col width="5%">
+              <col width="9%">
+              <col>
+              <col width="6%">
+              <col width="10%">
+              <col width="9%">
+              <col width="17%">
+            </colgroup>
+            <thead class="pdf_table_head">
+              <tr class="header_table">
+                <th scope="col" style="font-size:10px;">Rank</th>
+                <th scope="col" style="font-size:10px;">Bib</th>
+                <th scope="col" style="font-size:10px;">Name</th>
+                <th scope="col" style="font-size:10px;">Nat.</th>
+                <th scope="col" style="font-size:10px;">Birth</th>
+                <th scope="col" style="font-size:10px;">Point</th>
+                <th scope="col" style="font-size:10px;"></th>
+              </tr>
+            </thead>
+            <tbody class=" pdf_table_body" style="text-align: center;">
+              <tr>
+                <td rowspan="1" scope="col"></td>
+                <td rowspan="1" scope="col">270</td>
+                <td rowspan="1" scope="col">Wilson Quaik Zhen Han</td>
+                <td rowspan="1" scope="col">MAS</td>
+                <td rowspan="1" scope="col">10 Apr 2004</td>
+                <td rowspan="1" scope="col" style="font-weight: bold;">DQ<span class="DQ_result">(0.123)</span></td>
+                <td rowspan="1" scope="col" style="font-weight: bold;">
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" scope="col"></td>
+                <td rowspan="1" scope="col">342</td>
+                <td rowspan="1" scope="col">Nodir Norbaev</td>
+                <td rowspan="1" scope="col">UZB</td>
+                <td rowspan="1" scope="col">4 Feb 2005</td>
+                <td rowspan="1" scope="col" style="font-weight: bold;">DQ<span class="DQ_result">(0.123)</span></td>
+                <td rowspan="1" scope="col" style="font-weight: bold;">
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" scope="col"></td>
+                <td rowspan="1" scope="col">340</td>
+                <td rowspan="1" scope="col">Makhmudov Samandar</td>
+                <td rowspan="1" scope="col">UZB</td>
+                <td rowspan="1" scope="col">13 Oct 2004</td>
+                <td rowspan="1" scope="col" style="font-weight: bold;">DQ<span class="DQ_result">(0.123)</span></td>
+                <td rowspan="1" scope="col" style="font-weight: bold;">
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" scope="col"></td>
+                <td rowspan="1" scope="col">200</td>
+                <td rowspan="1" scope="col">Sening Ivan</td>
+                <td rowspan="1" scope="col">KAZ</td>
+                <td rowspan="1" scope="col">20 Jun 2006</td>
+                <td rowspan="1" scope="col" style="font-weight: bold;">DQ<span class="DQ_result">(0.123)</span></td>
+                <td rowspan="1" scope="col" style="font-weight: bold;">
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" scope="col"></td>
+                <td rowspan="1" scope="col">251</td>
+                <td rowspan="1" scope="col">Mohammed Rashid Alsubaie</td>
+                <td rowspan="1" scope="col">KSA</td>
+                <td rowspan="1" scope="col">11 Aug 2004</td>
+                <td rowspan="1" scope="col" style="font-weight: bold;">DQ<span class="DQ_result">(0.123)</span></td>
+                <td rowspan="1" scope="col" style="font-weight: bold;">
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" scope="col"></td>
+                <td rowspan="1" scope="col">244</td>
+                <td rowspan="1" scope="col">Ali Hassan Beedh</td>
+                <td rowspan="1" scope="col">KSA</td>
+                <td rowspan="1" scope="col">25 Apr 2004</td>
+                <td rowspan="1" scope="col" style="font-weight: bold;">DQ<span class="DQ_result">(0.123)</span></td>
+                <td rowspan="1" scope="col" style="font-weight: bold;">
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" scope="col"></td>
+                <td rowspan="1" scope="col">154</td>
+                <td rowspan="1" scope="col">Sunil Kumar</td>
+                <td rowspan="1" scope="col">IND</td>
+                <td rowspan="1" scope="col">27 May 2004</td>
+                <td rowspan="1" scope="col" style="font-weight: bold;">DQ<span class="DQ_result">(0.123)</span></td>
+                <td rowspan="1" scope="col" style="font-weight: bold;">
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" scope="col"></td>
+                <td rowspan="1" scope="col">231</td>
+                <td rowspan="1" scope="col">Nam Hyunbin</td>
+                <td rowspan="1" scope="col">KOR</td>
+                <td rowspan="1" scope="col">6 Aug 2005</td>
+                <td rowspan="1" scope="col" style="font-weight: bold;">DQ<span class="DQ_result">(0.123)</span></td>
+                <td rowspan="1" scope="col" style="font-weight: bold;">
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" scope="col"></td>
+                <td rowspan="1" scope="col">228</td>
+                <td rowspan="1" scope="col">Lee Yuseong</td>
+                <td rowspan="1" scope="col">KOR</td>
+                <td rowspan="1" scope="col">13 Sep 2004</td>
+                <td rowspan="1" scope="col" style="font-weight: bold;">DQ<span class="DQ_result">(0.123)</span></td>
+                <td rowspan="1" scope="col" style="font-weight: bold;">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="sign_footer">
+        <div>Recorder:<span></span>
+        </div>
+        <div>Referee :<span></span>
+        </div>
+        <div>Chief Judge :<span></span>
+        </div>
+        <div>ITO:<span></span>
+        </div>
+      </div>
+      <div class="world_record">
+        <div class="PDF_result">
+          <p>Record History</p>
+        </div>
+        <table>
+          <thead>
+            <tr class="header_table">
+              <th>Record</th>
+              <th>Result</th>
+              <th>Wind</th>
+              <th>Name</th>
+              <th>Nat.</th>
+              <th>Location</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody style=" text-align: center; border: 0; ">
+          </tbody>
+        </table>
+      </div>
+      <footer class="PDF_footer">
+      </footer>
+    </div>
+</body>
+
+</html>

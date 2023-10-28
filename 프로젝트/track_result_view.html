@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>육상 경기 운영 시스템</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/xeicon.min.css" />
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/onlynumber.js"></script>
+</head>
+<script>
+  function rankcal1() {
+    let re = document.querySelectorAll("#result"); //결과 요소 가져옴
+    let ran = document.querySelectorAll("#rank"); //둥수 요소가져옴
+    let arr1 = {};
+    // 객체에 결과 저장
+    for (i = 0; i < re.length; i++) {
+      let k = i;
+      arr1[k] = re[i].value;
+    }
+
+    let keysSorted = Object.keys(arr1).sort(function (a, b) {
+      if (arr1[a].includes(":")) {
+        let time_a = arr1[a].split(":");
+        if (time_a.length <= 2) {
+          arr1[a] = time_a[0] * 60 + time_a[1];
+        } else if (time_a.length === 3) {
+          arr1[a] = time_a[0] * 3600 + time_a[1] * 60 + time_a[2];
+        }
+      }
+      if (arr1[b].includes(":")) {
+        let time_b = arr1[b].split(":");
+        if (time_b.length <= 2) {
+          arr1[b] = time_b[0] * 60 + time_b[1];
+        } else if (time_b.length === 3) {
+          arr1[b] = time_b[0] * 3600 + time_b[1] * 60 + time_b[2];
+        }
+      }
+
+      if (isNaN(arr1[a]) && isNaN(arr1[b])) {
+        // DQ, DNF, DNS 정렬
+        let rank_a = arr1[a] === "DQ" ? 1 : arr1[a] === "DNF" ? 2 : 3;
+        let rank_b = arr1[b] === "DQ" ? 1 : arr1[b] === "DNF" ? 2 : 3;
+
+        if (rank_a !== rank_b) {
+          return rank_a - rank_b;
+        }
+      } else if (isNaN(arr1[a])) {
+        return 1;
+      } else if (isNaN(arr1[b])) {
+        return -1;
+      } else {
+        let num_a = parseFloat(arr1[a]);
+        let num_b = parseFloat(arr1[b]);
+        if (num_a == num_b) {
+          return 0; // 두 값이 같으면 0 반환
+        }
+        return num_a - num_b;
+      }
+    });
+
+    // 등수대로 기입
+    let currentRank = 1;
+    for (i = 0; i < ran.length; i++) {
+      ran[keysSorted[i]].value = currentRank;
+      if (i < ran.length - 1) {
+        let currentValue = parseFloat(arr1[keysSorted[i]]);
+        let nextValue = parseFloat(arr1[keysSorted[i + 1]]);
+        if (currentValue !== nextValue) {
+          currentRank = i + 2;
+        }
+      }
+    }
+  }
+  function openTextFile() {
+    var input = document.createElement("input");
+    input.type = "file";
+    input.accept = "txt/plain"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
+    input.onchange = function (event) {
+      processFile(event.target.files[0]);
+    };
+    input.click();
+  }
+
+  function processFile(file) {
+    var reader = new FileReader();
+    reader.onload = function () {
+      let ddd = reader.result.split("\r\n");
+      let wind = document.querySelector('[name="wind"]');
+      console.log(wind);
+      // let check = document.getElementsByTagName('th')[1].textContent;
+      let val = ddd[0].split(",")[4];
+      if (wind !== null) {
+        if (val != "") {
+          wind.value = val;
+        } else {
+          wind.value = "0";
+        }
+      }
+      for (i = 1; i < ddd.length; i++) {
+        let k = ddd[i].split(",");
+        let on;
+        if (
+          !document.querySelector("#id" + k[1]) &&
+          !document.querySelector("#rane" + k[2])
+        ) {
+          continue;
+        }
+        if (!document.querySelector("#id" + k[1])) {
+          if (!k[1]) continue;
+          on = document.querySelector("#rane" + k[2]).children;
+        } else {
+          if (!k[1]) continue;
+          on = document.querySelector("#id" + k[1]).children;
+        }
+        if (k[6]) {
+          on[5].firstElementChild.value = k[6];
+        } else if (k[0] == "DNS") {
+          on[5].firstElementChild.value = "DNS";
+        } else if (k[0] == "DNF") {
+          on[5].firstElementChild.value = "DNF";
+        } else {
+          on[5].firstElementChild.value = "DQ";
+        }
+        if (k[9]) {
+          on[7].firstElementChild.value = k[9];
+        }
+      }
+      rankcal1();
+    };
+    reader.readAsText(file, /* optional */ "utf-8");
+    input_time(true);
+  }
+  function openTxtFile() {
+    var input = document.createElement("input");
+    input.type = "file";
+    input.accept = ".txt"; // 확장자가 txt 일 때
+    input.onchange = function (event) {
+      txtprocessFile(event.target.files[0]);
+    };
+    input.click();
+  }
+  function txtprocessFile(file) {
+    var reader = new FileReader();
+    reader.onload = function () {
+      let lines = reader.result.split("\n");
+
+      let wind = document.querySelector('[name="wind"]');
+      let headerLine = lines[0].split("\t");
+      let windValue = headerLine[3];
+
+      if (wind !== null) {
+        if (windValue !== "") {
+          wind.value = windValue;
+        } else {
+          wind.value = "0";
+        }
+      }
+
+      for (let i = 2; i < lines.length; i++) {
+        let cols = lines[i].split("\t");
+        if (cols.length < 5) continue; // skip lines with insufficient data
+
+        let lane = cols[1];
+        let id = cols[3];
+        let time = cols[2];
+
+        console.log(lane);
+        console.log(id);
+        console.log(time);
+        let on;
+        if (
+          !document.querySelector("#id" + id) &&
+          !document.querySelector("#rane" + lane)
+        ) {
+          continue;
+        }
+
+        if (!document.querySelector("#id" + id)) {
+          if (!id) continue;
+          on = document.querySelector("#rane" + lane).children;
+        } else {
+          if (!id) continue;
+          on = document.querySelector("#id" + id).children;
+        }
+
+        if (time) {
+          time = time.replace(/M/, ""); // "M" 문자를 제거
+          on[5].firstElementChild.value = time;
+        } else if (info === "DNS") {
+          on[5].firstElementChild.value = "DNS";
+        } else if (info === "DNF") {
+          on[5].firstElementChild.value = "DNF";
+        } else {
+          on[5].firstElementChild.value = "DQ";
+        }
+      }
+      rankcal1();
+    };
+    reader.readAsText(file, /* optional */ "utf-8");
+    input_time(true);
+  }
+</script>
+
+<body>
+  <div id="sh_adm_wrap_index">
+    <!-- 관리자모드 HEADER -->
+    <header>
+      <div id="sh_adm_hd">
+        <h1><a href="/index.html">육상 경기 운영 시스템</a></h1>
+        <ul id="sh_adm_nav">
+          <li>
+            <a href="/athlete_list.html">
+              <p>선수관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <p>경기관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/sports_list.html">경기목록</a></li>
+
+              <li>
+                <a class="clicked" href="/schedule_list.html">일정목록</a>
+              </li>
+              <li><a href="/group_list.html">조편성</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>기록관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/history_list.html">역대기록목록</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>통계관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/player_ranking_list.html">선수별 순위보기</a></li>
+              <li><a href="/new_record_list.html">신기록 경기기록</a></li>
+              <li><a href="/all_record.html">전체 기록보기</a></li>
+              <li><a href="/schedule_medal_list.html">경기별 메달보기</a></li>
+              <li>
+                <a href="/country_ranking_list.html">소속별 순위보기</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>기록관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="mypage.html">계정 정보</a></li>
+              <li><a href="change_password.html">비밀번호 변경</a></li>
+              <li><a href="account_write.html">계정 생성</a></li>
+              <li><a href="account_list.html">계정 목록</a></li>
+              <li><a href="log_list.html">로그 목록</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul id="sh_adm_gnb">
+          <li id="tnb_logout">
+            <a href="login.html">로그아웃</a>
+          </li>
+          <li class="mypage">
+            <a href="mypage.html"><i class="xi-profile-o"></i></a>
+          </li>
+          <li>
+            <button type="button" class="MobileTabMenuBtn">
+              <i class="xi-bars"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="MobileTabMenu hidden">
+        <!-- 관리자모드 SNB -->
+        <!-- 퀵메뉴 설정 팝업 스크립트 -->
+        <div class="MobileMenu">
+          <div class=" ">
+            <ul class="MobileMenuList">
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  참가자관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li>
+                    <a href="/athlete_list.html">선수목록</a>
+                  </li>
+                  <li><a href="/coach_list.html">코치목록</a></li>
+                  <li><a href="/judge_list.html">심판목록</a></li>
+                  <li><a href="/director_list.html">임원목록</a></li>
+                  <li>
+                    <a href="/certificate_list.html">참가증서목록</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  경기관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="/sports_list.html">경기목록</a></li>
+
+                  <li>
+                    <a class="clicked" href="/schedule_list.html">일정목록</a>
+                  </li>
+                  <li>
+                    <a href="/group_list.html">조편성</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  기록관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="/history_list.html">역대기록목록</a></li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  통계관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li>
+                    <a href="/player_ranking_list.html">선수별 순위보기</a>
+                  </li>
+                  <li><a href="/new_record_list.html">신기록 경기기록</a></li>
+                  <li><a href="/all_record.html">전체 기록보기</a></li>
+                  <li>
+                    <a href="/schedule_medal_list.html">경기별 메달보기</a>
+                  </li>
+                  <li>
+                    <a href="/country_ranking_list.html">소속별 순위보기</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  기록관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="mypage.html">계정 정보</a></li>
+                  <li><a href="change_password.html">비밀번호 변경</a></li>
+                  <li><a href="account_write.html">계정 생성</a></li>
+                  <li><a href="account_list.html">계정 목록</a></li>
+                  <li><a href="log_list.html">로그 목록</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="MobileBackground hidden"></div>
+      <div class="top">
+        <div id="js-scroll">
+          <i class="xi-caret-up-min topBtn"> </i>
+          <p>TOP</p>
+        </div>
+      </div>
+      <div id="sh_adm_count">
+        <ul>
+          <li><a href="/sports_list.html">경기목록</a></li>
+
+          <li><a class="clicked" href="/schedule_list.html">일정목록</a></li>
+          <li><a href="/group_list.html">조편성</a></li>
+        </ul>
+      </div>
+    </header>
+    <div id="sh_adm_cont_wrap" class="MobileScroll">
+      <div class="local_ov01 local_ov min1024">
+        <!-- <form action=""> -->
+        <div class="result_view_tbale">
+          <table>
+            <tbody>
+              <tr>
+                <th>경기 종목</th>
+                <td>
+                  <input type="text" id="Sport" value="100M" />
+                </td>
+                <th>라운드</th>
+                <td>
+                  <input type="text" id="Round" value="Final Result" />
+                </td>
+              </tr>
+              <tr>
+                <th>성별</th>
+                <td><input type="text" id="Gender" value="M" /></td>
+                <th>풍속</th>
+                <td><input type="text" name="wind" id="wind" value="" /></td>
+              </tr>
+              <tr>
+                <th>현재 시간</th>
+                <td>
+                  <input placeholder="박스를 클릭하세요" type="text" id="Time" name="starttime" onclick="input_time()" />
+                </td>
+              </tr>
+              <input type="hidden" value="Test" id="title" />
+              <input type="hidden" value="Test" id="group" />
+            </tbody>
+          </table>
+        </div>
+        <div class="ResultTable">
+          <table class="box_table throwBackground">
+            <colgroup>
+              <col style="width: 4%" />
+              <col style="width: 4%" />
+              <col style="width: 7%" />
+              <col />
+              <col style="width: 5%" />
+              <col style="width: 8%" />
+              <col style="width: 10%" />
+              <col style="width: 5%" />
+              <col style="width: 5%" />
+              <col style="width: 6%" />
+              <col style="width: 6%" />
+            </colgroup>
+            <thead class="result_table entry_table">
+              <tr>
+                <th>등수</th>
+                <th>레인</th>
+                <th>등 번호</th>
+                <th>이름</th>
+                <th>국가</th>
+                <th>경기 결과</th>
+
+                <th>Reaction Time</th>
+                <th>비고</th>
+                <th>참고기록</th>
+                <th>Q/q</th>
+                <th>신기록</th>
+                <th>메달</th>
+              </tr>
+            </thead>
+            <tbody class="entry_table">
+              <tr id="rane6">
+                <td>
+                  <input type="number" name="rank[]" id="rank" value="" min="1" required="" />
+                </td>
+                <td>
+                  <input type="number" name="rain[]" value="6" min="1" required="" readonly />
+                </td>
+                <td>
+                  <input placeholder="등번호" type="text" name="playerbib[]" id="bib" value="446" maxlength="30"
+                    required="" readonly />
+                </td>
+                <td>
+                  <input placeholder="선수 이름" type="text" name="playername[]" value="Rezoana Mallick Heena"
+                    maxlength="30" required="" readonly /><input type="hidden" name="athlete_id[]" value="94"
+                    maxlength="30" />
+                </td>
+                <td>
+                  <input placeholder="국가" type="text" id="Country" name="country" value="IND" maxlength="30" required=""
+                    readonly />
+                </td>
+                <td>
+                  <input placeholder="경기 결과를 입력해주세요" type="text" name="gameresult[]" id="result" value="53.51"
+                    maxlength="15" required="" onkeyup="trackFinal(this)"
+                    style="float: left; width: auto; padding-right: 5px" />
+                </td>
+                <td>
+                  <input placeholder="Reaction Time" type="text" name="reactiontime[]" id="reactiontime" value=""
+                    maxlength="9" onkeyup="trackReactionTimeForm(this)" style="float: left; padding-right: 5px" /><input
+                    type="hidden" name="compresult[]" value="53.51" />
+                </td>
+                <td>
+                  <input placeholder="비고를 입력해주세요" type="text" id="Bigo" name="bigo[]" value="" maxlength="100" />
+                </td>
+                <td>
+                  <input id="RR" type="checkbox" name="record_rr[94]" maxlength="100" />
+                </td>
+                <td>
+                  <input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" />
+                </td>
+                <td>
+                  <input placeholder="" type="text" id="Newrecord" name="newrecord[]" value="" maxlength="100"
+                    ath="Rezoana Mallick Heena" sports="400m" record_round="heats" and record_gender="f" and
+                    record_group="1" record="53.51" />
+                </td>
+              </tr>
+
+              <tr id="rane4">
+                <td>
+                  <input type="number" name="rank[]" id="rank" value="" min="1" required="" />
+                </td>
+                <td>
+                  <input type="number" name="rain[]" value="4" min="1" required="" readonly />
+                </td>
+                <td>
+                  <input placeholder="등번호" type="text" name="playerbib[]" id="bib" value="564" maxlength="30"
+                    required="" readonly />
+                </td>
+                <td>
+                  <input placeholder="선수 이름" type="text" name="playername[]" value="Liu, Chen Yu" maxlength="30"
+                    required="" readonly /><input type="hidden" name="athlete_id[]" value="395" maxlength="30" />
+                </td>
+                <td>
+                  <input placeholder="국가" type="text" id="Country" name="country" value="TPE" maxlength="30" required=""
+                    readonly />
+                </td>
+                <td>
+                  <input placeholder="경기 결과를 입력해주세요" type="text" name="gameresult[]" id="result" value="55.80"
+                    maxlength="15" required="" onkeyup="trackFinal(this)"
+                    style="float: left; width: auto; padding-right: 5px" />
+                </td>
+                <td>
+                  <input placeholder="Reaction Time" type="text" name="reactiontime[]" id="reactiontime" value=""
+                    maxlength="9" onkeyup="trackReactionTimeForm(this)" style="float: left; padding-right: 5px" /><input
+                    type="hidden" name="compresult[]" value="55.80" />
+                </td>
+                <td>
+                  <input placeholder="비고를 입력해주세요" type="text" id="Bigo" name="bigo[]" value="" maxlength="100" />
+                </td>
+                <td>
+                  <input id="RR" type="checkbox" name="record_rr[395]" maxlength="100" />
+                </td>
+                <td>
+                  <input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" />
+                </td>
+                <td>
+                  <input placeholder="" type="text" id="Newrecord" name="newrecord[]" value="" maxlength="100"
+                    ath="Liu, Chen Yu" sports="400m" record_round="heats" and record_gender="f" and record_group="1"
+                    record="55.80" />
+                </td>
+              </tr>
+
+              <tr id="rane3">
+                <td>
+                  <input type="number" name="rank[]" id="rank" value="" min="1" required="" />
+                </td>
+                <td>
+                  <input type="number" name="rain[]" value="3" min="1" required="" readonly />
+                </td>
+                <td>
+                  <input placeholder="등번호" type="text" name="playerbib[]" id="bib" value="480" maxlength="30"
+                    required="" readonly />
+                </td>
+                <td>
+                  <input placeholder="선수 이름" type="text" name="playername[]" value="Kidenko Sofya" maxlength="30"
+                    required="" readonly /><input type="hidden" name="athlete_id[]" value="176" maxlength="30" />
+                </td>
+                <td>
+                  <input placeholder="국가" type="text" id="Country" name="country" value="KAZ" maxlength="30" required=""
+                    readonly />
+                </td>
+                <td>
+                  <input placeholder="경기 결과를 입력해주세요" type="text" name="gameresult[]" id="result" value="56.13"
+                    maxlength="15" required="" onkeyup="trackFinal(this)"
+                    style="float: left; width: auto; padding-right: 5px" />
+                </td>
+                <td>
+                  <input placeholder="Reaction Time" type="text" name="reactiontime[]" id="reactiontime" value=""
+                    maxlength="9" onkeyup="trackReactionTimeForm(this)" style="float: left; padding-right: 5px" /><input
+                    type="hidden" name="compresult[]" value="56.13" />
+                </td>
+                <td>
+                  <input placeholder="비고를 입력해주세요" type="text" id="Bigo" name="bigo[]" value="" maxlength="100" />
+                </td>
+                <td>
+                  <input id="RR" type="checkbox" name="record_rr[176]" maxlength="100" />
+                </td>
+                <td>
+                  <input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" />
+                </td>
+                <td>
+                  <input placeholder="" type="text" id="Newrecord" name="newrecord[]" value="" maxlength="100"
+                    ath="Kidenko Sofya" sports="400m" record_round="heats" and record_gender="f" and record_group="1"
+                    record="56.13" />
+                </td>
+              </tr>
+
+              <tr id="rane5">
+                <td>
+                  <input type="number" name="rank[]" id="rank" value="" min="1" required="" />
+                </td>
+                <td>
+                  <input type="number" name="rain[]" value="5" min="1" required="" readonly />
+                </td>
+                <td>
+                  <input placeholder="등번호" type="text" name="playerbib[]" id="bib" value="524" maxlength="30"
+                    required="" readonly />
+                </td>
+                <td>
+                  <input placeholder="선수 이름" type="text" name="playername[]" value="Sin Hyunjin" maxlength="30"
+                    required="" readonly /><input type="hidden" name="athlete_id[]" value="264" maxlength="30" />
+                </td>
+                <td>
+                  <input placeholder="국가" type="text" id="Country" name="country" value="KOR" maxlength="30" required=""
+                    readonly />
+                </td>
+                <td>
+                  <input placeholder="경기 결과를 입력해주세요" type="text" name="gameresult[]" id="result" value="56.76"
+                    maxlength="15" required="" onkeyup="trackFinal(this)"
+                    style="float: left; width: auto; padding-right: 5px" />
+                </td>
+                <td>
+                  <input placeholder="Reaction Time" type="text" name="reactiontime[]" id="reactiontime" value=""
+                    maxlength="9" onkeyup="trackReactionTimeForm(this)" style="float: left; padding-right: 5px" /><input
+                    type="hidden" name="compresult[]" value="56.76" />
+                </td>
+                <td>
+                  <input placeholder="비고를 입력해주세요" type="text" id="Bigo" name="bigo[]" value="" maxlength="100" />
+                </td>
+                <td>
+                  <input id="RR" type="checkbox" name="record_rr[264]" maxlength="100" />
+                </td>
+                <td>
+                  <input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" />
+                </td>
+                <td>
+                  <input placeholder="" type="text" id="Newrecord" name="newrecord[]" value="SB" maxlength="100"
+                    ath="Sin Hyunjin" sports="400m" record_round="heats" and record_gender="f" and record_group="1"
+                    record="56.76" />
+                </td>
+              </tr>
+
+              <tr id="rane8">
+                <td>
+                  <input type="number" name="rank[]" id="rank" value="" min="1" required="" />
+                </td>
+                <td>
+                  <input type="number" name="rain[]" value="8" min="1" required="" readonly />
+                </td>
+                <td>
+                  <input placeholder="등번호" type="text" name="playerbib[]" id="bib" value="516" maxlength="30"
+                    required="" readonly />
+                </td>
+                <td>
+                  <input placeholder="선수 이름" type="text" name="playername[]" value="Lee Minkyung" maxlength="30"
+                    required="" readonly /><input type="hidden" name="athlete_id[]" value="247" maxlength="30" />
+                </td>
+                <td>
+                  <input placeholder="국가" type="text" id="Country" name="country" value="KOR" maxlength="30" required=""
+                    readonly />
+                </td>
+                <td>
+                  <input placeholder="경기 결과를 입력해주세요" type="text" name="gameresult[]" id="result" value="57.01"
+                    maxlength="15" required="" onkeyup="trackFinal(this)"
+                    style="float: left; width: auto; padding-right: 5px" />
+                </td>
+                <td>
+                  <input placeholder="Reaction Time" type="text" name="reactiontime[]" id="reactiontime" value=""
+                    maxlength="9" onkeyup="trackReactionTimeForm(this)" style="float: left; padding-right: 5px" /><input
+                    type="hidden" name="compresult[]" value="57.01" />
+                </td>
+                <td>
+                  <input placeholder="비고를 입력해주세요" type="text" id="Bigo" name="bigo[]" value="" maxlength="100" />
+                </td>
+                <td>
+                  <input id="RR" type="checkbox" name="record_rr[247]" maxlength="100" />
+                </td>
+                <td>
+                  <input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" />
+                </td>
+                <td>
+                  <input placeholder="" type="text" id="Newrecord" name="newrecord[]" value="PB" maxlength="100"
+                    ath="Lee Minkyung" sports="400m" record_round="heats" and record_gender="f" and record_group="1"
+                    record="57.01" />
+                </td>
+              </tr>
+
+              <tr id="rane7">
+                <td>
+                  <input type="number" name="rank[]" id="rank" value="" min="1" required="" />
+                </td>
+                <td>
+                  <input type="number" name="rain[]" value="7" min="1" required="" readonly />
+                </td>
+                <td>
+                  <input placeholder="등번호" type="text" name="playerbib[]" id="bib" value="421" maxlength="30"
+                    required="" readonly />
+                </td>
+                <td>
+                  <input placeholder="선수 이름" type="text" name="playername[]" value="Chow Chi Kiu" maxlength="30"
+                    required="" readonly /><input type="hidden" name="athlete_id[]" value="35" maxlength="30" />
+                </td>
+                <td>
+                  <input placeholder="국가" type="text" id="Country" name="country" value="HKG" maxlength="30" required=""
+                    readonly />
+                </td>
+                <td>
+                  <input placeholder="경기 결과를 입력해주세요" type="text" name="gameresult[]" id="result" value="57.90"
+                    maxlength="15" required="" onkeyup="trackFinal(this)"
+                    style="float: left; width: auto; padding-right: 5px" />
+                </td>
+                <td>
+                  <input placeholder="Reaction Time" type="text" name="reactiontime[]" id="reactiontime" value=""
+                    maxlength="9" onkeyup="trackReactionTimeForm(this)" style="float: left; padding-right: 5px" /><input
+                    type="hidden" name="compresult[]" value="57.90" />
+                </td>
+                <td>
+                  <input placeholder="비고를 입력해주세요" type="text" id="Bigo" name="bigo[]" value="" maxlength="100" />
+                </td>
+                <td>
+                  <input id="RR" type="checkbox" name="record_rr[35]" maxlength="100" />
+                </td>
+                <td>
+                  <input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" />
+                </td>
+                <td>
+                  <input placeholder="" type="text" id="Newrecord" name="newrecord[]" value="" maxlength="100"
+                    ath="Chow Chi Kiu" sports="400m" record_round="heats" and record_gender="f" and record_group="1"
+                    record="57.90" />
+                </td>
+              </tr>
+
+              <tr id="rane2">
+                <td>
+                  <input type="number" name="rank[]" id="rank" value="" min="1" required="" />
+                </td>
+                <td>
+                  <input type="number" name="rain[]" value="2" min="1" required="" readonly />
+                </td>
+                <td>
+                  <input placeholder="등번호" type="text" name="playerbib[]" id="bib" value="544" maxlength="30"
+                    required="" readonly />
+                </td>
+                <td>
+                  <input placeholder="선수 이름" type="text" name="playername[]" value="Angkana Thongtae" maxlength="30"
+                    required="" readonly /><input type="hidden" name="athlete_id[]" value="344" maxlength="30" />
+                </td>
+                <td>
+                  <input placeholder="국가" type="text" id="Country" name="country" value="THA" maxlength="30" required=""
+                    readonly />
+                </td>
+                <td>
+                  <input placeholder="경기 결과를 입력해주세요" type="text" name="gameresult[]" id="result" value="59.07"
+                    maxlength="15" required="" onkeyup="trackFinal(this)"
+                    style="float: left; width: auto; padding-right: 5px" />
+                </td>
+                <td>
+                  <input placeholder="Reaction Time" type="text" name="reactiontime[]" id="reactiontime" value=""
+                    maxlength="9" onkeyup="trackReactionTimeForm(this)" style="float: left; padding-right: 5px" /><input
+                    type="hidden" name="compresult[]" value="59.07" />
+                </td>
+                <td>
+                  <input placeholder="비고를 입력해주세요" type="text" id="Bigo" name="bigo[]" value="" maxlength="100" />
+                </td>
+                <td>
+                  <input id="RR" type="checkbox" name="record_rr[344]" maxlength="100" />
+                </td>
+                <td>
+                  <input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" />
+                </td>
+                <td>
+                  <input placeholder="" type="text" id="Newrecord" name="newrecord[]" value="" maxlength="100"
+                    ath="Angkana Thongtae" sports="400m" record_round="heats" and record_gender="f" and record_group="1"
+                    record="59.07" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="addBtn">
+          <span class="btn State"><input type="text" id="State" value="Start List" /></span>
+          <button type="button" onclick="openTextFile()" class="btn pdf_BTN2">
+            자동 입력(lif)
+          </button>
+          <button type="button" onclick="openTxtFile()" class="btn BTN_Red">
+            자동 입력(txt)
+          </button>
+          <button class="btn_submit btn" onclick="SendTrackData( )">
+            확인
+          </button>
+        </div>
+        <!-- </form> -->
+      </div>
+    </div>
+  </div>
+  <!-- #adm_cont-->
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

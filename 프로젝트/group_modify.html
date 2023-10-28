@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>릴레이 등록 페이지</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/select2.min.css" />
+  <link rel="stylesheet" href="./assets/css/xeicon.min.css" />
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/select2.min.js"></script>
+</head>
+<!-- 일반 등록 페이지 -->
+
+<body>
+  <header>
+    <div id="sh_adm_hd">
+      <h1><a href="main">육상 경기 운영 시스템</a></h1>
+      <ul id="sh_adm_nav">
+        <li>
+          <a href="athlete_list">
+            <p>선수관리</p>
+            <i class="xi-angle-down-min"></i>
+          </a>
+          <ul class="nav_smn">
+            <li><a href="athlete_list">선수 목록</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="clicked" href="sports_list">
+            <p>경기관리</p>
+            <i class="xi-angle-down-min"></i>
+          </a>
+          <ul class="nav_smn">
+            <li><a href="sports_list">경기 목록</a></li>
+            <li><a href="schedule_list">일정목록</a></li>
+            <li><a class="clicked" href="group_list">조편성 목록</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="history_list">
+            <p>기록관리</p>
+            <i class="xi-angle-down-min"></i>
+          </a>
+          <ul class="nav_smn">
+            <li><a href="history_list">역대기록 목록</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="all_record">
+            <p>통계관리</p>
+            <i class="xi-angle-down-min"></i>
+          </a>
+          <ul class="nav_smn">
+            <li><a href="all_record">전체 기록보기</a></li>
+            <li><a href="player_ranking_list">선수별 순위보기</a></li>
+            <li><a href="new_record_list">신기록 경기기록</a></li>
+            <li><a href="schedule_ranking_list">경기별 순위보기</a></li>
+            <li><a href="schedule_medal_list">경기별 메달보기</a></li>
+            <li><a href="country_ranking_list">소속별 순위보기</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="mypage">
+            <p>계정관리</p>
+            <i class="xi-angle-down-min"></i>
+          </a>
+          <ul class="nav_smn">
+            <li><a href="mypage">계정 정보</a></li>
+            <li><a href="change_password">비빌번호 변경</a></li>
+            <li><a href="account_write">계정 생성</a></li>
+            <li><a href="account_list">계정 목록</a></li>
+            <li><a href="log_list">로그 목록</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul id="sh_adm_gnb">
+        <li id="tnb_logout">
+          <a href="action/auth/logout.php"> 로그아웃 </a>
+        </li>
+        <li class="mypage">
+          <a href="mypage"><i class="xi-profile-o"></i></a>
+        </li>
+        <li>
+          <button type="button" class="MobileTabMenuBtn">
+            <i class="xi-bars"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="MobileTabMenu hidden">
+      <!-- 관리자모드 SNB -->
+      <!-- 퀵메뉴 설정 팝업 스크립트 -->
+      <div class="MobileMenu">
+        <div class=" ">
+          <ul class="MobileMenuList">
+            <li class="MobileMenuItem">
+              <div class="MobileMenuTitle">
+                참가자관리
+                <i class="xi-angle-down-min"></i>
+              </div>
+              <ul class="MenuList" style="display: none">
+                <li><a href="athlete_list">선수 목록</a></li>
+              </ul>
+            </li>
+            <li class="MobileMenuItem">
+              <div class="MobileMenuTitle">
+                경기관리
+                <i class="xi-angle-down-min"></i>
+              </div>
+              <ul class="MenuList" style="display: none">
+                <li><a href="sports_list">경기 목록</a></li>
+                <li><a href="schedule_list">일정목록</a></li>
+                <li><a class="clicked" href="group_list">조편성 목록</a></li>
+              </ul>
+            </li>
+            <li class="MobileMenuItem">
+              <div class="MobileMenuTitle">
+                기록관리
+                <i class="xi-angle-down-min"></i>
+              </div>
+              <ul class="MenuList" style="display: none">
+                <li><a href="history_list">역대기록 목록</a></li>
+              </ul>
+            </li>
+            <li class="MobileMenuItem">
+              <div class="MobileMenuTitle">
+                통계관리
+                <i class="xi-angle-down-min"></i>
+              </div>
+              <ul class="MenuList" style="display: none">
+                <li><a href="all_record">전체 기록보기</a></li>
+                <li><a href="player_ranking_list">선수별 순위보기</a></li>
+                <li><a href="new_record_list">신기록 경기기록</a></li>
+                <li><a href="schedule_ranking_list">경기별 순위보기</a></li>
+
+                <li><a href="schedule_medal_list">경기별 메달보기</a></li>
+                <li><a href="country_ranking_list">소속별 순위보기</a></li>
+              </ul>
+            </li>
+            <li class="MobileMenuItem">
+              <div class="MobileMenuTitle">
+                기록관리
+                <i class="xi-angle-down-min"></i>
+              </div>
+              <ul class="MenuList" style="display: none">
+                <li><a href="mypage">계정 정보</a></li>
+                <li><a href="change_password">비빌번호 변경</a></li>
+                <li><a href="account_write">계정 생성</a></li>
+                <li><a href="account_list">계정 목록</a></li>
+                <li><a href="log_list">로그 목록</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="MobileBackground hidden"></div>
+    <div class="top">
+      <div id="js-scroll">
+        <i class="xi-caret-up-min topBtn"> </i>
+        <p>TOP</p>
+      </div>
+    </div>
+    <div id="sh_adm_count">
+      <ul>
+        <li><a href="sports_list">경기 목록</a></li>
+        <li><a href="schedule_list">일정목록</a></li>
+        <li><a class="clicked" href="group_list">조편성 목록</a></li>
+      </ul>
+    </div>
+  </header>
+  <!-- contents 본문 내용 -->
+  <div id="sh_adm_cont_wrap" class="MobileScroll">
+    <form class="groupForm min1024">
+      <div class="UserCnt">
+        <div class="title">
+          <h2>조편성 수정</h2>
+        </div>
+      </div>
+      <div class="groupNumber groupTable">
+        <div class="" id="group_table">
+          <div class="schedule_filed_tit">
+            <p>1조 편성</p>
+          </div>
+          <div class="filed2_form">
+            <table cellspacing="0" cellpadding="0" class="filed2_Table filed2_swap group_datatable" id="dataTable1"
+              name="table_name[]">
+              <colgroup>
+                <col width="20%" />
+                <col width="60%" />
+                <col width="20%" />
+              </colgroup>
+              <thead class="filed_list filed2_list result_table">
+                <tr>
+                  <th>순서</th>
+                  <th>선수 이름</th>
+                  <th>삭제</th>
+                </tr>
+              </thead>
+              <!-- 레인넘버 & 선수 선택 for문 -->
+              <tbody class="grouping_body entry_table Relay_Tbody_0" id="Relay_Tbody">
+                <tr>
+                  <td>
+                    <!-- 조 :: record_group -->
+                    <input type="hidden" name="group[]" id="group[]" value="1" />
+                    <!-- 순서 :: record_order -->
+                    <input type="hidden" name="order[]" id="order[]" value="1" />
+                    <input type="text" name="lane[]" id="lane[]" class="number" value="1" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <input type="hidden" name="athlete[]" id="athlete[]" value="6" />
+                        <input type="text" name="name[]" id="name[]" value="
+                        (103) Chen Jinfeng(CHN) (China)" />
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <!-- 조 :: record_group -->
+                    <input type="hidden" name="group[]" id="group[]" value="1" />
+                    <!-- 순서 :: record_order -->
+                    <input type="hidden" name="order[]" id="order[]" value="2" />
+                    <input type="text" name="lane[]" id="lane[]" class="number" value="2" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <input type="hidden" name="athlete[]" id="athlete[]" value="356" />
+                        <input type="text" name="name[]" id="name[]" value="
+                        (306) Sarawut Nuansi(THA) (Thailand)" />
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <!-- 조 :: record_group -->
+                    <input type="hidden" name="group[]" id="group[]" value="1" />
+                    <!-- 순서 :: record_order -->
+                    <input type="hidden" name="order[]" id="order[]" value="3" />
+                    <input type="text" name="lane[]" id="lane[]" class="number" value="3" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <input type="hidden" name="athlete[]" id="athlete[]" value="145" />
+                        <input type="text" name="name[]" id="name[]" value="
+                        (176) Kimura Shunya(JPN) (Japan)" />
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <!-- 조 :: record_group -->
+                    <input type="hidden" name="group[]" id="group[]" value="1" />
+                    <!-- 순서 :: record_order -->
+                    <input type="hidden" name="order[]" id="order[]" value="4" />
+                    <input type="text" name="lane[]" id="lane[]" class="number" value="4" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <input type="hidden" name="athlete[]" id="athlete[]" value="61" />
+                        <input type="text" name="name[]" id="name[]" value="
+                        (128) Eryk Aprya Dwycandra(INA) (Indonesia)" />
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <!-- 조 :: record_group -->
+                    <input type="hidden" name="group[]" id="group[]" value="1" />
+                    <!-- 순서 :: record_order -->
+                    <input type="hidden" name="order[]" id="order[]" value="5" />
+                    <input type="text" name="lane[]" id="lane[]" class="number" value="5" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <input type="hidden" name="athlete[]" id="athlete[]" value="50" />
+                        <input type="text" name="name[]" id="name[]" value="
+                        (121) Johannsson Magnus Prostur(HKG) (Hong Kong, China)" />
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <!-- 조 :: record_group -->
+                    <input type="hidden" name="group[]" id="group[]" value="1" />
+                    <!-- 순서 :: record_order -->
+                    <input type="hidden" name="order[]" id="order[]" value="6" />
+                    <input type="text" name="lane[]" id="lane[]" class="number" value="6" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <input type="hidden" name="athlete[]" id="athlete[]" value="204" />
+                        <input type="text" name="name[]" id="name[]" value="
+                        (206) Bae Geonyul(KOR) (Korea)" />
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <!-- 조 :: record_group -->
+                    <input type="hidden" name="group[]" id="group[]" value="1" />
+                    <!-- 순서 :: record_order -->
+                    <input type="hidden" name="order[]" id="order[]" value="7" />
+                    <input type="text" name="lane[]" id="lane[]" class="number" value="7" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <input type="hidden" name="athlete[]" id="athlete[]" value="241" />
+                        <input type="text" name="name[]" id="name[]" value="
+                        (230) Na Hyunjoo(KOR) (Korea)" />
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <!-- 조 :: record_group -->
+                    <input type="hidden" name="group[]" id="group[]" value="1" />
+                    <!-- 순서 :: record_order -->
+                    <input type="hidden" name="order[]" id="order[]" value="8" />
+                    <input type="text" name="lane[]" id="lane[]" class="number" value="8" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <input type="hidden" name="athlete[]" id="athlete[]" value="435" />
+                        <input type="text" name="name[]" id="name[]" value="
+                        (1231) kk(NPL) (safsdaf)" />
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <button class="BTN_Blue swapBtn defaultBtn BIG_btn" id="swapBtn" type="button">
+                      <i class="xi-check"></i>
+                    </button>
+                    <button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue" id="deleteBtn1">
+                      <i class="xi-minus"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="BTN_Orange defaultBtn BIG_btn Relay_PlusBtn_0 group_addBtn" id="adconnecttn1" type="button">
+              <i class="xi-plus"></i>
+            </button>
+            <table class="Relay_Table_0">
+              <colgroup>
+                <col width="25%" />
+                <col width="75%" />
+              </colgroup>
+              <thead class="filed_list filed2_list result_table">
+                <tr>
+                  <th>순서</th>
+                  <th>선수 이름</th>
+                </tr>
+              </thead>
+              <tbody class="grouping_body entry_table">
+                <tr>
+                  <td>
+                    <input type="text" class="number" id="lane1" />
+                    <input type="hidden" id="group" value="1" />
+                  </td>
+                  <td>
+                    <div id="copy-value">
+                      <div>
+                        <select name="athlete" id="name1" class="select2-hidden-accessible select-box select-box"
+                          tabindex="-1" aria-hidden="true">
+                          <option value="" disabled selected>
+                            선수 선택
+                          </option>
+                          <option value="6">
+                            (103) Chen Jinfeng(CHN) (China)
+                          </option>
+                          <option value="13">
+                            (110) Wang Xinkai(CHN) (China)
+                          </option>
+                          <option value="34">
+                            (114) Chan Yat Lok(HKG) (Hong Kong, China)
+                          </option>
+                          <option value="50">
+                            (121) Johannsson Magnus Prostur(HKG) (Hong Kong,
+                            China)
+                          </option>
+                          <option value="61">
+                            (128) Eryk Aprya Dwycandra(INA) (Indonesia)
+                          </option>
+                          <option value="145">
+                            (176) Kimura Shunya(JPN) (Japan)
+                          </option>
+                          <option value="165">
+                            (191) Takasu Futo(JPN) (Japan)
+                          </option>
+                          <option value="201">
+                            (204) Litovskii Ruslan(KGZ) (Kyrgyzstan)
+                          </option>
+                          <option value="202">
+                            (205) Pobezhimov Egor(KGZ) (Kyrgyzstan)
+                          </option>
+                          <option value="204">
+                            (206) Bae Geonyul(KOR) (Korea)
+                          </option>
+                          <option value="225">
+                            (219) Kim Dongjin(KOR) (Korea)
+                          </option>
+                          <option value="241">
+                            (230) Na Hyunjoo(KOR) (Korea)
+                          </option>
+                          <option value="293">
+                            (263) Lou Weng Fu(MAC) (Macau)
+                          </option>
+                          <option value="300">
+                            (267) Pengiran Aidil Auf Bin Hajam(MAS) (Malaysia)
+                          </option>
+                          <option value="307">
+                            (272) D.bayar-erdene(MGL) (Mongolia)
+                          </option>
+                          <option value="308">
+                            (273) O.enkhbayar(MGL) (Mongolia)
+                          </option>
+                          <option value="309">
+                            (274) Abdallah Ali Khalfan Al-handhali(OMA) (Oman)
+                          </option>
+                          <option value="310">
+                            (275) Hamzah Abdulla Humaid Said Al Jabri(OMA)
+                            (Oman)
+                          </option>
+                          <option value="333">
+                            (294) Lee Mark Ren(SGP) (Singapore)
+                          </option>
+                          <option value="355">
+                            (305) Puripol Boonson(THA) (Thailand)
+                          </option>
+                          <option value="356">
+                            (306) Sarawut Nuansi(THA) (Thailand)
+                          </option>
+                          <option value="372">
+                            (317) Lee, Po Jui(TPE) (Chinese Taipei)
+                          </option>
+                          <option value="378">
+                            (321) Lin, Po Syun(TPE) (Chinese Taipei)
+                          </option>
+                          <option value="435">
+                            (1231) kk(NPL) (safsdaf)
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <input type="hidden" name="round" value="5" />
+        <input type="hidden" name="gender" value="m" />
+        <input type="hidden" name="sport_code" value="200m" />
+        <input type="hidden" name="category" value="트랙경기" />
+        <input type="hidden" name="title" value="1" />
+        <input type="hidden" name="id" value="54" />
+        <div class="addBtn">
+          <a class="btn btn_02" href="group_list">목록</a>
+          <button type="submit" class="btn_submit btn">만들기</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script>
+    $("select[name=athlete]").select2();
+  </script>
+  <script>
+    $(document).ready(function () {
+      const DataTables = document.querySelectorAll(".group_datatable");
+      const group_addButtons = document.querySelectorAll(".group_addBtn");
+
+      // 각 DataTable에 이벤트 위임을 적용합니다.
+      DataTables.forEach((table, index) => {
+        $(table).on("click", "button[name='delete_each_row']", function () {
+          $(this).closest("tr").remove();
+        });
+      });
+
+      // 각 '추가' 버튼에 이벤트 리스너를 부착합니다.
+      group_addButtons.forEach((button, index) => {
+        $(button).click(function () {
+          const group = $($("#group")[index]).val(); // index를 사용하여 적절한 input을 찾고, jQuery 형태로 변경
+          const lane = $($("#lane1")[index]).val(); // index를 사용하여 적절한 input을 찾고, jQuery 형태로 변경
+          const id = $($(".select-box")[index]).val(); // index를 사용하여 적절한 select-box를 찾고, jQuery 형태로 변경
+          const name = $($(".select-box option:selected")[index]).text(); // index를 사용하여 적절한 option을 찾고, jQuery 형태로 변경
+
+          $(DataTables[index]).append(
+            "<tr>" +
+            "<td>" +
+            '<input type="hidden" name="group[' +
+            group +
+            '][]" value="1">' +
+            '<input type="text" class="input_text" value="' +
+            lane +
+            '" name="lane[' +
+            group +
+            '][]">' +
+            '<input type="hidden" class="input_text" value="' +
+            lane +
+            '" name="order[]">' +
+            "</td>" +
+            "<td>" +
+            '<input type="hidden" name="athlete[' +
+            group +
+            '][]" value="' +
+            id +
+            '">' +
+            '<input type="text" name="name[]" class="group_name" value="' +
+            name +
+            '">' +
+            "</td>" +
+            "<td>" +
+            '<button type="button" name="delete_each_row" class="defaultBtn BIG_btn BTN_Blue fileconnectTN">' +
+            '<i class="xi-minus"></i>' +
+            "</button>" +
+            "</td>" +
+            "</tr>"
+          );
+
+          $("#lane1").val(""); // 여기를 적절하게 수정해 주세요
+        });
+      });
+    });
+  </script>
+  <!-- <script type="text/javascript" src="assets/js/main.js"></script> -->
+</body>
+
+</html>

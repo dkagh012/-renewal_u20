@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>역대기록목록 수정</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/xeicon.min.css" />
+  <script src="assets/js/jquery.js"></script>
+  <link rel="stylesheet" href="assets/css/select2.min.css" />
+  <script type="text/javascript" src="assets/js/select2.min.js"></script>
+</head>
+
+<!-- 역대기록목록 수정 페이지 -->
+
+<body>
+  <div id="sh_adm_wrap_index">
+    <!-- 관리자모드 HEADER -->
+    <header>
+      <div id="sh_adm_hd">
+        <h1><a href="/index.html">육상 경기 운영 시스템</a></h1>
+        <ul id="sh_adm_nav">
+          <li>
+            <a href="/athlete_list.html">
+              <p>선수관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <p>경기관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/sports_list.html">경기목록</a></li>
+
+              <li><a href="/schedule_list.html">일정목록</a></li>
+              <li><a href="/group_list.html">조편성</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>기록관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li>
+                <a class="clicked" href="/history_list.html">역대기록목록</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>통계관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/player_ranking_list.html">선수별 순위보기</a></li>
+              <li><a href="/new_record_list.html">신기록 경기기록</a></li>
+              <li><a href="/all_record.html">전체 기록보기</a></li>
+              <li><a href="/schedule_medal_list.html">경기별 메달보기</a></li>
+              <li>
+                <a href="/country_ranking_list.html">소속별 순위보기</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>기록관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="mypage.html">계정 정보</a></li>
+              <li><a href="change_password.html">비밀번호 변경</a></li>
+              <li><a href="account_write.html">계정 생성</a></li>
+              <li><a href="account_list.html">계정 목록</a></li>
+              <li><a href="log_list.html">로그 목록</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul id="sh_adm_gnb">
+          <li id="tnb_logout">
+            <a href="login.html">로그아웃</a>
+          </li>
+          <li class="mypage">
+            <a href="mypage.html"><i class="xi-profile-o"></i></a>
+          </li>
+          <li>
+            <button type="button" class="MobileTabMenuBtn">
+              <i class="xi-bars"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="MobileTabMenu hidden">
+        <!-- 관리자모드 SNB -->
+        <!-- 퀵메뉴 설정 팝업 스크립트 -->
+        <div class="MobileMenu">
+          <div class=" ">
+            <ul class="MobileMenuList">
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  참가자관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li>
+                    <a href="/athlete_list.html">선수목록</a>
+                  </li>
+                  <li><a href="/coach_list.html">코치목록</a></li>
+                  <li><a href="/judge_list.html">심판목록</a></li>
+                  <li><a href="/director_list.html">임원목록</a></li>
+                  <li>
+                    <a href="/certificate_list.html">참가증서목록</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  경기관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="/sports_list.html">경기목록</a></li>
+
+                  <li><a href="/schedule_list.html">일정목록</a></li>
+                  <li>
+                    <a href="/group_list.html">조편성</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  기록관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li>
+                    <a class="clicked" href="/history_list.html">역대기록목록</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  통계관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li>
+                    <a href="/player_ranking_list.html">선수별 순위보기</a>
+                  </li>
+                  <li><a href="/new_record_list.html">신기록 경기기록</a></li>
+                  <li><a href="/all_record.html">전체 기록보기</a></li>
+                  <li>
+                    <a href="/schedule_medal_list.html">경기별 메달보기</a>
+                  </li>
+                  <li>
+                    <a href="/country_ranking_list.html">소속별 순위보기</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  기록관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="mypage.html">계정 정보</a></li>
+                  <li><a href="change_password.html">비밀번호 변경</a></li>
+                  <li><a href="account_write.html">계정 생성</a></li>
+                  <li><a href="account_list.html">계정 목록</a></li>
+                  <li><a href="log_list.html">로그 목록</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="MobileBackground hidden"></div>
+      <div class="top">
+        <div id="js-scroll">
+          <i class="xi-caret-up-min topBtn"> </i>
+          <p>TOP</p>
+        </div>
+      </div>
+      <div id="sh_adm_count">
+        <ul>
+          <li>
+            <a class="clicked" href="/history_list.html">역대기록목록</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div id="sh_adm_cont_wrap" class="MobileScroll">
+      <div class="local_ov01 local_ov UserTable">
+        <form action="">
+          <table class="scheduleTable">
+            <tbody class="scheduleAddBody">
+              <tr class="CertificateTr">
+                <th scope="row">
+                  <label class="certificateTitle" for="mb_id">
+                    <h1>경기 종목</h1>
+                  </label>
+                </th>
+                <td>
+                  <select name="sports" id="" required="">
+                    <option value="" hidden="">경기 종목</option>
+                    <optgroup label="필드경기">
+                      <option value="discusthrow">Discus Throw</option>
+                      <option value="hammerthrow">Hammer Throw</option>
+                      <option value="highjump">High Jump</option>
+                      <option value="javelinthrow">Javelin Throw</option>
+                      <option value="longjump">Long Jump</option>
+                      <option value="polevault">Pole Vault</option>
+                      <option value="shotput">ShotPut</option>
+                      <option value="triplejump">Triple Jump</option>
+                    </optgroup>
+                    <optgroup label="트랙경기">
+                      <option value="10000mW">10000m Race Walk</option>
+                      <option value="100m">100m</option>
+                      <option value="100mH">100m Hurdles</option>
+                      <option value="110mH">110m Hurdles</option>
+                      <option value="1500m">1500m</option>
+                      <option value="200m">200m</option>
+                      <option value="3000m">3000m</option>
+                      <option value="3000mSC">3000m Steeplechase</option>
+                      <option value="400m">400m</option>
+                      <option value="400mH">400m Hurdles</option>
+                      <option value="4x100mR">4x100 Relay</option>
+                      <option value="4x400mR">4x400 Relay</option>
+                      <option value="4x400mR(Mixed)">
+                        4x400 Mixed Relay
+                      </option>
+                      <option value="5000m">5000m</option>
+                      <option value="800m">800m</option>
+                    </optgroup>
+                    <optgroup label="종합경기">
+                      <option value="decathlon">Decathlon</option>
+                      <option value="heptathlon">Heptathlon</option>
+                    </optgroup>
+                  </select>
+                </td>
+              </tr>
+              <tr class="CertificateTr">
+                <th scope="row">
+                  <label class="certificateTitle" for="mb_id">
+                    <h1>성별</h1>
+                  </label>
+                </th>
+                <td>
+                  <select name="gender">
+                    <option value="non" hidden="">경기 성별</option>
+                    <option value="m">남성</option>
+                    <option value="f">여성</option>
+                    <option value="c">혼성</option>
+                  </select>
+                </td>
+              </tr>
+              <tr class="CertificateTr">
+                <th scope="row">
+                  <label class="certificateTitle" for="mb_id">
+                    <h1>기록 구분</h1>
+                  </label>
+                </th>
+                <td>
+                  <select name="athletics" s required="">
+                    <option value="" hidden="">기록 구분</option>
+                    <option value="WR">세계신기록</option>
+                    <option value="WU20R">세계U20신기록</option>
+                    <option value="AR">아시아신기록</option>
+                    <option value="AU20R">아시아U20신기록</option>
+                    <option value="CR">대회신기록</option>
+                  </select>
+                </td>
+              </tr>
+              <tr class="CertificateTr">
+                <th scope="row">
+                  <label class="certificateTitle" for="mb_id">
+                    <h1>선수 이름</h1>
+                  </label>
+                </th>
+                <td>
+                  <input type="text" placeholder="선수 이름을 입력하세요" class="certificateInput" size="" maxlength="20" />
+                </td>
+              </tr>
+              <tr class="CertificateTr">
+                <th scope="row">
+                  <label class="certificateTitle" for="mb_id">
+                    <h1>선수 국가</h1>
+                  </label>
+                </th>
+                <td>
+                  <input type="text" placeholder="선수 국가을 입력하세요" class="certificateInput" size="" maxlength="20" />
+                </td>
+              </tr>
+              <tr class="CertificateTr">
+                <th scope="row">
+                  <label class="certificateTitle" for="mb_id">
+                    <h1>기록</h1>
+                  </label>
+                </th>
+                <td>
+                  <input type="text" placeholder="기록를 입력하세요" class="certificateInput" size="" maxlength="20" />
+                </td>
+              </tr>
+              <tr class="CertificateTr">
+                <th scope="row">
+                  <label class="certificateTitle" for="mb_id">
+                    <h1>풍속/용기구 무게</h1>
+                  </label>
+                </th>
+                <td>
+                  <input type="text" placeholder="풍속/용기구 무게" class="certificateInput" size="" maxlength="20" />
+                </td>
+              </tr>
+              <tr class="CertificateTr">
+                <th scope="row">
+                  <label class="certificateTitle" for="mb_id">
+                    <h1>장소</h1>
+                  </label>
+                </th>
+                <td>
+                  <input type="text" placeholder="장소를 입력하세요" class="certificateInput" size="" maxlength="20" />
+                </td>
+              </tr>
+              <tr class="CertificateTr">
+                <th scope="row">
+                  <label class="certificateTitle" for="mb_id">
+                    경기 날짜
+                  </label>
+                </th>
+                <td class="scheduleDay">
+                  <div class="schedule_Box">
+                    <div class="schedule_year">
+                      <select id="athlete" name="athlete" tabindex="-1" class="change select2-hidden-accessible"
+                        aria-hidden="true">
+                        <option value="" disabled="" selected="">년</option>
+                        <option value="2023">2023</option>
+                      </select>
+                    </div>
+                    <div style="float: left">-</div>
+                    <div class="schedule_month">
+                      <select id="athlete" name="athlete" tabindex="-1" class="change select2-hidden-accessible"
+                        aria-hidden="true">
+                        <option value="" disabled="" selected="">월</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                      </select>
+                    </div>
+                    <div style="float: left">-</div>
+                    <div class="schedule_day">
+                      <select id="athlete" name="athlete" tabindex="-1" class="change select2-hidden-accessible"
+                        aria-hidden="true">
+                        <option value="" disabled="" selected="">일</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                      </select>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="addBtn">
+            <a class="btn btn_02" href="/certificate_list.html">목록</a>
+            <button class="btn_submit btn" type="submit">확인</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- #adm_cont-->
+  <script>
+    $("select[name=athlete]").select2();
+  </script>
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>육상 경기 운영 시스템</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/xeicon.min.css" />
+  <script src="assets/js/jquery.js"></script>
+  <!-- <script src="assets/js/jquery-migrate-1.4.1.min.js"></script>
+  <script src="assets/js/jquery.menu.js.js"></script>
+  <script src="assets/js/wrest.js.js"></script>
+  <script src="assets/js/placeholders.min.js"></script> -->
+</head>
+<!-- 선수 SOUVENIR PDF 페이지 -->
+<script>
+  window.print();
+</script>
+<style>
+  body {
+    background-color: white !important;
+  }
+
+  @page {
+    size: 210mm 297mm;
+    /*A4*/
+  }
+
+  @media print {
+
+    html,
+    body {
+      -webkit-print-color-adjust: exact;
+      width: 210mm;
+      height: 297mm;
+    }
+  }
+</style>
+
+<body>
+  <div class="page2">
+    <div class="pdf_header">
+      <p>20TH ASIAN U20 ATHLETICS CHAMPIONSHIPS</p>
+      <p>YECHEON</p>
+      <p>4th to 7th June 2023</p>
+    </div>
+    <div class="pdf_img">
+      <img src="../assets/images/logo2.png" alt="Logo" class="logo_img" />
+    </div>
+    <div class="paf_tit">
+      <p>DIPLOMA SOUVENIR</p>
+    </div>
+
+    <div class="pdf_name">
+      <p>Dissanayaka Mudiyanselage Tharushi Dilsara Karunarathna(KOR)</p>
+      <p>Athlete</p>
+    </div>
+    <div class="pdf_intro">
+      <p>
+        in recognition of your participation and contribution to 20th Asian
+        U20 Athletics Championships 2023
+      </p>
+    </div>
+    <div class="sign_containner">
+      <div class="pdf_sign">
+        <div>
+          <img src="../assets/images/AAA사인.png" class="AAAImg" alt="" />
+          <span></span>
+        </div>
+        <div>
+          <p>DAHLAH JUMAAN AL HAMAD</p>
+          <p>President</p>
+          <p>Asian Athletics Association</p>
+        </div>
+      </div>
+
+      <div class="pdf_sign">
+        <div>
+          <img src="../assets/images/U20.png" class="U20Img" alt="" />
+          <span></span>
+        </div>
+        <div>
+          <p>YOOK HYEON PYO</p>
+          <p>President</p>
+          <p>Korea Association of Athletics Federations</p>
+          <p>(Co-Chairman of Yecheon Organizing Committee)</p>
+        </div>
+      </div>
+      <div class="pdf_sign">
+        <div>
+          <img src="../assets/images/김학동.png" class="HAKImg" alt="" />
+          <span></span>
+        </div>
+        <div>
+          <p>KIM HAK DONG</p>
+          <p>President</p>
+          <p>Yecheon Organizing Committee</p>
+        </div>
+      </div>
+    </div>
+    <div class="pdf_background"></div>
+    <div class="pdf_background2"></div>
+  </div>
+</body>
+
+</html>

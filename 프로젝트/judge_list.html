@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>심판 목록</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/xeicon.min.css" />
+  <script src="assets/js/jquery.js"></script>
+</head>
+<!-- 심판 목록  -->
+
+<body>
+  <div id="sh_adm_wrap_index">
+    <!-- 관리자모드 HEADER -->
+    <header>
+      <div id="sh_adm_hd">
+        <h1><a href="/index.html">육상 경기 운영 시스템</a></h1>
+        <ul id="sh_adm_nav">
+          <li>
+            <a href="">
+              <p>참가자관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li>
+                <a href="/athlete_list.html">선수목록</a>
+              </li>
+              <li><a href="/coach_list.html">코치목록</a></li>
+              <li><a class="clicked" href="/judge_list.html">심판목록</a></li>
+              <li><a href="/director_list.html">임원목록</a></li>
+              <li>
+                <a href="/certificate_list.html">참가증서목록</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>경기관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/sports_list.html">경기목록</a></li>
+
+              <li><a href="/schedule_list.html">일정목록</a></li>
+              <li><a href="/group_list.html">조편성</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>기록관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/history_list.html">역대기록목록</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>통계관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/player_ranking_list.html">선수별 순위보기</a></li>
+              <li><a href="/new_record_list.html">신기록 경기기록</a></li>
+              <li><a href="/all_record.html">전체 기록보기</a></li>
+              <li><a href="/schedule_medal_list.html">경기별 메달보기</a></li>
+              <li>
+                <a href="/country_ranking_list.html">소속별 순위보기</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>기록관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="mypage.html">계정 정보</a></li>
+              <li><a href="change_password.html">비밀번호 변경</a></li>
+              <li><a href="account_write.html">계정 생성</a></li>
+              <li><a href="account_list.html">계정 목록</a></li>
+              <li><a href="log_list.html">로그 목록</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul id="sh_adm_gnb">
+          <li id="tnb_logout">
+            <a href="login.html">로그아웃</a>
+          </li>
+          <li class="mypage">
+            <a href="mypage.html"><i class="xi-profile-o"></i></a>
+          </li>
+          <li>
+            <button type="button" class="MobileTabMenuBtn">
+              <i class="xi-bars"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="MobileTabMenu hidden">
+        <!-- 관리자모드 SNB -->
+        <!-- 퀵메뉴 설정 팝업 스크립트 -->
+        <div class="MobileMenu">
+          <div class=" ">
+            <ul class="MobileMenuList">
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  참가자관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li>
+                    <a href="/athlete_list.html">선수목록</a>
+                  </li>
+                  <li>
+                    <a href="/coach_list.html">코치목록</a>
+                  </li>
+                  <li>
+                    <a class="clicked" href="/judge_list.html">심판목록</a>
+                  </li>
+                  <li><a href="/director_list.html">임원목록</a></li>
+                  <li>
+                    <a href="/certificate_list.html">참가증서목록</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  경기관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="/sports_list.html">경기목록</a></li>
+
+                  <li><a href="/schedule_list.html">일정목록</a></li>
+                  <li><a href="/group_list.html">조편성</a></li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  기록관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="/history_list.html">역대기록목록</a></li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  통계관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li>
+                    <a href="/player_ranking_list.html">선수별 순위보기</a>
+                  </li>
+                  <li><a href="/new_record_list.html">신기록 경기기록</a></li>
+                  <li><a href="/all_record.html">전체 기록보기</a></li>
+                  <li>
+                    <a href="/schedule_medal_list.html">경기별 메달보기</a>
+                  </li>
+                  <li>
+                    <a href="/country_ranking_list.html">소속별 순위보기</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  기록관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="mypage.html">계정 정보</a></li>
+                  <li><a href="change_password.html">비밀번호 변경</a></li>
+                  <li><a href="account_write.html">계정 생성</a></li>
+                  <li><a href="account_list.html">계정 목록</a></li>
+                  <li><a href="log_list.html">로그 목록</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="MobileBackground hidden"></div>
+      <div class="top">
+        <div id="js-scroll">
+          <i class="xi-caret-up-min topBtn"> </i>
+          <p>TOP</p>
+        </div>
+      </div>
+      <div id="sh_adm_count">
+        <ul>
+          <li>
+            <a href="/athlete_list.html">선수목록</a>
+          </li>
+          <li><a href="/coach_list.html">코치목록</a></li>
+          <li><a class="clicked" href="/judge_list.html">심판목록</a></li>
+          <li><a href="/director_list.html">임원목록</a></li>
+          <li>
+            <a href="/certificate_list.html">참가증서목록</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div id="sh_adm_cont_wrap" class="">
+      <div class="local_ov01 local_ov">
+        <div class="UserCnt">
+          <span class="btn_ov01"><span class="ov_txt">총 갯수 </span><span class="ov_num"> 2명 </span></span>
+          <span class="btn_ov01"><span class="ov_txt2">남자 인원수 </span><span class="ov_num"> 2명 </span></span>
+          <span class="btn_ov01"><span class="ov_txt2">여자 인원수 </span><span class="ov_num"> 2명 </span></span>
+        </div>
+        <form action="">
+          <div class="Page_Search">
+            <div class="PageNumber">
+              <div class="defaultSelectBox widthFUll">
+                <select name="page_size" onchange="changeTableSize(this);" id="changePageSize" class="changePageSize">
+                  <option value="" hidden="">페이지</option>
+                  <option value="10" selected="">10개씩</option>
+                  <option value="20">20개씩</option>
+                  <option value="50">50개씩</option>
+                  <option value="100">100개씩</option>
+                  <option value="432">전체보기</option>
+                </select>
+              </div>
+            </div>
+            <div class="SelectArea">
+              <div class="defaultSelectBox">
+                <select title="국가" name="country">
+                  <option value="" hidden="">국가</option>
+                  <option value="">전체</option>
+                  <option value="BAN">방글라데시</option>
+                  <option value="CHN">중국</option>
+                  <option value="HKG">홍콩</option>
+                  <option value="INA">인도네시아</option>
+                  <option value="IND">인도</option>
+                  <option value="IRI">이란</option>
+                  <option value="IRQ">이라크</option>
+                  <option value="JPN">일본</option>
+                  <option value="KAZ">카자흐스탄</option>
+                  <option value="KGZ">키르기스스탄</option>
+                  <option value="KOR">대한민국</option>
+                  <option value="KSA">사우디아라비아</option>
+                  <option value="KUW">쿠웨이트</option>
+                  <option value="MAC">마카오</option>
+                  <option value="MAS">말레이시아</option>
+                  <option value="MDV">몰디브</option>
+                  <option value="MGL">몽골</option>
+                  <option value="OMA">오만</option>
+                  <option value="PAK">파키스탄</option>
+                  <option value="PHI">필리핀</option>
+                  <option value="QAT">카타르</option>
+                  <option value="SGP">싱가포르</option>
+                  <option value="SRI">스리랑카</option>
+                  <option value="THA">태국</option>
+                  <option value="TPE">대만</option>
+                  <option value="UZB">우즈베키스탄</option>
+                  <option value="VIE">베트남</option>
+                </select>
+              </div>
+              <div class="defaultSelectBox">
+                <select class="d_select" title="성별" name="gender" style="width: 5em">
+                  <option value="" hidden="">성별</option>
+                  <option value="">전체</option>
+                  <option value="m">남자</option>
+                  <option value="f">여자</option>
+                </select>
+              </div>
+              <div class="defaultSelectBox">
+                <select class="d_select" title="직무" name="duty" style="width: 10em">
+                  <option value="" hidden="">직무</option>
+                  <option value="">전체</option>
+                  <option value=""></option>
+                  <option value="경보심판원(IWJ)" selected="">
+                    경보심판원(IWJ)
+                  </option>
+                  <option value="사진판정심판(PFJ)">사진판정심판(PFJ)</option>
+                  <option value="상소심판원">상소심판원</option>
+                </select>
+              </div>
+              <div class="defaultSelectBox">
+                <select class="d_select" title="AD카드" name="isIssued" style="width: 10em">
+                  <option value="" hidden="">AD카드발급</option>
+                  <option value="">전체</option>
+                  <option value="N">미발급</option>
+                  <option value="Y">발급</option>
+                </select>
+              </div>
+              <div class="defaultSelectBox">
+                <select class="d_select" title="프로필사진" name="isRegistered" style="width: 10em">
+                  <option value="" hidden="">프로필사진여부</option>
+                  <option value="">전체</option>
+                  <option value="X">미등록</option>
+                  <option value="O">등록</option>
+                </select>
+              </div>
+              <div class="defaultSelectBox">
+                <input type="text" name="stx" value="" id="stx" required="" class="required frm_input" />
+              </div>
+              <div class="defaultSelectBox widthFUll">
+                <button type="submit" class="defaultSearchBth" title="검색">
+                  <i class="xi-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="MobileScroll">
+          <div class="UserTable tbl_head01 tbl_wrap">
+            <table class="EntryTable">
+              <colgroup>
+                <col width="5%" />
+                <col width="10%" />
+                <col width="10%" />
+                <col width="10%" />
+                <col width="22.5%" />
+                <col width="22.5%" />
+                <col width="10%" />
+                <col width="5%%" />
+                <col width="5%%" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th rowspan="2">
+                    <input id="checkAll" onclick="toggle(this)" type="checkbox" />
+                  </th>
+                  <th colspan="2"><a href="">AD카드</a></th>
+                  <th><a href="">국가</a></th>
+                  <th>소속</th>
+                  <th>직무</th>
+                  <th>생년월일</th>
+                  <th colspan="2">수정</th>
+                </tr>
+                <tr>
+                  <th><a href="">프로필사진</a></th>
+                  <th><a href="">번호</a></th>
+                  <th><a href="">성별</a></th>
+                  <th colspan="2"><a href="">이름</a></th>
+                  <th><a href="">나이</a></th>
+                  <th>보기</th>
+                  <th>삭제</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="2">
+                    <input type="checkbox" class="entry_check" name="checked[]" />
+                  </td>
+                  <td colspan="2"><input type="checkbox" /></td>
+                  <td>Korea</td>
+                  <td>AAA</td>
+                  <td>Coach</td>
+                  <td>1998.04.21</td>
+                  <td colspan="2">
+                    <a href="/judge_modify.html" class="defaultBtn BTN_Blue outBtn" type="button">수정</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>313</td>
+                  <td>M</td>
+                  <td colspan="2">배정태</td>
+                  <td>26</td>
+                  <td>
+                    <a href="/judge_view.html" class="defaultBtn BTN_Gray outBtn">보기</a>
+                  </td>
+                  <td>
+                    <button class="defaultBtn BTN_Red" type="button">
+                      삭제
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td rowspan="2">
+                    <input type="checkbox" class="entry_check" name="checked[]" />
+                  </td>
+                  <td colspan="2"><input type="checkbox" /></td>
+                  <td>Korea</td>
+                  <td>AAA</td>
+                  <td>Coach</td>
+                  <td>1998.04.21</td>
+                  <td colspan="2">
+                    <a href="/judge_modify.html" class="defaultBtn BTN_Blue outBtn" type="button">수정</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>313</td>
+                  <td>M</td>
+                  <td colspan="2">배정태</td>
+                  <td>26</td>
+                  <td>
+                    <a href="/judge_view.html" class="defaultBtn BTN_Gray outBtn">보기</a>
+                  </td>
+                  <td>
+                    <button class="defaultBtn BTN_Red" type="button">
+                      삭제
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="btn_list01 btn_list">
+          <a href="/judge_add.html" id="member_add" class="btn BTN_Red2">회원추가</a>
+          <a href="/AD_card.html" id="" class="btn ID_Print">AD발급</a>
+          <a href="" id="" class="btn excel_Print">엑셀 출력</a>
+          <a href="" id="" class="btn excel_input">엑셀 입력</a>
+          <a href="" id="" class="btn excel_form">엑셀 양식</a>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <ul class="pagination">
+        <li class="page_item">
+          <a class="PageBtn1" href="#"></a>
+        </li>
+        <li class="page_item">
+          <a class="PageBtn2" href="#"></a>
+        </li>
+        <li class="page_item page_number clicked">
+          <a href="#">
+            <p class="page_link">1</p>
+          </a>
+        </li>
+        <li class="page_item page_number">
+          <a href="#">
+            <p class="page_link">2</p>
+          </a>
+        </li>
+        <li class="page_item page_number">
+          <a href="#">
+            <p class="page_link">3</p>
+          </a>
+        </li>
+        <li class="page_item page_number">
+          <a href="#">
+            <p class="page_link">4</p>
+          </a>
+        </li>
+        <li class="page_item page_number">
+          <a href="#">
+            <p class="page_link">5</p>
+          </a>
+        </li>
+        <li class="page_item page_number">
+          <a href="#">
+            <p class="page_link">6</p>
+          </a>
+        </li>
+        <li class="page_item page_number">
+          <a href="#">
+            <p class="page_link">7</p>
+          </a>
+        </li>
+        <li class="page_item page_number">
+          <a href="#">
+            <p class="page_link">8</p>
+          </a>
+        </li>
+        <li class="page_item page_number">
+          <a href="#">
+            <p class="page_link">9</p>
+          </a>
+        </li>
+        <li class="page_item page_number">
+          <a href="#">
+            <p class="page_link">10</p>
+          </a>
+        </li>
+        <li class="page_item">
+          <a class="PageBtn3" href="#"></a>
+        </li>
+        <li class="page_item">
+          <a class="PageBtn4" href="#"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- #adm_cont-->
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

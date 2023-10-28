@@ -1,0 +1,199 @@
+/* 초기화 */
+html {
+  overflow-y: scroll;
+}
+
+body {
+  font-size: 12px;
+  margin: 0;
+  font-family: "dotum" !important;
+}
+
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+img,
+dl,
+dt,
+dd,
+il,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+li {
+  list-style: none;
+}
+
+legend {
+  overflow: hidden;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -9999em;
+}
+
+label,
+input,
+button,
+select,
+img {
+  vertical-align: middle;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  font-size: 1em;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+textarea,
+select {
+  border: 1px solid #ddd;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"],
+input[type="image"],
+input[id="stx"],
+textarea {
+  -webkit-appearance: none;
+}
+
+button {
+  border-radius: 0;
+  font-size: 1em;
+  -webkit-appearance: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+th,
+th a {
+  font-weight: bold !important;
+  font-size: 12px !important;
+}
+
+textarea,
+select,
+input {
+  font-family: inherit;
+  font-size: 1em;
+}
+
+select {
+  height: 22px;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  word-break: break-all;
+}
+
+hr {
+  display: none;
+}
+
+pre {
+  margin: 0;
+  padding: 0;
+  line-height: 0.65em;
+  font-size: 1em;
+}
+
+a {
+  cursor: pointer;
+  color: #222;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fff url(../images/arrow.png);
+  background-repeat: no-repeat;
+  background-position: 98%;
+  background-size: auto 10px;
+  color: black;
+  min-width: 100px;
+  border-radius: 0;
+}
+select::-ms-expand {
+  display: none;
+}
+select {
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+select option {
+  border-radius: 0;
+}
+select option {
+  appearance: none;
+  border-radius: 0;
+  border: 1px solid #000; /* 이 부분은 선택 사항이며, 테두리를 추가하는 데 사용됩니다. */
+}
+
+select::-ms-expand {
+  /* 화살표 없애기 for IE10, 11*/
+  display: none;
+}
+input[type="file"]::file-selector-button {
+  padding: 0.2em 0.4em;
+  border-radius: 0.2em;
+  transition: 1s;
+  border: 1px solid black;
+  border-radius: 0;
+  color: black;
+}

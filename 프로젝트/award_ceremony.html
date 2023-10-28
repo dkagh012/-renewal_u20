@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/award_ceremony.css" />
+    <title>award ceremony</title>
+  </head>
+  <!-- 국기 페이지 -->
+  <body>
+    <div class="awardCeremony">
+      <div class="flag-container first">
+        <canvas id="flag1" class="flag"></canvas>
+      </div>
+
+      <div class="flag-container second">
+        <canvas id="flag2" class="flag"></canvas>
+      </div>
+
+      <div class="flag-container third">
+        <canvas id="flag3" class="flag"></canvas>
+      </div>
+
+      <div class="banner-container">
+        <div class="banner"></div>
+        <div class="bannerLogoContainer">
+          <div class="bannerLogo">20TH ASIAN U20 ATHLETICS CHAMPIONSHIPS</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var h = new Image();
+      h.src = "assets/images/u20_national_flag/afghanistan.png";
+      var h2 = new Image();
+      h2.src = "assets/images/u20_national_flag/brunei.png";
+      var h3 = new Image();
+      h3.src = "assets/images/u20_national_flag/iraq.png";
+    </script>
+    <script src="assets/js/award_ceremony.js"></script>
+    <script src="assets/js/jquery.js"></script>
+  </body>
+</html>

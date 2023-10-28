@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>종합경기 수평</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/xeicon.min.css" />
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/onlynumber.js"></script>
+</head>
+<!-- 종합경기 멀리뛰기 경기 -->
+<script type="text/javascript">
+  $(document).ready(function () {
+    $("#loading").hide();
+    $("#post_action").submit(function () {
+      $("#loading").show();
+      return true;
+    });
+  });
+
+  window.onload = function () {
+    for (k = 0; k < document.querySelectorAll("#name").length; k++) {
+      let a = document.querySelectorAll("#name")[k];
+      fieldFinal2(a);
+    }
+    rankcal4();
+  };
+  function InputValueCheckColor(input) {
+    var currentValue = input.value;
+
+    if (currentValue !== "") {
+      input.parentElement.style.backgroundColor = "black";
+      input.style.color = "white";
+    } else {
+      input.parentElement.style.backgroundColor = "";
+      input.style.color = "";
+    }
+  }
+</script>
+
+<body>
+  <div class="loading" id="loading">
+    <div>
+      <i class="xi-spinner-2 Loading_spin"></i>
+    </div>
+  </div>
+  <div id="sh_adm_wrap_index">
+    <!-- 관리자모드 HEADER -->
+    <header>
+      <div id="sh_adm_hd">
+        <h1><a href="/index.html">육상 경기 운영 시스템</a></h1>
+        <ul id="sh_adm_nav">
+          <li>
+            <a href="/athlete_list.html">
+              <p>선수관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <p>경기관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/sports_list.html">경기목록</a></li>
+              <li>
+                <a class="clicked" href="/country_list.html">국가목록</a>
+              </li>
+              <li><a href="/schedule_list.html">일정목록</a></li>
+              <li><a href="/group_list.html">조편성</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>기록관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/history_list.html">역대기록목록</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>통계관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/player_ranking_list.html">선수별 순위보기</a></li>
+              <li><a href="/new_record_list.html">신기록 경기기록</a></li>
+              <li><a href="/all_record.html">전체 기록보기</a></li>
+              <li><a href="/schedule_medal_list.html">경기별 메달보기</a></li>
+              <li>
+                <a href="/country_ranking_list.html">소속별 순위보기</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>기록관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="mypage.html">계정 정보</a></li>
+              <li><a href="change_password.html">비밀번호 변경</a></li>
+              <li><a href="account_write.html">계정 생성</a></li>
+              <li><a href="account_list.html">계정 목록</a></li>
+              <li><a href="log_list.html">로그 목록</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul id="sh_adm_gnb">
+          <li id="tnb_logout">
+            <a href="login.html">로그아웃</a>
+          </li>
+          <li class="mypage">
+            <a href="mypage.html"><i class="xi-profile-o"></i></a>
+          </li>
+          <li>
+            <button type="button" class="MobileTabMenuBtn">
+              <i class="xi-bars"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="MobileTabMenu hidden">
+        <!-- 관리자모드 SNB -->
+        <!-- 퀵메뉴 설정 팝업 스크립트 -->
+        <div class="MobileMenu">
+          <div class=" ">
+            <ul class="MobileMenuList">
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  참가자관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li>
+                    <a href="/athlete_list.html">선수목록</a>
+                  </li>
+                  <li><a href="/coach_list.html">코치목록</a></li>
+                  <li><a href="/judge_list.html">심판목록</a></li>
+                  <li><a href="/director_list.html">임원목록</a></li>
+                  <li>
+                    <a href="/certificate_list.html">참가증서목록</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  경기관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="/sports_list.html">경기목록</a></li>
+                  <li>
+                    <a class="clicked" href="/country_list.html">국가목록</a>
+                  </li>
+                  <li><a href="/schedule_list.html">일정목록</a></li>
+                  <li><a href="/group_list.html">조편성</a></li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  기록관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="/history_list.html">역대기록목록</a></li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  통계관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li>
+                    <a href="/player_ranking_list.html">선수별 순위보기</a>
+                  </li>
+                  <li><a href="/new_record_list.html">신기록 경기기록</a></li>
+                  <li><a href="/all_record.html">전체 기록보기</a></li>
+                  <li>
+                    <a href="/schedule_medal_list.html">경기별 메달보기</a>
+                  </li>
+                  <li>
+                    <a href="/country_ranking_list.html">소속별 순위보기</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  기록관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="mypage.html">계정 정보</a></li>
+                  <li><a href="change_password.html">비밀번호 변경</a></li>
+                  <li><a href="account_write.html">계정 생성</a></li>
+                  <li><a href="account_list.html">계정 목록</a></li>
+                  <li><a href="log_list.html">로그 목록</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="MobileBackground hidden"></div>
+      <div class="top">
+        <div id="js-scroll">
+          <i class="xi-caret-up-min topBtn"> </i>
+          <p>TOP</p>
+        </div>
+      </div>
+      <div id="sh_adm_count">
+        <ul>
+          <li><a href="/sports_list.html">경기목록</a></li>
+          <li>
+            <a class="clicked" href="/country_list.html">국가목록</a>
+          </li>
+          <li><a href="/schedule_list.html">일정목록</a></li>
+          <li><a href="/group_list.html">조편성</a></li>
+        </ul>
+      </div>
+    </header>
+    <div id="sh_adm_cont_wrap" class="MobileScroll">
+      <div class="local_ov01 local_ov UserTable">
+        <!-- <form action=""> -->
+        <div class="result_view_tbale">
+          <table>
+            <tbody>
+              <tr>
+                <th>경기 종목</th>
+                <td><input type="text" id="Sport" value="High Jump" /></td>
+                <th>라운드</th>
+                <td>
+                  <input type="text" id="Round" value="Final Result" />
+                </td>
+              </tr>
+              <tr>
+                <th>성별</th>
+                <td><input type="text" id="Gender" value="M" /></td>
+                <th>현재 시간</th>
+                <td>
+                  <input placeholder="박스를 클릭하세요" type="text" id="Time" name="starttime" onclick="input_time()" />
+                </td>
+              </tr>
+              <input type="hidden" value="Test" id="group" />
+              <input type="hidden" value="Test" id="title" />
+            </tbody>
+          </table>
+        </div>
+        <div class="ResultTable">
+          <table class="box_table">
+            <colgroup>
+              <col style="width: 4%" />
+              <col style="width: 4%" />
+              <col style="width: 7%" />
+              <col style="width: 18%" />
+              <col style="width: 4%" />
+              <col style="width: auto" />
+              <col style="width: auto" />
+              <col style="width: auto" />
+              <col style="width: auto" />
+              <col style="width: 5%" />
+              <col style="width: 3%" />
+              <col style="width: 7%" />
+              <col style="width: 7%" />
+            </colgroup>
+            <thead class="result_table De_tbody entry_table">
+              <tr>
+                <th rowspan="2">등수</th>
+                <th rowspan="2">순서</th>
+                <th rowspan="2">BIB</th>
+                <th rowspan="2">이름</th>
+                <th rowspan="2">국가</th>
+                <th>1차 시기</th>
+                <th>2차 시기</th>
+                <th>3차 시기</th>
+                <th>기록</th>
+                <th rowspan="2">비고</th>
+                <th rowspan="2">Q / q</th>
+                <th rowspan="2">참고기록</th>
+                <th rowspan="2">신기록</th>
+              </tr>
+              <tr>
+                <th colspan="4">풍속</th>
+              </tr>
+            </thead>
+            <tbody class="table_tbody De_tbody entry_table">
+              <tr id="col1" class="col1_1">
+                <td rowspan="2">
+                  <input type="number" name="rank[398]" id="rank" value="1" min="1" required="" />
+                </td>
+                <td rowspan="2">
+                  <input type="number" name="rain[398]" value="6" required="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="BIB" type="text" id="bib" name="playerbib[]" value="567" required=""
+                    readonly="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="선수 이름" type="text" id="name" name="playername[]" value="Wang, Tzu Hsuan"
+                    required="" readonly="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="국가" id="Country" type="text" name="division" value="CHN" maxlength="50"
+                    required="" readonly="" />
+                </td>
+                <td>
+                  <input type="text" name="game_trial_result[398][1]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input type="text" name="game_trial_result[398][2]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input type="text" name="game_trial_result[398][3]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input id="result" type="text" name="gameresult[398]" value="" required=""
+                    onkeyup="field2Format(this)" onchange="InputValueCheckColor(this)" />
+                </td>
+                <td rowspan="2">
+                  <input type="text" id="Bigo" name="bigo[398]" value="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" />
+                </td>
+                <td rowspan="2">
+                  <input type="checkbox" id="RR" name="record_rr[398]" />
+                </td>
+                <td rowspan="2">
+                  <input type="text" id="Newrecord" name="newrecord[398]" value="" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="text" name="wind[398][1]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input type="text" name="wind[398][2]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input type="text" name="wind[398][3]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input placeholder="풍속" id="threetopwind" name="lastwind[398]" type="text" class="input_text"
+                    maxlength="5" readonly="" />
+                </td>
+              </tr>
+              <tr id="col1" class="col1_2">
+                <td rowspan="2">
+                  <input type="number" name="rank[174]" id="rank" value="2" min="1" required="" />
+                </td>
+                <td rowspan="2">
+                  <input type="number" name="rain[174]" value="3" required="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="BIB" type="text" id="bib" name="playerbib[]" value="478" required=""
+                    readonly="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="선수 이름" type="text" id="name" name="playername[]" value="Chistyakova Alina"
+                    required="" readonly="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="국가" id="Country" type="text" name="division" value="CHN" maxlength="50"
+                    required="" readonly="" />
+                </td>
+                <td>
+                  <input type="text" name="game_trial_result[174][1]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input type="text" name="game_trial_result[174][2]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input type="text" name="game_trial_result[174][3]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input id="result" type="text" name="gameresult[174]" value="" required=""
+                    onkeyup="field2Format(this)" onchange="InputValueCheckColor(this)" />
+                </td>
+                <td rowspan="2">
+                  <input type="text" id="Bigo" name="bigo[174]" value="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" />
+                </td>
+                <td rowspan="2">
+                  <input type="checkbox" id="RR" name="record_rr[174]" />
+                </td>
+                <td rowspan="2">
+                  <input type="text" id="Newrecord" name="newrecord[174]" value="" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="text" name="wind[174][1]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input type="text" name="wind[174][2]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input type="text" name="wind[174][3]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input placeholder="풍속" id="threetopwind" name="lastwind[174]" type="text" class="input_text"
+                    maxlength="5" readonly="" />
+                </td>
+              </tr>
+              <tr id="col1" class="col1_3">
+                <td rowspan="2">
+                  <input type="number" name="rank[136]" id="rank" value="3" min="1" required="" />
+                </td>
+                <td rowspan="2">
+                  <input type="number" name="rain[136]" value="1" required="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="BIB" type="text" id="bib" name="playerbib[]" value="463" required=""
+                    readonly="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="선수 이름" type="text" id="name" name="playername[]" value="Hayashi Miki" required=""
+                    readonly="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="국가" id="Country" type="text" name="division" value="CHN" maxlength="50"
+                    required="" readonly="" />
+                </td>
+                <td>
+                  <input type="text" name="game_trial_result[136][1]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input type="text" name="game_trial_result[136][2]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input type="text" name="game_trial_result[136][3]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input id="result" type="text" name="gameresult[136]" value="" required=""
+                    onkeyup="field2Format(this)" onchange="InputValueCheckColor(this)" />
+                </td>
+                <td rowspan="2">
+                  <input type="text" id="Bigo" name="bigo[136]" value="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" />
+                </td>
+                <td rowspan="2">
+                  <input type="checkbox" id="RR" name="record_rr[136]" />
+                </td>
+                <td rowspan="2">
+                  <input type="text" id="Newrecord" name="newrecord[136]" value="" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="text" name="wind[136][1]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input type="text" name="wind[136][2]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input type="text" name="wind[136][3]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input placeholder="풍속" id="threetopwind" name="lastwind[136]" type="text" class="input_text"
+                    maxlength="5" readonly="" />
+                </td>
+              </tr>
+              <tr id="col1" class="col1_4">
+                <td rowspan="2">
+                  <input type="number" name="rank[424]" id="rank" value="4" min="1" required="" />
+                </td>
+                <td rowspan="2">
+                  <input type="number" name="rain[424]" value="7" required="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="BIB" type="text" id="bib" name="playerbib[]" value="580" required=""
+                    readonly="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="선수 이름" type="text" id="name" name="playername[]" value="Ugiloy Norboeva"
+                    required="" readonly="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="국가" id="Country" type="text" name="division" value="CHN" maxlength="50"
+                    required="" readonly="" />
+                </td>
+                <td>
+                  <input type="text" name="game_trial_result[424][1]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input type="text" name="game_trial_result[424][2]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input type="text" name="game_trial_result[424][3]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input id="result" type="text" name="gameresult[424]" value="" required=""
+                    onkeyup="field2Format(this)" onchange="InputValueCheckColor(this)" />
+                </td>
+                <td rowspan="2">
+                  <input type="text" id="Bigo" name="bigo[424]" value="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" />
+                </td>
+                <td rowspan="2">
+                  <input type="checkbox" id="RR" name="record_rr[424]" />
+                </td>
+                <td rowspan="2">
+                  <input type="text" id="Newrecord" name="newrecord[424]" value="" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="text" name="wind[424][1]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input type="text" name="wind[424][2]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input type="text" name="wind[424][3]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input placeholder="풍속" id="threetopwind" name="lastwind[424]" type="text" class="input_text"
+                    maxlength="5" readonly="" />
+                </td>
+              </tr>
+              <tr id="col1" class="col1_5">
+                <td rowspan="2">
+                  <input type="number" name="rank[246]" id="rank" value="5" min="1" required="" />
+                </td>
+                <td rowspan="2">
+                  <input type="number" name="rain[246]" value="5" required="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="BIB" type="text" id="bib" name="playerbib[]" value="515" required=""
+                    readonly="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="선수 이름" type="text" id="name" name="playername[]" value="Lee Hayan" required=""
+                    readonly="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="국가" id="Country" type="text" name="division" value="CHN" maxlength="50"
+                    required="" readonly="" />
+                </td>
+                <td>
+                  <input type="text" name="game_trial_result[246][1]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input type="text" name="game_trial_result[246][2]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input type="text" name="game_trial_result[246][3]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input id="result" type="text" name="gameresult[246]" value="" required=""
+                    onkeyup="field2Format(this)" onchange="InputValueCheckColor(this)" />
+                </td>
+                <td rowspan="2">
+                  <input type="text" id="Bigo" name="bigo[246]" value="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" />
+                </td>
+                <td rowspan="2">
+                  <input type="checkbox" id="RR" name="record_rr[246]" />
+                </td>
+                <td rowspan="2">
+                  <input type="text" id="Newrecord" name="newrecord[246]" value="" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="text" name="wind[246][1]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input type="text" name="wind[246][2]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input type="text" name="wind[246][3]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input placeholder="풍속" id="threetopwind" name="lastwind[246]" type="text" class="input_text"
+                    maxlength="5" readonly="" />
+                </td>
+              </tr>
+              <tr id="col1" class="col1_6">
+                <td rowspan="2">
+                  <input type="number" name="rank[116]" id="rank" value="6" min="1" required="" />
+                </td>
+                <td rowspan="2">
+                  <input type="number" name="rain[116]" value="2" required="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="BIB" type="text" id="bib" name="playerbib[]" value="461" required=""
+                    readonly="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="선수 이름" type="text" id="name" name="playername[]" value="Saba Khorasani Zavarehvar"
+                    required="" readonly="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="국가" id="Country" type="text" name="division" value="CHN" maxlength="50"
+                    required="" readonly="" />
+                </td>
+                <td>
+                  <input type="text" name="game_trial_result[116][1]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input type="text" name="game_trial_result[116][2]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input type="text" name="game_trial_result[116][3]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input id="result" type="text" name="gameresult[116]" value="" required=""
+                    onkeyup="field2Format(this)" onchange="InputValueCheckColor(this)" />
+                </td>
+                <td rowspan="2">
+                  <input type="text" id="Bigo" name="bigo[116]" value="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" />
+                </td>
+                <td rowspan="2">
+                  <input type="checkbox" id="RR" name="record_rr[116]" />
+                </td>
+                <td rowspan="2">
+                  <input type="text" id="Newrecord" name="newrecord[116]" value="" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="text" name="wind[116][1]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input type="text" name="wind[116][2]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input type="text" name="wind[116][3]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input placeholder="풍속" id="threetopwind" name="lastwind[116]" type="text" class="input_text"
+                    maxlength="5" readonly="" />
+                </td>
+              </tr>
+              <tr id="col1" class="col1_7">
+                <td rowspan="2">
+                  <input type="number" name="rank[394]" id="rank" value="7" min="1" required="" />
+                </td>
+                <td rowspan="2">
+                  <input type="number" name="rain[394]" value="4" required="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="BIB" type="text" id="bib" name="playerbib[]" value="563" required=""
+                    readonly="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="선수 이름" type="text" id="name" name="playername[]" value="Lin, Pei Hsuan"
+                    required="" readonly="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="국가" id="Country" type="text" name="division" value="CHN" maxlength="50"
+                    required="" readonly="" />
+                </td>
+                <td>
+                  <input type="text" name="game_trial_result[394][1]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input type="text" name="game_trial_result[394][2]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input type="text" name="game_trial_result[394][3]" value="" onkeyup="field2Format(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+
+                <td>
+                  <input id="result" type="text" name="gameresult[394]" value="" required=""
+                    onkeyup="field2Format(this)" onchange="InputValueCheckColor(this)" />
+                </td>
+                <td rowspan="2">
+                  <input type="text" id="Bigo" name="bigo[394]" value="" />
+                </td>
+                <td rowspan="2">
+                  <input placeholder="Q/q" id="Qq" type="text" name="record_q[]" value="" maxlength="100" />
+                </td>
+                <td rowspan="2">
+                  <input type="checkbox" id="RR" name="record_rr[394]" />
+                </td>
+                <td rowspan="2">
+                  <input type="text" id="Newrecord" name="newrecord[394]" value="" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="text" name="wind[394][1]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input type="text" name="wind[394][2]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input type="text" name="wind[394][3]" value="" onkeyup="windFormat(this)"
+                    onchange="InputValueCheckColor(this)" />
+                </td>
+                <td>
+                  <input placeholder="풍속" id="threetopwind" name="lastwind[394]" type="text" class="input_text"
+                    maxlength="5" readonly="" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="addBtn">
+          <span class="btn State"><input type="text" id="State" value="Start List" /></span>
+          <button class="btn_submit btn" type="submit" onclick="Send_horizontal_Data()">
+            확인
+          </button>
+        </div>
+        <!-- </form> -->
+      </div>
+    </div>
+  </div>
+  <!-- #adm_cont-->
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

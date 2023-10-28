@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <link rel="stylesheet" href="assets/css/pdf.css" />
+    <script>
+      window.print();
+    </script>
+
+    <style>
+      @page {
+        size: 210mm 297mm;
+        /*A4*/
+      }
+
+      @media print {
+        .PDF_wrap {
+        }
+
+        html,
+        body {
+          -webkit-print-color-adjust: exact;
+          width: 210mm;
+          height: 297mm;
+        }
+      }
+      table {
+        width: 100%;
+      }
+
+      .PDF_wrap {
+        padding: 0.5cm 0.7cm 2cm 0.7cm;
+      }
+      .PDF_wrap .header_table > th {
+        border: 0;
+        height: 30px;
+        padding: 0 5px;
+      }
+      .PDF_wrap .pdf_table_body > tr > td {
+        border: 0;
+        border-bottom: 1px solid #000;
+        height: 50px;
+      }
+
+      .PDF_wrap .world_record > table > tbody > tr > td {
+        border: 0;
+        border-bottom: 1px solid #000;
+        padding: 3px;
+      }
+
+      .PDF_wrap .PDF_footer,
+      .PDF_wrap .en_PDF_footer {
+        width: calc(100% - 1.4cm);
+      }
+
+      .page_number {
+        right: 0.7cm;
+      }
+      .pdf_table_body > tr > td:nth-child(1) {
+        text-align: right;
+        font-weight: bold;
+      }
+      .pdf_table_body > tr > td:nth-child(2) {
+        text-align: right;
+      }
+      .pdf_table_body > tr > td:nth-child(3) {
+        text-align: left;
+        font-weight: bold;
+      }
+      .pdf_table_body > tr > td:nth-child(4) {
+        font-weight: bold;
+        text-align: left;
+      }
+      .pdf_table_body > tr > td:nth-child(5) {
+        text-align: left;
+      }
+      .pdf_table_body > tr > td > div {
+        font-weight: bold;
+        text-align: right;
+        height: 15px;
+      }
+      .pdf_table_body > tr > td:nth-child(8) > span {
+        background: #00a73c;
+        padding: 2px 4px;
+        color: white;
+      }
+
+      .pdf_table_head > tr > th:nth-child(1) {
+        text-align: right;
+      }
+      .pdf_table_head > tr > th:nth-child(2) {
+        text-align: right;
+      }
+      .pdf_table_head > tr > th:nth-child(3) {
+        text-align: center;
+      }
+      .pdf_table_head > tr > th:nth-child(4) {
+        text-align: left;
+      }
+      .pdf_table_head > tr > th:nth-child(5) {
+        text-align: left;
+      }
+      .pdf_table_head > tr > th:nth-child(6) {
+        text-align: right;
+      }
+      .pdf_table_head > tr > th:nth-child(7) {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="PDF_wrap ko_wrap hori_pdf">
+      <header class="pdf_header">
+        <div class="pdf_right_logo">
+          <img src="assets/images/logo3.png" alt="" />
+        </div>
+        <div class="pdf_left_logo">
+          <img src="assets/images/logo.png" alt="" />
+        </div>
+        <div>
+          <div class="PDF_tit">
+            <p class="main_title">제20회 예천아시아 U20 육상경기선수권대회</p>
+            <p>예천</p>
+            <p>2023. 6. 4 ~ 6. 7</p>
+          </div>
+          <div class="PDF_result">
+            <p>SUMMARY</p>
+          </div>
+        </div>
+      </header>
+      <div class="page_number">
+        <p>Page</p>
+        <p class="pageNumber">1</p>
+        <span>/</span>
+        <p class="pageAllNumber">1</p>
+      </div>
+      <div class="word_wrap">
+        <div class="word_container">
+          <div class="pdf_info_two">
+            <div>
+              <p>Decathlon MEN</p>
+            </div>
+            <div>
+              <p>100m</p>
+              <p>2023-06-05 10:25</p>
+            </div>
+          </div>
+          <div class="word_run" style="">
+            <table class="box_table" style="zoom: 0.9">
+              <!-- 달리기 테이블  -->
+              <colgroup>
+                <col width="5%" />
+                <col width="9%" />
+                <col />
+                <col width="6%" />
+                <col width="10%" />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col width="9%" />
+                <col />
+              </colgroup>
+              <thead class="pdf_table_head">
+                <tr class="header_table">
+                  <th scope="col" style="font-size: 10px">순위</th>
+                  <th scope="col" style="font-size: 10px">Bib</th>
+                  <th scope="col" style="font-size: 10px">이름</th>
+                  <th scope="col" style="font-size: 10px">국가</th>
+                  <th scope="col" style="font-size: 10px">생년월일</th>
+                  <th scope="col" style="font-size: 10px">100m</th>
+                  <th scope="col" style="font-size: 10px">Longjump</th>
+                  <th scope="col" style="font-size: 10px">Shotput</th>
+                  <th scope="col" style="font-size: 10px">Highjump</th>
+                  <th scope="col" style="font-size: 10px">400m</th>
+                  <th scope="col" style="font-size: 10px">110mH</th>
+                  <th scope="col" style="font-size: 10px">Discusthrow</th>
+                  <th scope="col" style="font-size: 10px">Polevault</th>
+                  <th scope="col" style="font-size: 10px">Javelinthrow</th>
+                  <th scope="col" style="font-size: 10px">1500m</th>
+                  <th scope="col" style="font-size: 10px; text-align: right">
+                    점수
+                  </th>
+                  <th
+                    scope="col"
+                    style="font-size: 10px; text-align: right"
+                  ></th>
+                </tr>
+              </thead>
+              <tbody class="pdf_table_body" style="text-align: center">
+                <tr>
+                  <td rowspan="1" scope="col">1</td>
+                  <td rowspan="1" scope="col">228</td>
+                  <td rowspan="1" scope="col">Lee Yuseong</td>
+                  <td rowspan="1" scope="col">KOR</td>
+                  <td rowspan="1" scope="col">2004-09-13</td>
+                  <td rowspan="1" scope="col">DQ</td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  >
+                    DQ<span class="DQ_result">(0.123)</span>
+                  </td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  ></td>
+                </tr>
+                <tr>
+                  <td rowspan="1" scope="col">2</td>
+                  <td rowspan="1" scope="col">231</td>
+                  <td rowspan="1" scope="col">Nam Hyunbin</td>
+                  <td rowspan="1" scope="col">KOR</td>
+                  <td rowspan="1" scope="col">2005-08-06</td>
+                  <td rowspan="1" scope="col">
+                    <div>843</div>
+                    <div>11.08</div>
+                    <div>-0.2</div>
+                  </td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  >
+                    843
+                  </td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  ></td>
+                </tr>
+                <tr>
+                  <td rowspan="1" scope="col">3</td>
+                  <td rowspan="1" scope="col">200</td>
+                  <td rowspan="1" scope="col">Sening Ivan</td>
+                  <td rowspan="1" scope="col">KAZ</td>
+                  <td rowspan="1" scope="col">2006-06-20</td>
+                  <td rowspan="1" scope="col">
+                    <div>742</div>
+                    <div>11.55</div>
+                    <div>-0.2</div>
+                  </td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  >
+                    742
+                  </td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  ></td>
+                </tr>
+                <tr>
+                  <td rowspan="1" scope="col">4</td>
+                  <td rowspan="1" scope="col">154</td>
+                  <td rowspan="1" scope="col">Sunil Kumar</td>
+                  <td rowspan="1" scope="col">IND</td>
+                  <td rowspan="1" scope="col">2004-05-27</td>
+                  <td rowspan="1" scope="col">
+                    <div>738</div>
+                    <div>11.57</div>
+                    <div>-0.2</div>
+                  </td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  >
+                    738
+                  </td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  ></td>
+                </tr>
+                <tr>
+                  <td rowspan="1" scope="col">4</td>
+                  <td rowspan="1" scope="col">342</td>
+                  <td rowspan="1" scope="col">Nodir Norbaev</td>
+                  <td rowspan="1" scope="col">UZB</td>
+                  <td rowspan="1" scope="col">2005-02-04</td>
+                  <td rowspan="1" scope="col">
+                    <div>738</div>
+                    <div>11.57</div>
+                    <div>-0.2</div>
+                  </td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  >
+                    738
+                  </td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  ></td>
+                </tr>
+                <tr>
+                  <td rowspan="1" scope="col">6</td>
+                  <td rowspan="1" scope="col">340</td>
+                  <td rowspan="1" scope="col">Makhmudov Samandar</td>
+                  <td rowspan="1" scope="col">UZB</td>
+                  <td rowspan="1" scope="col">2004-10-13</td>
+                  <td rowspan="1" scope="col">
+                    <div>725</div>
+                    <div>11.63</div>
+                    <div>-0.2</div>
+                  </td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  >
+                    725
+                  </td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  ></td>
+                </tr>
+                <tr>
+                  <td rowspan="1" scope="col">7</td>
+                  <td rowspan="1" scope="col">270</td>
+                  <td rowspan="1" scope="col">Wilson Quaik Zhen Han</td>
+                  <td rowspan="1" scope="col">MAS</td>
+                  <td rowspan="1" scope="col">2004-04-10</td>
+                  <td rowspan="1" scope="col">
+                    <div>721</div>
+                    <div>11.65</div>
+                    <div>-0.2</div>
+                  </td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  >
+                    721
+                  </td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  ></td>
+                </tr>
+                <tr>
+                  <td rowspan="1" scope="col">8</td>
+                  <td rowspan="1" scope="col">251</td>
+                  <td rowspan="1" scope="col">Mohammed Rashid Alsubaie</td>
+                  <td rowspan="1" scope="col">KSA</td>
+                  <td rowspan="1" scope="col">2004-08-11</td>
+                  <td rowspan="1" scope="col">
+                    <div>0</div>
+                    <div>0.00</div>
+                    <div>-0.2</div>
+                  </td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td rowspan="1" scope="col"></td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  >
+                    0
+                  </td>
+                  <td
+                    rowspan="1"
+                    scope="col"
+                    style="font-weight: bold; text-align: right"
+                  ></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="world_record">
+          <div class="PDF_result">
+            <p>역대 기록</p>
+          </div>
+          <table>
+            <thead>
+              <tr class="header_table">
+                <th>구분</th>
+                <th>기록</th>
+                <th>풍속</th>
+                <th>성명</th>
+                <th>국가</th>
+                <th>장소</th>
+                <th>일자</th>
+              </tr>
+            </thead>
+            <tbody style="text-align: center; border: 0">
+              <tr>
+                <td style="line-height: 15px; font-size: 10px">WR</td>
+                <td style="line-height: 15px; font-size: 10px">9126</td>
+                <td style="line-height: 15px; font-size: 10px">0</td>
+                <td style="line-height: 15px; font-size: 10px">Kevin MAYER</td>
+                <td style="line-height: 15px; font-size: 10px">FRA</td>
+                <td style="line-height: 15px; font-size: 10px">
+                  Stade Pierre Paul Bernard, Talence (FRA)
+                </td>
+                <td style="line-height: 15px; font-size: 10px">2018-09-16</td>
+              </tr>
+              <tr>
+                <td style="line-height: 15px; font-size: 10px">AR</td>
+                <td style="line-height: 15px; font-size: 10px">8725</td>
+                <td style="line-height: 15px; font-size: 10px">0</td>
+                <td style="line-height: 15px; font-size: 10px">
+                  Dmitriy KARPOV
+                </td>
+                <td style="line-height: 15px; font-size: 10px">KAZ</td>
+                <td style="line-height: 15px; font-size: 10px">
+                  Olympic Stadium, Athina (GRE)
+                </td>
+                <td style="line-height: 15px; font-size: 10px">2004-08-24</td>
+              </tr>
+              <tr>
+                <td style="line-height: 15px; font-size: 10px">WU20R</td>
+                <td style="line-height: 15px; font-size: 10px">8435</td>
+                <td style="line-height: 15px; font-size: 10px">0</td>
+                <td style="line-height: 15px; font-size: 10px">Niklas KAUL</td>
+                <td style="line-height: 15px; font-size: 10px">GER</td>
+                <td style="line-height: 15px; font-size: 10px">
+                  Grosseto (ITA)
+                </td>
+                <td style="line-height: 15px; font-size: 10px">2017-07-23</td>
+              </tr>
+              <tr>
+                <td style="line-height: 15px; font-size: 10px">AU20R</td>
+                <td style="line-height: 15px; font-size: 10px">8041</td>
+                <td style="line-height: 15px; font-size: 10px">0</td>
+                <td style="line-height: 15px; font-size: 10px">Qi Haifeng</td>
+                <td style="line-height: 15px; font-size: 10px">CHN</td>
+                <td style="line-height: 15px; font-size: 10px">Busan(KOR)</td>
+                <td style="line-height: 15px; font-size: 10px">2002-10-10</td>
+              </tr>
+              <tr>
+                <td style="line-height: 15px; font-size: 10px">CR</td>
+                <td style="line-height: 15px; font-size: 10px">7713</td>
+                <td style="line-height: 15px; font-size: 10px">0</td>
+                <td style="line-height: 15px; font-size: 10px">Yu bin</td>
+                <td style="line-height: 15px; font-size: 10px">CHN</td>
+                <td style="line-height: 15px; font-size: 10px">Ipoh(MAS)</td>
+                <td style="line-height: 15px; font-size: 10px">2004-06-12</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <footer class="PDF_footer"></footer>
+      </div>
+    </div>
+  </body>
+</html>

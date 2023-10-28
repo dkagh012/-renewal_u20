@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>릴레이 페이지</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/xeicon.min.css" />
+  <script src="assets/js/jquery.js"></script>
+</head>
+
+<body>
+  <div id="sh_adm_wrap_index">
+    <!-- 관리자모드 HEADER -->
+    <header>
+      <div id="sh_adm_hd">
+        <h1><a href="/index.html">육상 경기 운영 시스템</a></h1>
+        <ul id="sh_adm_nav">
+          <li>
+            <a href="/athlete_list.html">
+              <p>선수관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <p>경기관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/sports_list.html">경기목록</a></li>
+
+              <li>
+                <a class="clicked" href="/schedule_list.html">일정목록</a>
+              </li>
+              <li><a href="/group_list.html">조편성</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>기록관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/history_list.html">역대기록목록</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>통계관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="/player_ranking_list.html">선수별 순위보기</a></li>
+              <li><a href="/new_record_list.html">신기록 경기기록</a></li>
+              <li><a href="/all_record.html">전체 기록보기</a></li>
+              <li><a href="/schedule_medal_list.html">경기별 메달보기</a></li>
+              <li>
+                <a href="/country_ranking_list.html">소속별 순위보기</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">
+              <p>기록관리</p>
+              <i class="xi-angle-down-min"></i>
+            </a>
+            <ul class="nav_smn">
+              <li><a href="mypage.html">계정 정보</a></li>
+              <li><a href="change_password.html">비밀번호 변경</a></li>
+              <li><a href="account_write.html">계정 생성</a></li>
+              <li><a href="account_list.html">계정 목록</a></li>
+              <li><a href="log_list.html">로그 목록</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul id="sh_adm_gnb">
+          <li id="tnb_logout">
+            <a href="login.html">로그아웃</a>
+          </li>
+          <li class="mypage">
+            <a href="mypage.html"><i class="xi-profile-o"></i></a>
+          </li>
+          <li>
+            <button type="button" class="MobileTabMenuBtn">
+              <i class="xi-bars"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="MobileTabMenu hidden">
+        <!-- 관리자모드 SNB -->
+        <!-- 퀵메뉴 설정 팝업 스크립트 -->
+        <div class="MobileMenu">
+          <div class=" ">
+            <ul class="MobileMenuList">
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  참가자관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li>
+                    <a href="/athlete_list.html">선수목록</a>
+                  </li>
+                  <li><a href="/coach_list.html">코치목록</a></li>
+                  <li><a href="/judge_list.html">심판목록</a></li>
+                  <li><a href="/director_list.html">임원목록</a></li>
+                  <li>
+                    <a href="/certificate_list.html">참가증서목록</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  경기관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="/sports_list.html">경기목록</a></li>
+
+                  <li>
+                    <a class="clicked" href="/schedule_list.html">일정목록</a>
+                  </li>
+                  <li>
+                    <a href="/group_list.html">조편성</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  기록관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="/history_list.html">역대기록목록</a></li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  통계관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li>
+                    <a href="/player_ranking_list.html">선수별 순위보기</a>
+                  </li>
+                  <li><a href="/new_record_list.html">신기록 경기기록</a></li>
+                  <li><a href="/all_record.html">전체 기록보기</a></li>
+                  <li>
+                    <a href="/schedule_medal_list.html">경기별 메달보기</a>
+                  </li>
+                  <li>
+                    <a href="/country_ranking_list.html">소속별 순위보기</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="MobileMenuItem">
+                <div class="MobileMenuTitle">
+                  기록관리
+                  <i class="xi-angle-down-min"></i>
+                </div>
+                <ul class="MenuList" style="display: none">
+                  <li><a href="mypage.html">계정 정보</a></li>
+                  <li><a href="change_password.html">비밀번호 변경</a></li>
+                  <li><a href="account_write.html">계정 생성</a></li>
+                  <li><a href="account_list.html">계정 목록</a></li>
+                  <li><a href="log_list.html">로그 목록</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="MobileBackground hidden"></div>
+      <div class="top">
+        <div id="js-scroll">
+          <i class="xi-caret-up-min topBtn"> </i>
+          <p>TOP</p>
+        </div>
+      </div>
+      <div id="sh_adm_count">
+        <ul>
+          <li><a href="/sports_list.html">경기목록</a></li>
+
+          <li><a class="clicked" href="/schedule_list.html">일정목록</a></li>
+          <li><a href="/group_list.html">조편성</a></li>
+        </ul>
+      </div>
+    </header>
+    <div id="sh_adm_cont_wrap" class="MobileScroll">
+      <div class="local_ov01 local_ov UserTable tbl_head01 tbl_wrap">
+        <div class="schedule_Btn">
+          <button class="defaultBtn Start" type="button" onclick="window.open('StartList_PDF.html')">
+            Start List(PDF)
+          </button>
+          <button class="defaultBtn BTN_blue4" type="button" onclick="window.open('OfficialResult_pdf.html')">
+            Official Result(PDF)
+          </button>
+          <button type="button" class="defaultBtn BTN_Red" onclick="window.open('summary_pdf.html')">
+            Summary(PDF)
+          </button>
+          <button type="button" class="defaultBtn excel_Print filedBTN">
+            Summary(Excel)
+          </button>
+          <button class="defaultBtn BTN_DarkBlue" type="button">
+            기록 전환
+          </button>
+          <span class="Result">마감</span>
+        </div>
+        <div class="scheduleViewTable">
+          <form action="">
+            <div class="ViewTitleHash">
+              <div class="ViewTableTit">
+                <p>1조</p>
+              </div>
+              <div class="Start ViewHash">
+                <span>Start List</span>
+              </div>
+            </div>
+            <table class="box_table throwBackground one_Tr">
+              <colgroup>
+                <col style="width: 7%" />
+                <col style="width: 7%" />
+                <col style="width: 7%" />
+                <col style="width: 23%" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: auto" />
+                <col style="width: 8%" />
+                <col style="width: auto" />
+              </colgroup>
+              <thead class="result_table entry_table">
+                <tr>
+                  <th scope="col" colspan="1">레인</th>
+                  <th scope="col" colspan="1">등수</th>
+                  <th scope="col" colspan="1">등번호</th>
+                  <th scope="col" colspan="1">이름</th>
+                  <th scope="col" colspan="1">국가</th>
+                  <th scope="col" colspan="1">기록</th>
+                  <th scope="col" colspan="1">비고</th>
+                  <th scope="col" colspan="1">참고기록</th>
+                  <th scope="col" colspan="1">메달</th>
+                  <th scope="col" colspan="1">신기록</th>
+                </tr>
+                <tr class="filed2_bottom"></tr>
+              </thead>
+              <tbody class="table_tbody De_tbody entry_table">
+                <tr id="rane8">
+                  <td>
+                    <input type="number" name="rain[]" value="8" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" id="rank" value="1" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="412" maxlength="30" required=""
+                      readonly="" style="margin-bottom: 10px" /><input placeholder="등번호" type="text" name="playerbib[]"
+                      value="418" maxlength="30" required="" readonly="" style="margin-bottom: 10px" /><input
+                      placeholder="등번호" type="text" name="playerbib[]" value="408" maxlength="30" required=""
+                      readonly="" style="margin-bottom: 10px" /><input placeholder="등번호" type="text" name="playerbib[]"
+                      value="415" maxlength="30" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="playername[]" value="Liu Xiajun" maxlength="30" required="" readonly=""
+                      style="margin-bottom: 10px" /><input type="text" name="playername[]" value="Zhao Junyan"
+                      maxlength="30" required="" readonly="" style="margin-bottom: 10px" /><input type="text"
+                      name="playername[]" value="Huang Na" maxlength="30" required="" readonly=""
+                      style="margin-bottom: 10px" /><input type="text" name="playername[]" value="Xiong Shiqi"
+                      maxlength="30" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="division[]" value="CHN" maxlength="50" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" id="result" name="gameresult[]" value="45.049" maxlength="8"
+                      onkeyup="trackFinal(this)" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" maxlength="100" />
+                  </td>
+                  <td></td>
+                  <td><input type="text" value="10000" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                </tr>
+                <tr id="rane7" class="Ranklist_Background">
+                  <td>
+                    <input type="number" name="rain[]" value="7" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" id="rank" value="2" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="546" maxlength="30" required=""
+                      readonly="" style="margin-bottom: 10px" /><input placeholder="등번호" type="text" name="playerbib[]"
+                      value="547" maxlength="30" required="" readonly="" style="margin-bottom: 10px" /><input
+                      placeholder="등번호" type="text" name="playerbib[]" value="552" maxlength="30" required=""
+                      readonly="" style="margin-bottom: 10px" /><input placeholder="등번호" type="text" name="playerbib[]"
+                      value="545" maxlength="30" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="playername[]" value="Jirapat Khanonta" maxlength="30" required=""
+                      readonly="" style="margin-bottom: 10px" /><input type="text" name="playername[]"
+                      value="Manatsada Sanmano" maxlength="30" required="" readonly=""
+                      style="margin-bottom: 10px" /><input type="text" name="playername[]" value="Suwimol Srathienthong"
+                      maxlength="30" required="" readonly="" style="margin-bottom: 10px" /><input type="text"
+                      name="playername[]" value="Athicha Phetkun" maxlength="30" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="division[]" value="THA" maxlength="50" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" id="result" name="gameresult[]" value="45.338" maxlength="8"
+                      onkeyup="trackFinal(this)" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" maxlength="100" />
+                  </td>
+                  <td></td>
+                  <td><input type="text" value="100" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                </tr>
+                <tr id="rane4">
+                  <td>
+                    <input type="number" name="rain[]" value="4" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" id="rank" value="3" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="453" maxlength="30" required=""
+                      readonly="" style="margin-bottom: 10px" /><input placeholder="등번호" type="text" name="playerbib[]"
+                      value="437" maxlength="30" required="" readonly="" style="margin-bottom: 10px" /><input
+                      placeholder="등번호" type="text" name="playerbib[]" value="444" maxlength="30" required=""
+                      readonly="" style="margin-bottom: 10px" /><input placeholder="등번호" type="text" name="playerbib[]"
+                      value="436" maxlength="30" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="playername[]" value="Tamanna" maxlength="30" required="" readonly=""
+                      style="margin-bottom: 10px" /><input type="text" name="playername[]" value="Akshaya S"
+                      maxlength="30" required="" readonly="" style="margin-bottom: 10px" /><input type="text"
+                      name="playername[]" value="Nayana Kokare" maxlength="30" required="" readonly=""
+                      style="margin-bottom: 10px" /><input type="text" name="playername[]" value="Abinaya Rajarajan"
+                      maxlength="30" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="division[]" value="IND" maxlength="50" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" id="result" name="gameresult[]" value="45.355" maxlength="8"
+                      onkeyup="trackFinal(this)" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" maxlength="100" />
+                  </td>
+                  <td></td>
+                  <td><input type="text" value="1" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                </tr>
+                <tr id="rane3" class="Ranklist_Background">
+                  <td>
+                    <input type="number" name="rain[]" value="3" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" id="rank" value="4" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="430" maxlength="30" required=""
+                      readonly="" style="margin-bottom: 10px" /><input placeholder="등번호" type="text" name="playerbib[]"
+                      value="428" maxlength="30" required="" readonly="" style="margin-bottom: 10px" /><input
+                      placeholder="등번호" type="text" name="playerbib[]" value="432" maxlength="30" required=""
+                      readonly="" style="margin-bottom: 10px" /><input placeholder="등번호" type="text" name="playerbib[]"
+                      value="426" maxlength="30" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="playername[]" value="Tang Cheuk Man Serena" maxlength="30" required=""
+                      readonly="" style="margin-bottom: 10px" /><input type="text" name="playername[]"
+                      value="Luo Tsz Yuen" maxlength="30" required="" readonly="" style="margin-bottom: 10px" /><input
+                      type="text" name="playername[]" value="Yau Sin Ting Nicole" maxlength="30" required="" readonly=""
+                      style="margin-bottom: 10px" /><input type="text" name="playername[]" value="Li Tsz To"
+                      maxlength="30" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="division[]" value="HKG" maxlength="50" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" id="result" name="gameresult[]" value="46.103" maxlength="8"
+                      onkeyup="trackFinal(this)" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" maxlength="100" />
+                  </td>
+                  <td></td>
+                  <td><input type="text" value="0" maxlength="100" /></td>
+                  <td><input type="text" value="PB" maxlength="100" /></td>
+                </tr>
+                <tr id="rane6">
+                  <td>
+                    <input type="number" name="rain[]" value="6" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" id="rank" value="5" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="514" maxlength="30" required=""
+                      readonly="" style="margin-bottom: 10px" /><input placeholder="등번호" type="text" name="playerbib[]"
+                      value="512" maxlength="30" required="" readonly="" style="margin-bottom: 10px" /><input
+                      placeholder="등번호" type="text" name="playerbib[]" value="523" maxlength="30" required=""
+                      readonly="" style="margin-bottom: 10px" /><input placeholder="등번호" type="text" name="playerbib[]"
+                      value="502" maxlength="30" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="playername[]" value="Lee Eunbin" maxlength="30" required="" readonly=""
+                      style="margin-bottom: 10px" /><input type="text" name="playername[]" value="Lee Chaehyeon"
+                      maxlength="30" required="" readonly="" style="margin-bottom: 10px" /><input type="text"
+                      name="playername[]" value="Sin Gayoung" maxlength="30" required="" readonly=""
+                      style="margin-bottom: 10px" /><input type="text" name="playername[]" value="Jeon Hayoung"
+                      maxlength="30" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="division[]" value="KOR" maxlength="50" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" id="result" name="gameresult[]" value="46.240" maxlength="8"
+                      onkeyup="trackFinal(this)" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" maxlength="100" />
+                  </td>
+                  <td></td>
+                  <td><input type="text" value="0" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                </tr>
+                <tr id="rane5" class="Ranklist_Background">
+                  <td>
+                    <input type="number" name="rain[]" value="5" min="1" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="number" name="rank[]" id="rank" value="6" min="1" />
+                  </td>
+                  <td>
+                    <input placeholder="등번호" type="text" name="playerbib[]" value="492" maxlength="30" required=""
+                      readonly="" style="margin-bottom: 10px" /><input placeholder="등번호" type="text" name="playerbib[]"
+                      value="497" maxlength="30" required="" readonly="" style="margin-bottom: 10px" /><input
+                      placeholder="등번호" type="text" name="playerbib[]" value="483" maxlength="30" required=""
+                      readonly="" style="margin-bottom: 10px" /><input placeholder="등번호" type="text" name="playerbib[]"
+                      value="489" maxlength="30" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="playername[]" value="Shuvalova Mariya" maxlength="30" required=""
+                      readonly="" style="margin-bottom: 10px" /><input type="text" name="playername[]"
+                      value="Yermola Kristina" maxlength="30" required="" readonly=""
+                      style="margin-bottom: 10px" /><input type="text" name="playername[]" value="Konichsheva Irina"
+                      maxlength="30" required="" readonly="" style="margin-bottom: 10px" /><input type="text"
+                      name="playername[]" value="Rypakova Anastassiya" maxlength="30" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="division[]" value="KAZ" maxlength="50" required="" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" id="result" name="gameresult[]" value="47.486" maxlength="8"
+                      onkeyup="trackFinal(this)" readonly="" />
+                  </td>
+                  <td>
+                    <input type="text" name="bigo[]" value="" maxlength="100" />
+                  </td>
+                  <td></td>
+                  <td><input type="text" value="0" maxlength="100" /></td>
+                  <td><input type="text" value="" maxlength="100" /></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="scheduleBtn">
+              <div>
+                <button class="defaultBtn BTN_DarkBlue" type="button" onclick="window.open('electronic_display.html')">
+                  전광판
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn BTN_Red2" type="button" onclick="window.open('ko_PDF_Relay.html')">
+                  PDF(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn matchBtn" type="button" onclick="window.open('ko_PDF_Relay_sign.html')">
+                  사인란(한)
+                </button>
+              </div>
+              <div>
+                <button class="defaultBtn excel_Print" type="button">
+                  엑셀
+                </button>
+              </div>
+            </div>
+            <div class="scheduleInputBtn">
+              <button class="defaultBtn BIG_btn BTN_Orange" type="button"
+                onclick="window.open('Relay_result_view.html')">
+                기록 입력
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- #adm_cont-->
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

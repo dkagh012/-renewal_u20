@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="application/vnd.ms-word; charset=utf-8" />
+  <title>Word File Content</title>
+  <style>
+    @font-face {
+      font-family: "Noto Sans KR";
+      font-style: normal;
+      font-weight: 100;
+      src: local("Noto Sans Light"), local("NotoSans-Light"),
+        url(./assets/css/fonts/NotoSans-Light.eot);
+      src: url(./assets/css/fonts/NotoSans-Light.eot?#iefix) format("embedded-opentype"),
+        url(./assets/css/fonts/NotoSans-Light.woff2) format("woff2"),
+        url(./assets/css/fonts/NotoSans-Light.woff) format("woff");
+    }
+
+    @font-face {
+      font-family: "Noto Sans KR";
+      font-style: normal;
+      font-weight: 300;
+      src: local("Noto Sans Regular"), local("NotoSans-Regular"),
+        url(./assets/css/fonts/NotoSans-Regular.eot);
+      src: url(./assets/css/fonts/NotoSans-Regular.eot?#iefix) format("embedded-opentype"),
+        url(./assets/css/fonts/NotoSans-Regular.woff2) format("woff2"),
+        url(./assets/css/fonts/NotoSans-Regular.woff) format("woff");
+    }
+
+    @font-face {
+      font-family: "Noto Sans KR";
+      font-style: normal;
+      font-weight: 500;
+      src: local("Noto Sans Medium"), local("NotoSans-Medium"),
+        url(./assets/css/fonts/NotoSans-Medium.eot);
+      src: url(./assets/css/fonts/NotoSans-Medium.eot?#iefix) format("embedded-opentype"),
+        url(./assets/css/fonts/NotoSans-Medium.woff2) format("woff2"),
+        url(./assets/css/fonts/NotoSans-Medium.woff) format("woff");
+    }
+
+    @font-face {
+      font-family: "Noto Sans KR";
+      font-style: normal;
+      font-weight: 700;
+      src: local("Noto Sans Bold"), local("NotoSans-Bold"),
+        url(./assets/css/fonts/NotoSans-Bold.eot);
+      src: url(./assets/css/fonts/NotoSans-Bold.eot?#iefix) format("embedded-opentype"),
+        url(./assets/css/fonts/NotoSans-Bold.woff2) format("woff2"),
+        url(./assets/css/fonts/NotoSans-Bold.woff) format("woff");
+    }
+
+    @font-face {
+      font-family: "Nanum Myeongjo";
+      font-style: normal;
+      font-weight: 900;
+      src: local("※"), url(./assets/css/fonts/NanumMyeongjoEB.eot);
+      src: url(./assets/css/fonts/NanumMyeongjoEB.eot?#iefix) format("embedded-opentype"),
+        url(./assets/css/fonts/NanumMyeongjoEB.woff2) format("woff2"),
+        url(./assets/css/fonts/NanumMyeongjoEB.woff) format("woff");
+    }
+
+    @font-face {
+      font-family: "IBMPlexSansKR";
+      src: url(./assets/css/fonts/IBMPlexSansKR-ExtraLight.ttf) format("truetype");
+      font-weight: 200;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "IBMPlexSansKR";
+      src: url(./assets/css/fonts/IBMPlexSansKR-Light.ttf) format("truetype");
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "IBMPlexSansKR";
+      src: url(./assets/css/fonts/IBMPlexSansKR-Regular.ttf) format("truetype");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "IBMPlexSansKR";
+      src: url(./assets/css/fonts/IBMPlexSansKR-Medium.ttf) format("truetype");
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "IBMPlexSansKR";
+      src: url(./assets/css/fonts/IBMPlexSansKR-SemiBold.ttf) format("truetype");
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "IBMPlexSansKR";
+      src: url(./assets/css/fonts/IBMPlexSansKR-Bold.ttf) format("truetype");
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "IBMPlexSansKR";
+      src: url(./assets/css/fonts/IBMPlexSansKR-Thin.ttf) format("truetype");
+      font-weight: 100;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Montserrat";
+      src: url(./assets/css/fonts/Montserrat-VariableFont_wght.ttf) format("truetype-variations");
+      font-weight: 100 900;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Montserrat";
+      src: url(./assets/css/fonts/Montserrat-Italic-VariableFont_wght.ttf) format("truetype-variations");
+      font-weight: 100 900;
+      font-style: italic;
+    }
+
+    @font-face {
+      font-family: "Roboto";
+      src: url(./assets/css/fonts/Roboto-MediumItalic.ttf) format("truetype");
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    @font-face {
+      font-family: "Roboto";
+      src: url(./assets/css/fonts/Roboto-Bold.ttf) format("truetype");
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+      color: #000;
+      word-break: keep-all;
+    }
+
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: inherit;
+      font: inherit;
+      color: inherit;
+      vertical-align: baseline;
+    }
+
+    select {
+      font-weight: 700;
+    }
+
+    button,
+    input {
+      font-family: inherit;
+    }
+
+    a {
+      text-decoration: none;
+      outline: none;
+    }
+
+    a:hover,
+    a:active {
+      text-decoration: none;
+    }
+
+    /* HTML5 display-role reset for older browsers */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+      display: block;
+    }
+
+    html {
+      font-size: 10px;
+    }
+
+    body {
+      font-size: 16px;
+      font-family: "Noto Sans KR", sans-serif;
+      line-height: 1em;
+      font-weight: 300;
+    }
+
+    ol,
+    ul {
+      list-style: none;
+    }
+
+    blockquote,
+    q {
+      quotes: none;
+    }
+
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+      content: "";
+      content: none;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    .word_container {
+      width: 21cm;
+      min-height: 29.7cm;
+      padding: 0.5cm 0cm 0cm 0cm;
+      text-align: center;
+      position: relative;
+    }
+
+    .word_header {
+      position: absolute;
+      width: 100%;
+    }
+
+    .word_header_table>thead>tr:first-child>th:nth-child(1) {
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .word_header_table>thead>tr:first-child>th:nth-child(2) {
+      position: absolute;
+      right: 4%;
+      top: 20%;
+    }
+
+    .word_header_table>thead>tr:first-child>th:nth-child(2)>img {
+      width: 80px;
+      height: 40px;
+    }
+
+    .word_header_table>thead>tr:nth-child(2)>th {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 1em;
+      font-size: 16px;
+    }
+
+    .word_game>table>tbody {
+      width: 100%;
+    }
+
+    .word_game>table>tbody>tr {
+      width: 70%;
+    }
+
+    .entry_table {
+      font-size: 10px;
+    }
+
+    .word_right_logo {
+      position: absolute;
+      height: 66px;
+      width: 70px;
+      right: 0;
+    }
+
+    .word_header {
+      position: relative;
+      top: 0;
+      text-align: center;
+      width: 100%;
+      left: 0;
+    }
+
+    .word_left_logo {
+      position: absolute;
+      height: 50px;
+      left: 0px;
+      top: 8px;
+    }
+
+    .word_header .word_right_logo>img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .word_header .word_left_logo>img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .word_tit {
+      text-align: center;
+    }
+
+    .word_result {
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 25px;
+      text-align: left;
+      padding: 1rem 0 3rem 0px;
+    }
+
+    .word_tit .main_title {
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 22px;
+    }
+
+    .word_tit>p:nth-child(2) {
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: bold;
+      padding-top: 0.3rem;
+    }
+
+    .word_tit>p:nth-child(3) {
+      line-height: 14px;
+      font-size: 14px;
+      font-weight: bold;
+      padding-top: 0.3rem;
+    }
+
+    .word_info {
+      display: flex;
+      text-align: left;
+      width: 90%;
+      flex-direction: column;
+      font-size: 12px;
+      font-weight: bold;
+      margin: 0px auto;
+    }
+
+    .word_info>div {
+      width: 100%;
+      padding-top: 1rem;
+    }
+
+    .word_info>div>p {
+      width: calc(100% / 3.3);
+      margin: 0.5rem;
+      float: left;
+    }
+
+    .result_table {
+      background: #006caf;
+      border: 1px solid black;
+      font-weight: bold;
+      font-size: 10px;
+      color: white;
+      vertical-align: middle;
+    }
+
+    .table_tbody {
+      text-align: center;
+    }
+
+    .table_tbody>tr>td {
+      border: 1px solid black;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 15px;
+      font-size: 10px;
+      font-weight: 300;
+    }
+
+    .best_word_thead>tr>th {
+      background: #006caf;
+      border: 1px solid black;
+      font-weight: bold;
+      font-size: 10px;
+      color: white;
+      vertical-align: middle;
+    }
+
+    .word_footer {
+      padding: 2rem 0 1.5cm 0;
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      font-size: 10px;
+      gap: 11px;
+      font-weight: bold;
+      width: calc(100% - 79.79px);
+    }
+
+    .word_footer>div {
+      width: calc(100% / 3);
+      display: flex;
+      gap: 9px;
+      align-items: flex-end;
+    }
+
+    .word_footer>div>span {
+      width: 53%;
+      display: inline-block;
+      color: black;
+      height: 1px;
+      border: 1px solid black;
+    }
+
+    .word_footer div:nth-child(3) {
+      justify-content: flex-end;
+    }
+
+    .word_footer div:nth-child(2) {
+      justify-content: center;
+    }
+
+    .word_Date {
+      font-size: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="word_wrap">
+    <div class="word_container">
+      <div class="WordHeader">
+        <header class="word_header">
+          <table class="word_main_title" style="
+                width: 100%;
+                height: 100px;
+                border-top: 1px solid black;
+                border-bottom: 1px solid black;
+              ">
+            <thead class="word_tit">
+              <tr>
+                <th style="">
+                  <img src="http://121.183.58.218:5501assets/images/word2.png" alt="" style="object-fit: cover" />
+                </th>
+                <th colspan="7" class="main_title" style="vertical-align: middle">
+                  제20회 예천아시아 U20 육상경기선수권대회
+                </th>
+                <th>
+                  <img src="http://121.183.58.218:5501assets/images/word.png" alt="" />
+                </th>
+              </tr>
+              <tr>
+                <th colspan="9">예천</th>
+              </tr>
+              <tr>
+                <th colspan="9">2023. 6. 4 ~ 6. 7</th>
+              </tr>
+            </thead>
+          </table>
+          <div class="word_result">
+            <div>RESULT(경기결과)</div>
+          </div>
+          <table class="word_Date" style="width: 100%">
+            <tr>
+              <th colspan="9" style="text-align: left">Long Jump Men</th>
+            </tr>
+            <tr>
+              <th colspan="3" style="text-align: left">Final</th>
+              <th colspan="6" style="text-align: left">
+                15 May 2023 / 17:36
+              </th>
+            </tr>
+          </table>
+        </header>
+      </div>
+      <div class="word_run">
+        <table class="box_table" style="width: 100%; border-collapse: collapse">
+          <!-- 달리기 테이블  -->
+          <colgroup>
+            <!-- live -->
+            <col width="5%" />
+            <col width="6%" />
+            <col width="5%" />
+            <col width="20%" />
+            <col width="5%" />
+            <col width="10%" />
+            <col width="auto%" />
+            <col width="auto%" />
+            <col width="auto%" />
+            <col width="auto%" />
+            <col width="auto%" />
+            <col width="auto%" />
+            <col width="auto%" />
+            <col width="5%" />
+          </colgroup>
+          <thead class="result_table entry_table">
+            <tr>
+              <th scope="col" style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  " rowspan="2">
+                순위
+              </th>
+              <th scope="col" style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  " rowspan="2">
+                순서
+              </th>
+              <th scope="col" style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  " rowspan="2">
+                BIB
+              </th>
+              <th scope="col" style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  " rowspan="2">
+                이름
+              </th>
+              <th scope="col" style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  " rowspan="2">
+                국적
+              </th>
+              <th scope="col" style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  " rowspan="2">
+                생년월일
+              </th>
+              <th scope="col" style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  ">
+                1차시기
+              </th>
+              <th scope="col" style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  ">
+                2차시기
+              </th>
+              <th scope="col" style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  ">
+                3차시기
+              </th>
+              <th scope="col" style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  ">
+                4차시기
+              </th>
+              <th scope="col" style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  ">
+                5차시기
+              </th>
+              <th scope="col" style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  ">
+                6차시기
+              </th>
+              <th scope="col" style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  ">
+                기록
+              </th>
+              <th scope="col" style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  " rowspan="2">
+                비고
+              </th>
+            </tr>
+            <tr>
+              <th scope="col" style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  " colspan="7">
+                풍속
+              </th>
+            </tr>
+          </thead>
+          <tbody class="table_tbody De_tbody entry_table" style="text-align: center">
+            <tr>
+              <td style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  " rowspan="2">
+                OOO
+              </td>
+              <td style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  " rowspan="2">
+                OOO
+              </td>
+              <td style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  " rowspan="2">
+                OOO
+              </td>
+              <td style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  " rowspan="2">
+                OOO
+              </td>
+              <td style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  " rowspan="2">
+                OOO
+              </td>
+              <td style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  " rowspan="2">
+                2020-04-12
+              </td>
+              <td style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  ">
+                OOO
+              </td>
+              <td style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  ">
+                OOO
+              </td>
+              <td style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  ">
+                OOO
+              </td>
+              <td style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  ">
+                OOO
+              </td>
+              <td style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  ">
+                OOO
+              </td>
+              <td style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  ">
+                OOO
+              </td>
+              <td style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  " rowspan="1">
+                기록
+              </td>
+              <td rowspan="2" style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  ">
+                비고
+              </td>
+            </tr>
+            <tr>
+              <td style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  ">
+                OOO
+              </td>
+              <td style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  ">
+                OOO
+              </td>
+              <td style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  ">
+                OOO
+              </td>
+              <td style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  ">
+                OOO
+              </td>
+              <td style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  ">
+                OOO
+              </td>
+              <td style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  ">
+                OOO
+              </td>
+              <td style="
+                    border: 1px solid black;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 15px;
+                    font-size: 10px;
+                    font-weight: 300;
+                  ">
+                OOO
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="word_best">
+        <div>
+          <p style="font-weight: bold; padding: 1rem 0; font-size: 20px">
+            종합신기록
+          </p>
+        </div>
+        <table width="100%" style="border-collapse: collapse">
+          <colgroup>
+            <col width="10%" />
+            <col width="10%" />
+            <col width="10%" />
+            <col width="20%" />
+            <col width="20%" />
+            <col width="30%" />
+          </colgroup>
+          <thead class="best_word_thead" style="text-align: center">
+            <tr>
+              <th style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  ">
+                구분
+              </th>
+              <th style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  ">
+                기록
+              </th>
+              <th style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  ">
+                풍속
+              </th>
+              <th style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  ">
+                성명
+              </th>
+              <th style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  ">
+                소속
+              </th>
+              <th style="
+                    background: #006caf;
+                    border: 1px solid black;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: white;
+                    vertical-align: middle;
+                  ">
+                일자
+              </th>
+            </tr>
+          </thead>
+          <tbody style="text-align: center">
+            <tr>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                WR
+              </td>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                9.58
+              </td>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                0.9
+              </td>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                jungtae
+              </td>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                JAM
+              </td>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                2009-08-16 00:00:00
+              </td>
+            </tr>
+            <tr>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                WR
+              </td>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                9.58
+              </td>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                0.9
+              </td>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                jungtae
+              </td>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                JAM
+              </td>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                2009-08-16 00:00:00
+              </td>
+            </tr>
+            <tr>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                WR
+              </td>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                9.58
+              </td>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                0.9
+              </td>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                jungtae
+              </td>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                JAM
+              </td>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                2009-08-16 00:00:00
+              </td>
+            </tr>
+            <tr>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                WR
+              </td>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                9.58
+              </td>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                0.9
+              </td>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                jungtae
+              </td>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                JAM
+              </td>
+              <td rowspan="1" scope="col" style="
+                    border: 1px solid black;
+                    line-height: 15px;
+                    font-size: 10px;
+                  ">
+                2009-08-16 00:00:00
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <footer class="word_footer" style="
+            padding: 2rem 0 1.5cm 0;
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            font-size: 10px;
+            font-weight: bold;
+            width: calc(100% - 79.79px);
+          ">
+        <table style="width: 100%">
+          <colgroup>
+            <col width="10%" />
+            <col width="auto%" />
+            <col width="5%" />
+            <col width="10%" />
+            <col width="auto%" />
+            <col width="5%" />
+            <col width="10%" />
+            <col width="auto%" />
+            <col width="5%" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th rowspan="1" scope="col" style="font-size: 10px; text-align: left">
+                심판 서명:
+              </th>
+              <th rowspan="1" scope="col"></th>
+              <th rowspan="1" scope="col" style="font-size: 10px">(인)</th>
+              <th rowspan="1" scope="col" style="font-size: 10px">
+                협회장 서명:
+              </th>
+              <th rowspan="1" scope="col"></th>
+              <th rowspan="1" scope="col" style="font-size: 10px; text-align: right">
+                (인)
+              </th>
+              <th rowspan="1" scope="col" style="font-size: 10px">
+                회장 서명:
+              </th>
+              <th rowspan="1" scope="col"></th>
+              <th rowspan="1" scope="col" style="font-size: 10px; text-align: right">
+                (인)
+              </th>
+            </tr>
+          </thead>
+        </table>
+      </footer>
+    </div>
+  </div>
+  <!-- Code injected by live-server -->
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../assets/css/reset.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/jquery-1.12.4.min.js"></script>
+  <title>ID카드</title>
+</head>
+<style>
+  @media print {
+    .AD_card_Box {
+      page-break-after: avoid;
+    }
+
+    @page {
+      size: 105mm 165mm;
+      margin: 0;
+    }
+
+    body {
+      background-color: white;
+    }
+  }
+
+  body {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif !important;
+  }
+</style>
+<script>
+  window.print();
+</script>
+
+<style></style>
+<!-- AD카드 페이지 -->
+
+<body>
+  <div class="AD_card_Box">
+    <div class="AD_front">
+      <div class="AD_container">
+        <div class="AD_card">
+          <img src="assets/images/blue_front.png" alt="" />
+        </div>
+        <div class="AD_front_User">
+          <img src="../assets/images/profileimg.jpg" alt="" />
+        </div>
+        <div class="AD_country">
+          <p>KOR</p>
+        </div>
+        <div class="AD_form">
+          <div class="AD_front_name">
+            <!-- 이름 -->
+            <p>Bao Xingzu</p>
+          </div>
+        </div>
+        <!-- 직책 -->
+        <div class="AD_front_desc">
+          <p>Athletic</p>
+        </div>
+        <div class="AD_front_text">
+          <p>Yecheon Asian U20</p>
+          <p>Athletics Championships</p>
+        </div>
+        <!-- 선수촌 거주 허용 코드 -->
+        <p class="village">AV</p>
+        <p class="Seats"></p>
+        <!-- 식사 가능 여부 없을 시 이미지 삭제 -->
+        <img class="eat" src="../assets/images/eat.png" alt="" />
+        <div class="Access_venue">
+          <p>1</p>
+          <p>2</p>
+          <p>3</p>
+          <p>4</p>
+        </div>
+      </div>
+    </div>
+    <div class="AD_back">
+      <div class="AD_container">
+        <div class="AD_card">
+          <img src="assets/images/blue_back.jpg" alt="" />
+        </div>
+        <div class="AD_back_User">
+          <img src="assets/images/profileimg.jpg" alt="" />
+        </div>
+        <div class="AD_back_name">
+          <p>Bao XingzuBao Xingzu</p>
+        </div>
+        <div class="AD_back_nationality">
+          <span>
+            <p>Nationality</p>
+            <p>:</p>
+            <p>KOR</p>
+          </span>
+          <span>
+            <p>D.O.B</p>
+            <p>:</p>
+            <p>18/15/1992</p>
+          </span>
+          <span>
+            <p>Gender</p>
+            <p>:</p>
+            <p>M</p>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
